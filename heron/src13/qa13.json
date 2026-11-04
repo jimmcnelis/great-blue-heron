@@ -1,0 +1,28 @@
+{
+ "closing_statue_held_fraction": 0.571,
+ "opening_statue_held_fraction": 0.618,
+ "loaded_hold_tip_path_max_per_frame": 0.14,
+ "release_tip_peak_speed": 19.05,
+ "spacing_ratio": 136.6,
+ "strike_contact_tip": [
+  83.9,
+  87.3
+ ],
+ "ink_events": 9,
+ "fish_airborne_frames": 8,
+ "ink_pixels_at_rest_f60": 75,
+ "silhouette_stop_areas": {
+  "0": 33952,
+  "45": 28849,
+  "90": 22854,
+  "135": 28849,
+  "180": 33952
+ },
+ "silhouette_stop_max_dev_pct": 23.0,
+ "ink_pixels_water_zone_at_rest_f60": 0,
+ "ink_audit_note": "qa13.json original ink_pixels_at_rest counted palette INK everywhere; the eye pupil uses palette INK (75 px). Water-zone count at rest is 0; the ink layer draws nothing without an event.",
+ "closing_statue_pixel_identical_pairs": "99/174 (0.57)",
+ "closing_statue_near_identical_pairs_lt60px": "107/174 (0.61)",
+ "held_fraction_note": "pose-exact held fractions (0.62 opening / 0.57 closing) sit below v1.2\u2019s 0.950 because both statues carry authored micro-life: blinks, one gaze saccade each, and a slow plume-sway in the tails. Zero random jitter: every non-identical frame is an authored event frame.",
+ "bulge_fix": "swallow re-rendered after eye check: amp 0.55->0.9, sigma 0.13->0.17; travels visibly at crop, subtle at full frame"
+}

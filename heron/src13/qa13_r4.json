@@ -1,0 +1,367 @@
+{
+ "pose_frames_differing_outside_swallow_window": [],
+ "pose_frames_differing_vs_r3_outside_window": [],
+ "pose_frames_differing_vs_r3_inside_window_count": 29,
+ "closing_statue_held_fraction": 0.571,
+ "opening_statue_held_fraction": 0.618,
+ "loaded_hold_tip_path_max_per_frame": 0.14,
+ "release_tip_peak_speed": 19.05,
+ "strike_contact_tip": [
+  83.9,
+  87.3
+ ],
+ "ink_events": 9,
+ "fish_airborne_frames": 8,
+ "swallow_bulge_window_402_431": {
+  "chord_angle_from_vertical_max_deg": 0.94,
+  "chord_angle_from_vertical_mean_deg": 0.94,
+  "max_spine_deviation_units": 0.48,
+  "max_spine_deviation_px": 3.2,
+  "r2_equivalents": {
+   "chord_angle_max_deg": 32.67,
+   "max_spine_deviation_units": 4.72
+  }
+ },
+ "bulge_shadow_centroid_rows": {
+  "402": 279.2,
+  "403": 279.4,
+  "404": 279.1,
+  "405": 279.0,
+  "406": 278.9,
+  "407": 262.5,
+  "408": 262.2,
+  "409": 261.9,
+  "410": 261.9,
+  "411": 264.5,
+  "412": 265.2,
+  "413": 267.0,
+  "414": 267.0,
+  "415": 269.4,
+  "416": 271.8,
+  "417": 272.7,
+  "418": 273.7,
+  "419": 276.5,
+  "420": 278.5,
+  "421": 277.9,
+  "422": 278.6,
+  "423": 282.4,
+  "424": 282.2,
+  "425": 281.4,
+  "426": 280.5,
+  "427": 279.6,
+  "428": 279.3,
+  "429": 279.5,
+  "430": 279.2,
+  "431": 279.2
+ },
+ "bulge_shadow_descent_px": 0.0,
+ "bulge_shadow_frames_seen": [
+  402,
+  431
+ ],
+ "ink_pixels_at_rest_f60": 74,
+ "ink_rest_f60_note": "r4 counts 74 pure-ink px vs r3 75; the differing mask pixels sit at x347-348, y233-240 \u2014 the ripple-ring edge left of the bird, where r4's redrawn tail fan changed one majority-downsample cell adjacent to the ring. The ink events themselves are untouched (9 events, same frames); it is a resampling artifact of the art change, not an ink change.",
+ "bulge_measurement_method": "per-row neck-run width excess vs the version's own f430 baseline in box x400-590, rows 170-325 (head and breast excluded); across = max per-row width excess (px), along = longest run of rows with excess >= 6 px, travel = excess-weighted centroid-row change across strong frames",
+ "bulge_shape_r3": {
+  "peak_frame": 415,
+  "peak": {
+   "excess_area": 4715,
+   "across_px": 47,
+   "along_px": 155,
+   "centroid_row": 242.0
+  },
+  "travel_px": 73.3,
+  "strong_frames": [
+   407,
+   422
+  ]
+ },
+ "bulge_shape_r4": {
+  "peak_frame": 415,
+  "peak": {
+   "excess_area": 1891,
+   "across_px": 22,
+   "along_px": 140,
+   "centroid_row": 239.0
+  },
+  "travel_px": 95.9,
+  "strong_frames": [
+   404,
+   421
+  ]
+ },
+ "bulge_shape_series_r3": {
+  "403": {
+   "excess_area": 592,
+   "across_px": 110,
+   "along_px": 12,
+   "centroid_row": 172.4
+  },
+  "404": {
+   "excess_area": 892,
+   "across_px": 113,
+   "along_px": 30,
+   "centroid_row": 175.7
+  },
+  "405": {
+   "excess_area": 1132,
+   "across_px": 116,
+   "along_px": 44,
+   "centroid_row": 179.5
+  },
+  "406": {
+   "excess_area": 1488,
+   "across_px": 119,
+   "along_px": 66,
+   "centroid_row": 185.6
+  },
+  "407": {
+   "excess_area": 1916,
+   "across_px": 121,
+   "along_px": 85,
+   "centroid_row": 192.2
+  },
+  "408": {
+   "excess_area": 2364,
+   "across_px": 122,
+   "along_px": 109,
+   "centroid_row": 200.9
+  },
+  "409": {
+   "excess_area": 2876,
+   "across_px": 122,
+   "along_px": 129,
+   "centroid_row": 209.6
+  },
+  "410": {
+   "excess_area": 3446,
+   "across_px": 122,
+   "along_px": 151,
+   "centroid_row": 219.3
+  },
+  "411": {
+   "excess_area": 3708,
+   "across_px": 42,
+   "along_px": 155,
+   "centroid_row": 227.7
+  },
+  "412": {
+   "excess_area": 4150,
+   "across_px": 44,
+   "along_px": 155,
+   "centroid_row": 231.6
+  },
+  "413": {
+   "excess_area": 4476,
+   "across_px": 46,
+   "along_px": 155,
+   "centroid_row": 235.3
+  },
+  "414": {
+   "excess_area": 4670,
+   "across_px": 47,
+   "along_px": 155,
+   "centroid_row": 238.7
+  },
+  "415": {
+   "excess_area": 4715,
+   "across_px": 47,
+   "along_px": 155,
+   "centroid_row": 242.0
+  },
+  "416": {
+   "excess_area": 4624,
+   "across_px": 46,
+   "along_px": 155,
+   "centroid_row": 245.0
+  },
+  "417": {
+   "excess_area": 4403,
+   "across_px": 45,
+   "along_px": 154,
+   "centroid_row": 248.1
+  },
+  "418": {
+   "excess_area": 4027,
+   "across_px": 43,
+   "along_px": 148,
+   "centroid_row": 251.6
+  },
+  "419": {
+   "excess_area": 3578,
+   "across_px": 41,
+   "along_px": 143,
+   "centroid_row": 254.8
+  },
+  "420": {
+   "excess_area": 3070,
+   "across_px": 38,
+   "along_px": 137,
+   "centroid_row": 258.4
+  },
+  "421": {
+   "excess_area": 2517,
+   "across_px": 34,
+   "along_px": 130,
+   "centroid_row": 262.0
+  },
+  "422": {
+   "excess_area": 1968,
+   "across_px": 28,
+   "along_px": 123,
+   "centroid_row": 265.5
+  },
+  "423": {
+   "excess_area": 1457,
+   "across_px": 23,
+   "along_px": 118,
+   "centroid_row": 268.5
+  },
+  "424": {
+   "excess_area": 894,
+   "across_px": 17,
+   "along_px": 50,
+   "centroid_row": 274.1
+  },
+  "425": {
+   "excess_area": 377,
+   "across_px": 11,
+   "along_px": 24,
+   "centroid_row": 277.6
+  }
+ },
+ "bulge_shape_series_r4": {
+  "403": {
+   "excess_area": 528,
+   "across_px": 106,
+   "along_px": 5,
+   "centroid_row": 172.0
+  },
+  "404": {
+   "excess_area": 699,
+   "across_px": 108,
+   "along_px": 13,
+   "centroid_row": 173.1
+  },
+  "405": {
+   "excess_area": 780,
+   "across_px": 109,
+   "along_px": 21,
+   "centroid_row": 174.1
+  },
+  "406": {
+   "excess_area": 902,
+   "across_px": 110,
+   "along_px": 30,
+   "centroid_row": 176.2
+  },
+  "407": {
+   "excess_area": 1022,
+   "across_px": 111,
+   "along_px": 36,
+   "centroid_row": 178.2
+  },
+  "408": {
+   "excess_area": 1096,
+   "across_px": 111,
+   "along_px": 45,
+   "centroid_row": 181.9
+  },
+  "409": {
+   "excess_area": 1188,
+   "across_px": 111,
+   "along_px": 57,
+   "centroid_row": 187.3
+  },
+  "410": {
+   "excess_area": 1474,
+   "across_px": 110,
+   "along_px": 95,
+   "centroid_row": 200.9
+  },
+  "411": {
+   "excess_area": 1344,
+   "across_px": 21,
+   "along_px": 97,
+   "centroid_row": 211.8
+  },
+  "412": {
+   "excess_area": 1450,
+   "across_px": 23,
+   "along_px": 97,
+   "centroid_row": 214.5
+  },
+  "413": {
+   "excess_area": 1732,
+   "across_px": 23,
+   "along_px": 130,
+   "centroid_row": 225.6
+  },
+  "414": {
+   "excess_area": 1872,
+   "across_px": 23,
+   "along_px": 141,
+   "centroid_row": 233.0
+  },
+  "415": {
+   "excess_area": 1891,
+   "across_px": 22,
+   "along_px": 140,
+   "centroid_row": 239.0
+  },
+  "416": {
+   "excess_area": 1891,
+   "across_px": 21,
+   "along_px": 147,
+   "centroid_row": 245.8
+  },
+  "417": {
+   "excess_area": 1772,
+   "across_px": 20,
+   "along_px": 138,
+   "centroid_row": 251.3
+  },
+  "418": {
+   "excess_area": 1609,
+   "across_px": 19,
+   "along_px": 132,
+   "centroid_row": 256.1
+  },
+  "419": {
+   "excess_area": 1400,
+   "across_px": 17,
+   "along_px": 124,
+   "centroid_row": 260.1
+  },
+  "420": {
+   "excess_area": 1160,
+   "across_px": 15,
+   "along_px": 62,
+   "centroid_row": 263.3
+  },
+  "421": {
+   "excess_area": 913,
+   "across_px": 13,
+   "along_px": 60,
+   "centroid_row": 269.0
+  },
+  "422": {
+   "excess_area": 543,
+   "across_px": 12,
+   "along_px": 33,
+   "centroid_row": 273.8
+  },
+  "423": {
+   "excess_area": 320,
+   "across_px": 9,
+   "along_px": 25,
+   "centroid_row": 287.9
+  },
+  "424": {
+   "excess_area": 182,
+   "across_px": 7,
+   "along_px": 20,
+   "centroid_row": 298.7
+  }
+ }
+}

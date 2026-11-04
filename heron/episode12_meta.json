@@ -1,0 +1,295 @@
+{
+ "frames": 1941,
+ "fps": 24,
+ "events": [
+  [
+   1052,
+   "ROOM_EMPTY"
+  ],
+  [
+   1352,
+   "APPROACH"
+  ],
+  [
+   1376,
+   "PRESENCE_SUSTAINED"
+  ]
+ ],
+ "spans": [
+  {
+   "clip": "idle_hunt_a@L",
+   "start": 0,
+   "n": 264,
+   "note": "opening statue, left third"
+  },
+  {
+   "clip": "walk@L-C",
+   "start": 264,
+   "n": 110,
+   "note": "stalk walk to the middle"
+  },
+  {
+   "clip": "strike@C",
+   "start": 374,
+   "n": 52,
+   "note": "tiny strike"
+  },
+  {
+   "clip": "swallow_tiny@C",
+   "start": 426,
+   "n": 84,
+   "note": "full eating sequence, tiny"
+  },
+  {
+   "clip": "idle_hunt_b@C",
+   "start": 510,
+   "n": 96,
+   "note": "watched stillness"
+  },
+  {
+   "clip": "stretch@C",
+   "start": 606,
+   "n": 168,
+   "note": "same-side stretch"
+  },
+  {
+   "clip": "walk@C-R",
+   "start": 774,
+   "n": 110,
+   "note": "walk to the right third (verbatim cycle)"
+  },
+  {
+   "clip": "turn@R",
+   "start": 884,
+   "n": 72,
+   "note": "THE TURN \u2014 drawn through the stops"
+  },
+  {
+   "clip": "takeoff@R",
+   "start": 956,
+   "n": 96,
+   "note": "departure, facing left"
+  },
+  {
+   "clip": "empty",
+   "start": 1052,
+   "n": 96,
+   "note": "the water settles; churn ring persists"
+  },
+  {
+   "clip": "landing@L",
+   "start": 1148,
+   "n": 84,
+   "note": "measured landing, left third"
+  },
+  {
+   "clip": "ruffle@L",
+   "start": 1232,
+   "n": 72,
+   "note": "post-landing ruffle (measured behavior)"
+  },
+  {
+   "clip": "idle_hunt_a@L2",
+   "start": 1304,
+   "n": 48,
+   "note": "brief statue"
+  },
+  {
+   "clip": "alert@L",
+   "start": 1352,
+   "n": 61,
+   "note": "APPROACH \u2014 the take"
+  },
+  {
+   "clip": "walk@L-C2",
+   "start": 1413,
+   "n": 110,
+   "note": "watched walk to the middle"
+  },
+  {
+   "clip": "strike_big@C",
+   "start": 1523,
+   "n": 60,
+   "note": "big strike, deeper load"
+  },
+  {
+   "clip": "swallow@C",
+   "start": 1583,
+   "n": 118,
+   "note": "THE eating sequence \u2014 flip, work-back, bulge"
+  },
+  {
+   "clip": "idle_hunt_c@C",
+   "start": 1701,
+   "n": 240,
+   "note": "closing statue with the slow scan"
+  }
+ ],
+ "ink_events": [
+  [
+   287,
+   "ripple",
+   125.33333333333334
+  ],
+  [
+   317,
+   "ripple",
+   144.0
+  ],
+  [
+   347,
+   "ripple",
+   200.0
+  ],
+  [
+   373,
+   "ripple",
+   162.66666666666666
+  ],
+  [
+   400,
+   "splash",
+   247.45378689379098
+  ],
+  [
+   400,
+   "ring",
+   247.45378689379098
+  ],
+  [
+   405,
+   "drip",
+   241.90459000836861
+  ],
+  [
+   407,
+   "drip",
+   237.89920323831066
+  ],
+  [
+   409,
+   "drip",
+   234.92806430191212
+  ],
+  [
+   737,
+   "ripple",
+   168.0
+  ],
+  [
+   797,
+   "ripple",
+   200.0
+  ],
+  [
+   827,
+   "ripple",
+   218.66666666666666
+  ],
+  [
+   857,
+   "ripple",
+   274.66666666666663
+  ],
+  [
+   883,
+   "ripple",
+   237.33333333333331
+  ],
+  [
+   895,
+   "ripple",
+   237.33333333333331
+  ],
+  [
+   910,
+   "ripple",
+   218.66666666666666
+  ],
+  [
+   925,
+   "ripple",
+   237.33333333333331
+  ],
+  [
+   940,
+   "ripple",
+   218.66666666666666
+  ],
+  [
+   973,
+   "churn",
+   224.0
+  ],
+  [
+   973,
+   "ring",
+   224.0
+  ],
+  [
+   1190,
+   "ring",
+   66.66666666666667
+  ],
+  [
+   1190,
+   "splash",
+   66.66666666666667
+  ],
+  [
+   1212,
+   "ripple",
+   91.3939393939394
+  ],
+  [
+   1436,
+   "ripple",
+   125.33333333333334
+  ],
+  [
+   1466,
+   "ripple",
+   144.0
+  ],
+  [
+   1496,
+   "ripple",
+   200.0
+  ],
+  [
+   1522,
+   "ripple",
+   162.66666666666666
+  ],
+  [
+   1557,
+   "splash",
+   247.45378689379098
+  ],
+  [
+   1557,
+   "ring",
+   247.45378689379098
+  ],
+  [
+   1562,
+   "drip",
+   241.90459000836861
+  ],
+  [
+   1564,
+   "drip",
+   237.89920323831066
+  ],
+  [
+   1566,
+   "drip",
+   234.92806430191212
+  ],
+  [
+   1601,
+   "ring",
+   215.24548622914904
+  ]
+ ]
+}

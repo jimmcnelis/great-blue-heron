@@ -1,0 +1,279 @@
+{
+ "strike_audits": [
+  {
+   "clip": "strike_tiny_0",
+   "coil_depth": 1.0,
+   "frames_at_depth_before_release": 15,
+   "beak_move_final4_cells": 77.8,
+   "dist_final2": 77.3,
+   "dist_prev2": 0.5,
+   "peak_beak_speed_cpf": 62.5
+  },
+  {
+   "clip": "strike_tiny_0_m",
+   "coil_depth": 1.0,
+   "frames_at_depth_before_release": 15,
+   "beak_move_final4_cells": 77.8,
+   "dist_final2": 77.3,
+   "dist_prev2": 0.5,
+   "peak_beak_speed_cpf": 62.5
+  },
+  {
+   "clip": "strike_tiny_1",
+   "coil_depth": 1.0,
+   "frames_at_depth_before_release": 15,
+   "beak_move_final4_cells": 71.1,
+   "dist_final2": 70.6,
+   "dist_prev2": 0.5,
+   "peak_beak_speed_cpf": 67.4
+  },
+  {
+   "clip": "strike_tiny_1_m",
+   "coil_depth": 1.0,
+   "frames_at_depth_before_release": 15,
+   "beak_move_final4_cells": 71.1,
+   "dist_final2": 70.6,
+   "dist_prev2": 0.5,
+   "peak_beak_speed_cpf": 67.4
+  },
+  {
+   "clip": "strike_tiny_2",
+   "coil_depth": 1.0,
+   "frames_at_depth_before_release": 15,
+   "beak_move_final4_cells": 77.4,
+   "dist_final2": 76.8,
+   "dist_prev2": 0.6,
+   "peak_beak_speed_cpf": 64.1
+  },
+  {
+   "clip": "strike_tiny_2_m",
+   "coil_depth": 1.0,
+   "frames_at_depth_before_release": 15,
+   "beak_move_final4_cells": 77.4,
+   "dist_final2": 76.8,
+   "dist_prev2": 0.6,
+   "peak_beak_speed_cpf": 64.1
+  },
+  {
+   "clip": "strike_tiny_3",
+   "coil_depth": 1.0,
+   "frames_at_depth_before_release": 15,
+   "beak_move_final4_cells": 75.6,
+   "dist_final2": 75.1,
+   "dist_prev2": 0.6,
+   "peak_beak_speed_cpf": 66.8
+  },
+  {
+   "clip": "strike_tiny_3_m",
+   "coil_depth": 1.0,
+   "frames_at_depth_before_release": 15,
+   "beak_move_final4_cells": 75.6,
+   "dist_final2": 75.1,
+   "dist_prev2": 0.6,
+   "peak_beak_speed_cpf": 66.8
+  },
+  {
+   "clip": "strike_tiny_4",
+   "coil_depth": 1.0,
+   "frames_at_depth_before_release": 16,
+   "beak_move_final4_cells": 103.2,
+   "dist_final2": 102.3,
+   "dist_prev2": 0.9,
+   "peak_beak_speed_cpf": 64.9
+  },
+  {
+   "clip": "strike_tiny_4_m",
+   "coil_depth": 1.0,
+   "frames_at_depth_before_release": 16,
+   "beak_move_final4_cells": 103.2,
+   "dist_final2": 102.3,
+   "dist_prev2": 0.9,
+   "peak_beak_speed_cpf": 64.9
+  },
+  {
+   "clip": "strike_tiny_5",
+   "coil_depth": 1.0,
+   "frames_at_depth_before_release": 16,
+   "beak_move_final4_cells": 92.0,
+   "dist_final2": 91.5,
+   "dist_prev2": 0.5,
+   "peak_beak_speed_cpf": 52.1
+  },
+  {
+   "clip": "strike_tiny_5_m",
+   "coil_depth": 1.0,
+   "frames_at_depth_before_release": 16,
+   "beak_move_final4_cells": 92.0,
+   "dist_final2": 91.5,
+   "dist_prev2": 0.5,
+   "peak_beak_speed_cpf": 52.1
+  },
+  {
+   "clip": "strike_big_0",
+   "coil_depth": 1.0,
+   "frames_at_depth_before_release": 16,
+   "beak_move_final4_cells": 90.2,
+   "dist_final2": 89.8,
+   "dist_prev2": 0.5,
+   "peak_beak_speed_cpf": 49.7
+  },
+  {
+   "clip": "strike_big_0_m",
+   "coil_depth": 1.0,
+   "frames_at_depth_before_release": 16,
+   "beak_move_final4_cells": 90.2,
+   "dist_final2": 89.8,
+   "dist_prev2": 0.5,
+   "peak_beak_speed_cpf": 49.7
+  },
+  {
+   "clip": "strike_big_1",
+   "coil_depth": 1.0,
+   "frames_at_depth_before_release": 16,
+   "beak_move_final4_cells": 103.3,
+   "dist_final2": 102.3,
+   "dist_prev2": 0.9,
+   "peak_beak_speed_cpf": 65.0
+  },
+  {
+   "clip": "strike_big_1_m",
+   "coil_depth": 1.0,
+   "frames_at_depth_before_release": 16,
+   "beak_move_final4_cells": 103.3,
+   "dist_final2": 102.3,
+   "dist_prev2": 0.9,
+   "peak_beak_speed_cpf": 65.0
+  },
+  {
+   "clip": "strike_big_2",
+   "coil_depth": 1.0,
+   "frames_at_depth_before_release": 16,
+   "beak_move_final4_cells": 100.4,
+   "dist_final2": 100.0,
+   "dist_prev2": 0.4,
+   "peak_beak_speed_cpf": 62.5
+  },
+  {
+   "clip": "strike_big_2_m",
+   "coil_depth": 1.0,
+   "frames_at_depth_before_release": 16,
+   "beak_move_final4_cells": 100.4,
+   "dist_final2": 100.0,
+   "dist_prev2": 0.4,
+   "peak_beak_speed_cpf": 62.5
+  },
+  {
+   "clip": "strike_big_3",
+   "coil_depth": 1.0,
+   "frames_at_depth_before_release": 15,
+   "beak_move_final4_cells": 75.8,
+   "dist_final2": 75.3,
+   "dist_prev2": 0.5,
+   "peak_beak_speed_cpf": 67.0
+  },
+  {
+   "clip": "strike_big_3_m",
+   "coil_depth": 1.0,
+   "frames_at_depth_before_release": 15,
+   "beak_move_final4_cells": 75.8,
+   "dist_final2": 75.3,
+   "dist_prev2": 0.5,
+   "peak_beak_speed_cpf": 67.0
+  },
+  {
+   "clip": "strike_miss_0",
+   "coil_depth": 1.0,
+   "frames_at_depth_before_release": 16,
+   "beak_move_final4_cells": 82.7,
+   "dist_final2": 82.2,
+   "dist_prev2": 0.5,
+   "peak_beak_speed_cpf": 46.2
+  },
+  {
+   "clip": "strike_miss_0_m",
+   "coil_depth": 1.0,
+   "frames_at_depth_before_release": 16,
+   "beak_move_final4_cells": 82.7,
+   "dist_final2": 82.2,
+   "dist_prev2": 0.5,
+   "peak_beak_speed_cpf": 46.2
+  },
+  {
+   "clip": "strike_miss_1",
+   "coil_depth": 1.0,
+   "frames_at_depth_before_release": 16,
+   "beak_move_final4_cells": 83.8,
+   "dist_final2": 83.3,
+   "dist_prev2": 0.5,
+   "peak_beak_speed_cpf": 44.9
+  },
+  {
+   "clip": "strike_miss_1_m",
+   "coil_depth": 1.0,
+   "frames_at_depth_before_release": 16,
+   "beak_move_final4_cells": 83.8,
+   "dist_final2": 83.3,
+   "dist_prev2": 0.5,
+   "peak_beak_speed_cpf": 44.9
+  }
+ ],
+ "idle_holds": {
+  "idle_L_0": {
+   "held_fraction": 0.266,
+   "longest_still_s": 0.5,
+   "beak_path_cells_per_s": 20.66
+  },
+  "idle_C_1": {
+   "held_fraction": 0.221,
+   "longest_still_s": 0.21,
+   "beak_path_cells_per_s": 3.09
+  },
+  "idle_L_1_m": {
+   "held_fraction": 0.263,
+   "longest_still_s": 0.38,
+   "beak_path_cells_per_s": 3.53
+  },
+  "idle_L_2": {
+   "held_fraction": 0.268,
+   "longest_still_s": 0.25,
+   "beak_path_cells_per_s": 1.41
+  },
+  "idle_C_3": {
+   "held_fraction": 0.252,
+   "longest_still_s": 0.29,
+   "beak_path_cells_per_s": 2.18
+  }
+ },
+ "change_after_landing_14f": [
+  1451,
+  1483,
+  3519,
+  1214,
+  1120,
+  887,
+  615,
+  453,
+  226,
+  175,
+  175,
+  218,
+  437,
+  534
+ ],
+ "change_after_first_strike_swallow_14f": [
+  206,
+  233,
+  303,
+  283,
+  159,
+  133,
+  261,
+  116,
+  228,
+  78,
+  101,
+  143,
+  88,
+  147
+ ]
+}

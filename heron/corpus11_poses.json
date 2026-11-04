@@ -1,0 +1,51 @@
+{
+ "columns": [
+  "root_x",
+  "root_y",
+  "body_tilt",
+  "neck_coil",
+  "neck_extend",
+  "neck_sway",
+  "neck_retract",
+  "head_pitch",
+  "plume_sway",
+  "blink",
+  "look_back",
+  "wing_amt",
+  "flap",
+  "flying",
+  "leg_far_fx",
+  "leg_far_fy",
+  "leg_near_fx",
+  "leg_near_fy",
+  "tail_ang",
+  "hide_near",
+  "fish_ang",
+  "fish_slide",
+  "fish_x",
+  "fish_y",
+  "fish_free_ang",
+  "turn_f",
+  "fish_code",
+  "fish_size_code"
+ ],
+ "fish_code": {
+  "none": 0.0,
+  "held": 1.0,
+  "free": 2.0
+ },
+ "fish_size_code": {
+  "tiny": 0.0,
+  "big": 1.0
+ },
+ "fps": 24,
+ "design_space": "120x90 (normalized rig units)",
+ "orientation": "authored; mirrored clips carry facing=-1 in the clips json",
+ "turn_f": "per-frame horizontal squash factor (1.0 except turn clips)",
+ "frames": 43936,
+ "pairs_with": [
+  "corpus11 (320x240)",
+  "corpus11s (200x120)"
+ ],
+ "note": "Pose stream is grid-independent (design-space parameters). Verified 2026-11-02: a rebuild with pose dumping reproduced corpus11 frames bit-identically (0 differing cells) and beaks exactly, so this stream is frame-aligned with the shipped corpora."
+}

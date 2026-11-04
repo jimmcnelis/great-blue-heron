@@ -1,0 +1,5 @@
+name: "pixel-art-craft"
+title: "Cartoon Craft for Generated Grid Animation"
+description: "Direct and clean up small-grid generated animation so it reads as a hand-drawn cartoon: the 12 principles and limited-animation economy applied to a rig/corpus/model pipeline, plus measurable grid hygiene (palette snap, orphan cleanup, deflicker)."
+category: "Work and knowledge"
+include_in_prompt: false

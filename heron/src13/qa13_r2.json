@@ -1,0 +1,30 @@
+{
+ "closing_statue_held_fraction": 0.571,
+ "opening_statue_held_fraction": 0.618,
+ "loaded_hold_tip_path_max_per_frame": 0.14,
+ "release_tip_peak_speed": 19.05,
+ "spacing_ratio": 136.6,
+ "strike_contact_tip": [
+  83.9,
+  87.3
+ ],
+ "ink_events": 9,
+ "fish_airborne_frames": 8,
+ "bulge_travel": {
+  "pos_start": 0.05,
+  "pos_end": 0.92,
+  "amp_peak": 0.9,
+  "render_width_factor_at_peak": 2.62,
+  "note": "amp/pos are pose data (unchanged); r2 widened the render (factor 1.25->1.8, sigma 0.17->0.22) and added a two-step shadow slice + pale cap riding the lump. Eye-verified at full frame: lump descends f406->f412->f418."
+ },
+ "ink_pixels_at_rest_f60": 75,
+ "silhouette_stop_areas": {
+  "0": 33952,
+  "45": 28849,
+  "90": 19272,
+  "flight": 40265,
+  "135": 28849,
+  "180": 33952
+ },
+ "silhouette_note": "front area fell 22,854 -> 19,272 (57% of profile) because the ball is gone; a front heron genuinely foreshortens. Flight silhouette is new in r2 (40,265) and names itself."
+}

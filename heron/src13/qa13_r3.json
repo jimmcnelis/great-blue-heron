@@ -1,0 +1,34 @@
+{
+ "pose_frames_differing_outside_swallow_window": [],
+ "closing_statue_held_fraction": 0.571,
+ "opening_statue_held_fraction": 0.618,
+ "loaded_hold_tip_path_max_per_frame": 0.14,
+ "release_tip_peak_speed": 19.05,
+ "strike_contact_tip": [
+  83.9,
+  87.3
+ ],
+ "ink_events": 9,
+ "fish_airborne_frames": 8,
+ "swallow_bulge_window_402_431": {
+  "chord_angle_from_vertical_max_deg": 0.94,
+  "chord_angle_from_vertical_mean_deg": 0.94,
+  "max_spine_deviation_units": 0.48,
+  "max_spine_deviation_px": 3.2,
+  "r2_equivalents": {
+   "chord_angle_max_deg": 32.67,
+   "max_spine_deviation_units": 4.72
+  }
+ },
+ "ink_pixels_at_rest_f60": 75,
+ "bulge_rendered_descent": {
+  "method": "excess DARKSLATE mask vs f430 baseline (same upright pose, amp 0) in neck box x400-590,y80-340",
+  "slice_present_frames": "403-427",
+  "centroid_row_first": 233.0,
+  "centroid_row_last": 297.8,
+  "descent_px": 64.8,
+  "excess_px_peak": 2308,
+  "note": "raw centroid incl. static neck DARKSLATE read 0.0 net (contaminated); excess-mask isolates the slice: it forms under the head and travels ~65 px down the straight neck to the breast"
+ },
+ "ink_at_rest_note": "ink_pixels_at_rest_f60 = 75, identical to r2; all of it the bird's own eye/brow pixels \u2014 the water carries no ink at rest (0 ink events fire at f60)"
+}

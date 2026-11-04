@@ -1,0 +1,60 @@
+{
+ "grid_values": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10
+ ],
+ "palette_exact_index_domain": true,
+ "mp4_near_palette_frac": 0.9937,
+ "ink_final_idle_last2.5s_max": 0,
+ "ink_first_idle_last3s_max": 0,
+ "ink_empty_after_1.7s_max": 0,
+ "step_events": 12,
+ "step_events_with_ink": 12,
+ "big_events": 4,
+ "big_events_with_ink": 4,
+ "centroid_idle_L": 75.5,
+ "centroid_strike_tiny": 165.4,
+ "centroid_idle_R": 242.5,
+ "centroid_alert": 76.5,
+ "centroid_final_idle_C": 164.2,
+ "fish_cells_tiny_episode": 220,
+ "fish_cells_big_episode": 467,
+ "presence_events": [
+  {
+   "frame": 0,
+   "event": "ROOM_EMPTY",
+   "response": "unwatched baseline: idle/doze weights armed, fishing at base rate"
+  },
+  {
+   "frame": 1533,
+   "event": "APPROACH",
+   "response": "alert/head-up acknowledgment, then walk to center and fish for the audience"
+  },
+  {
+   "frame": 1588,
+   "event": "PRESENCE_SUSTAINED",
+   "response": "watched: fishing probability raised, doze suppressed"
+  }
+ ],
+ "median_frame_change": 64.0,
+ "max_join_change": 1584,
+ "episode_frames": 2024,
+ "episode_seconds": 84.3,
+ "body_axis_deg_samples": [
+  32.0,
+  31.8,
+  32.3,
+  32.0,
+  32.0,
+  32.2
+ ]
+}

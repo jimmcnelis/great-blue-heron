@@ -1,0 +1,637 @@
+# movement-charts.yaml — timing charts for the heron v1.2 pose-space rig.
+#
+# Companion to heron-movement-study.md (read it for the evidence + grading).
+# Conventions:
+#   - All budgets are EXACT frame counts at 24 fps (Jimmy's axiom, 2026-11-02:
+#     one polished signature cycle per behavior, repeated verbatim; variety
+#     comes from scheduling, never from perturbing motion). Where the real
+#     animal varies, the range lives in the study text; the chart picks one
+#     canonical value.
+#   - Variants are DISCRETE authored alternatives (max 2 extra per behavior),
+#     differing in script (direction, size class, event order) — never in
+#     continuous random parameters. No seeds. No noise terms.
+#   - Pose params use the species vocabulary in
+#     creature-engine/packages/great-blue-heron/species.yaml, plus the new
+#     params declared under new_pose_params (marked NEW wherever used).
+#   - "hold: true" on a phase means the pose is HELD (frame repeated /
+#     trajectory parked), not eased through.
+#   - events are sim/ink hooks (procedural layer), fired at exact frames.
+
+meta:
+  fps: 24
+  study: heron-movement-study.md
+  axiom: >-
+    Static-first. Long holds are the default state. Each behavior resolves
+    to ONE canonical cycle that repeats verbatim; 2-3 discrete authored
+    variants maximum; scheduling (which behavior, which zone, how long a
+    hold between) is the only variety engine. Hold durations may stretch
+    by repeating held frames; motion itself never stretches.
+  loop_rule: >-
+    Cycles marked loop: true must return to their exact first-frame pose
+    (loop-point pose distance 0). The player repeats cycles; it never
+    regenerates them.
+
+new_pose_params:
+  - name: yaw
+    kind: continuous
+    range: [0, 180]
+    unit: degrees
+    replaces: nothing (v1.1 has no facing parameter at all; facing was faked by corpus mirroring and by the turn squash)
+    why: body orientation, DRAWN by the rig through authored stops (see orientation_stops). 0 = profile facing right, 180 = profile facing left.
+  - name: head_yaw
+    kind: continuous
+    range: [-160, 160]
+    unit: degrees relative to body yaw
+    replaces: look_back (retire the flag — it flipped the head drawing in one frame at its 0.5 threshold)
+    why: the head's own orientation, drawn through 3/4 stops; saccades and gaze stabilization are expressed in this + yaw.
+  - name: head_roll
+    kind: continuous
+    range: [-25, 25]
+    unit: degrees
+    why: the sideways head-cock herons hold against sun glare / while scanning (Krebs & Partridge). Absent from v1.1 entirely.
+  - name: beak_open
+    kind: continuous
+    range: [0, 1]
+    why: gape. Opens on the final approach frame of the strike (bill opens ~1/30 s before impact), closes on the prey, works the fish during handling, claps in the settle. v1.1's bill could not open at all.
+  - name: fish_orient
+    kind: continuous
+    range: [-180, 180]
+    unit: degrees of the fish's long axis relative to the bill axis
+    why: the head-first reorientation is the heart of the swallow. 90 = crosswise (as caught); 0 = aligned head-first, head toward the gape.
+  - name: fish_grip
+    kind: continuous
+    range: [0, 1]
+    generalizes: fish_slide
+    why: grip point along the bill, 0 = tip, 1 = gape. fish_slide moved position without orientation; handling needs both, independently.
+  - name: neck_bulge_pos
+    kind: continuous
+    range: [0, 1]
+    why: position of the swallow bulge along the neck, 0 = gape, 1 = body. The rig's neck tube must render a local bulge here.
+  - name: neck_bulge_amp
+    kind: continuous
+    range: [0, 1]
+    why: bulge size; peaks mid-swallow, two peristaltic pulses in the canonical swallow.
+  - name: flap_tip
+    kind: continuous
+    unit: degrees
+    why: wingtip flap angle tracked separately from flap (root); authored lag of 2 frames behind the root in the flight cycle.
+  - name: leg_near.toe
+    kind: continuous
+    unit: degrees
+    why: toe pitch — trailing/pointed in swing, flat at plant, curled in the one-leg tuck. v1.1 has no toe articulation; the flat swinging foot is the "boot".
+  - name: leg_far.toe
+    kind: continuous
+    unit: degrees
+    why: same, far leg.
+
+rig_requirements:
+  - yaw-aware drawing path: part placement as a function of yaw with the five authored orientation stops; interpolation happens in pose space between stops, never by scaling a finished drawing.
+  - fish rendered from (fish_grip, fish_orient, free-arc state) in ALL phases; the corpus-builder toss patch is abolished — the toss is chart data.
+  - neck tube renders a localized bulge at neck_bulge_pos with size neck_bulge_amp.
+  - beak renders gape from beak_open (upper/lower mandible separation at the hinge).
+  - smear drawing available at peak strike extension (1 frame, authored shape).
+  - silhouette-area gate: every authored stop within ±5% of the idle silhouette area; turn frames included.
+
+orientation_stops:
+  note: the turnaround the rig must natively support (study §8). Each stop is an authored pose that must pass the filled-silhouette test.
+  stops:
+    - yaw: 0
+      name: profile_right
+      drawing: full side view; far leg visible behind near leg; folded wing patch on the near flank; one eye.
+    - yaw: 45
+      name: three_quarter_front_right
+      drawing: body width ~0.75x profile; tail swung to the far (left) side; neck base right of body midline; both eyes suggested, far eye small; wing patch migrating toward the body's left edge.
+    - yaw: 90
+      name: front
+      drawing: body narrow (~0.45x profile width), symmetric; neck centred; both legs visible, near/far roles exchanged across this stop; both eyes; chest fringe centred.
+    - yaw: 135
+      name: three_quarter_front_left
+      drawing: mirror construction of the 45 stop (authored, not flipped at render time — the DRAWING is authored; playback may reuse it by symmetry of construction).
+    - yaw: 180
+      name: profile_left
+      drawing: full side view facing left; the pose the old pipeline could only reach by mirroring the corpus.
+
+charts:
+
+  idle_hunt:
+    canonical_frames: 480
+    duration_s: 20.0
+    loop: false
+    note: a held pose with a script of discrete events. NO continuous motion terms anywhere in this chart (v1.1's four sine waves are abolished).
+    base_pose:
+      neck_coil: 0.85        # hunting coil, loaded but not full
+      body_tilt: -33         # the v1.1 diagonal, kept
+      yaw: 0
+      head_yaw: 0
+      head_roll: 0
+      beak_open: 0
+    phases:
+      - {name: hold_fixate, frames: 71, hold: true}
+      - {name: blink, frames: 3, keys: {blink: 1}}
+      - {name: hold_fixate, frames: 66, hold: true}
+      - {name: gaze_saccade_right, frames: 3, keys: {head_yaw: 35}, note: "saccade = full travel in 3 frames, no ease-in"}
+      - {name: hold_fixate, frames: 93, hold: true}
+      - {name: head_roll_tilt, frames: 6, keys: {head_roll: 14}, note: "the glare cock; slow by heron standards — this one is a lean, not a saccade"}
+      - {name: hold_tilted, frames: 66, hold: true}
+      - {name: head_roll_release, frames: 6, keys: {head_roll: 0}}
+      - {name: gaze_saccade_back, frames: 3, keys: {head_yaw: 0}}
+      - {name: hold_fixate, frames: 97, hold: true}
+      - {name: blink, frames: 3, keys: {blink: 1}}
+      - {name: hold_fixate, frames: 63, hold: true}
+    lead_lag: []
+    gates:
+      - held fraction >= 0.92 of frames (bird-region change under threshold)
+      - beak-tip path length <= 3 cells/s inside holds
+      - no periodic component: periodogram of root_y shows no dominant period (there is no root_y track at all)
+    variants:
+      - id: idle_hunt_b
+        differs: event script only — saccade left at frame 210, no head-roll, blinks at 150 and 402.
+      - id: idle_hunt_c
+        differs: event script only — one slow scan (head_yaw 0 -> -50 over 24 frames, the ONLY eased head move in the canon, used for scanning) at frame 300.
+
+  head_saccade:
+    canonical_frames: 3
+    note: not a standalone clip — the atomic gaze shift used inside idle/alert/turn. Full travel in 3 frames, spacing even (a saccade is ballistic), then fixation.
+    phases:
+      - {name: saccade, frames: 3, keys: {head_yaw: "target"}}
+    gates: ["no intermediate ease: head_yaw covers >= 40% of travel in frame 1"]
+
+  head_turn:
+    canonical_frames: 18
+    note: head-only change of facing (e.g. look behind) WITHOUT body turn — drawn through the head's own 3/4 stops; replaces every use of the old look_back flag.
+    phases:
+      - {name: anticipate_dip, frames: 3, keys: {head_pitch: 4}}
+      - {name: travel_out, frames: 6, keys: {head_yaw: 150}, note: "passes head 3/4 stop at frame 3 of this phase"}
+      - {name: hold_look, frames: 6, hold: true}
+      - {name: travel_back, frames: 3, keys: {head_yaw: 0}, note: "return is faster than the out-travel — the animal snaps back to its fixation"}
+    gates: ["silhouette of the mid-travel frame reads as a 3/4 head, not a squashed profile"]
+
+  strike:
+    canonical_frames: 52
+    note: starts from idle_hunt's coil. The release spacing is the chart's whole point — distance per frame must increase monotonically into contact.
+    phases:
+      - name: coil_deepen
+        frames: 12
+        keys: {neck_coil: 1.0, body_tilt: -30, head_pitch: 17}
+        note: "monotonic deepen; the final 4 frames settle 1-2 cells DEEPER (never a leak: coil at release == coil maximum)"
+      - name: loaded_hold
+        frames: 12
+        hold: true
+        keys: {neck_coil: 1.0}
+        note: "beak-tip movement <= 1 cell across the whole phase; gaze nailed (head_yaw/head_roll locked)"
+      - name: release
+        frames: 4
+        keys: {neck_extend: 1.0, neck_coil: 0.15, beak_open: 1}
+        spacing: "beak-tip travel per frame: 25% / 35% / 40% / contact — accelerating; frame 3 is the authored SMEAR frame; beak_open ramps 0 -> 1 across frames 3-4 (the bill opens ~1/30 s before impact)"
+        events: [{frame: 4, type: splash}]
+      - name: grab_dwell
+        frames: 2
+        keys: {beak_open: 0, fish: held}
+        note: "bill closes ON the prey — a grab, not a stab. Fish appears crosswise: fish_orient 90, fish_grip 0.35."
+      - name: withdrawal
+        frames: 12
+        keys: {neck_extend: 0, neck_coil: 0.7, head_pitch: 6}
+        note: "decelerating rise (spacing favors the start); fish crosswise at the bill; drips event spans this phase"
+        events: [{frame: 1, type: drips, until_frame: 12}]
+      - name: recover_to_coil
+        frames: 10
+        keys: {neck_coil: 0.85, head_pitch: 0}
+        note: "hands off to swallow (catch) or back to idle_hunt (miss variant)"
+    lead_lag:
+      - "head/beak lead everything; body_tilt rocks <= 3 degrees total and settles 4 frames AFTER the neck reaches full coil"
+      - "plume_sway peaks 3 frames after contact (follow-through)"
+    gates:
+      - "spacing audit: beak-tip distance in final 2 frames before contact >= distance in the 2 frames before those"
+      - "coil parameter at release == clip maximum"
+      - "exactly 1 smear frame, at peak extension"
+    variants:
+      - id: strike_miss
+        differs: "identical through release; grab_dwell has fish set to none; withdrawal is followed by head_shake (12 frames, neck_sway ±1.6 decaying, 3 oscillations) then recover_to_coil."
+      - id: strike_big
+        differs: coil_deepen 16 frames and loaded_hold 16 frames (a bigger load for a bigger target); all later phases identical. Fish size class only.
+
+  swallow:
+    canonical_frames: 118
+    note: >-
+      THE fix for "eating the fish is messy" — the animal's true phase order:
+      secure -> dip -> toss-flip to head-first -> work back along the bill ->
+      head back -> traveling-bulge swallow -> settle. Fish state is chart data
+      throughout (fish_orient / fish_grip / free arc); no builder patches.
+    phases:
+      - name: secure_shake
+        frames: 12
+        keys: {fish_orient: 90, fish_grip: 0.35}
+        note: "3 quick head shakes (4 frames each, alternating ±), killing/stunning the fish and shedding water"
+        events: [{frame: 1, type: drips, until_frame: 10}]
+      - name: dip
+        frames: 18
+        keys: {head_pitch: 26, neck_coil: 0.55}
+        note: "fish dunked once, down 9 frames / up 9 frames; skip in the tiny variant"
+        events: [{frame: 9, type: splash, scale: small}]
+      - name: toss_flip
+        frames: 16
+        keys: {fish: free}
+        note: >-
+          head flicks up-back (frames 1-4, head_pitch -> -14); fish released at
+          frame 4 on a small ballistic arc (rises ~5 cells), rotating
+          fish_free_ang by ~180 degrees across frames 4-14; re-caught at
+          frame 14 with fish_orient 0 (HEAD-FIRST, head toward the gape),
+          beak_open closes on it at frame 15-16.
+      - name: work_back
+        frames: 18
+        keys: {fish_grip: 0.85, fish_orient: 0}
+        note: "3 small head jerks (frames 1, 7, 13) walk the fish down the bill toward the gape; fish stays aligned head-first; between jerks, holds"
+      - name: head_back
+        frames: 8
+        keys: {head_pitch: -24, neck_coil: 0.35}
+        note: "head tips back, neck straightens toward vertical — gravity assist"
+      - name: swallow_travel
+        frames: 22
+        keys: {fish_grip: 1.0, neck_bulge_pos: 1.0}
+        note: >-
+          the fish itself is now inside (fish: none from frame 4 of this phase);
+          neck_bulge_amp envelopes 0 -> 1 (frames 1-8) -> hold -> 0 (frames
+          18-22) while neck_bulge_pos travels 0 -> 1 across all 22 frames,
+          with 2 peristaltic pulses (amp +0.15 blips at frames 9 and 15);
+          slight side-to-side neck shimmy (neck_sway ±0.8, 2 cycles)
+      - name: settle
+        frames: 24
+        keys: {head_pitch: 0, neck_coil: 0.85, beak_open: 0}
+        note: "2 beak claps (beak_open 0.5 at frames 4 and 11, 2 frames each); neck re-coils; plume/neck follow-through decays over the first 10 frames; ends exactly on idle_hunt's base pose"
+    total_check_frames: 118
+    lead_lag:
+      - "in toss_flip the fish's rotation lags the head flick by 2 frames (released, then turning)"
+      - "in swallow_travel the bulge lags fish_grip by 4 frames (the fish enters, THEN the bulge forms)"
+    gates:
+      - "freeze frame at head_back: fish reads HEAD-FIRST (head at the gape side) or the clip fails"
+      - "bulge visible in >= 12 consecutive frames of swallow_travel, moving monotonically toward the body"
+      - "no frame in which the fish intersects the head/neck drawing except inside the gape during swallow_travel"
+    variants:
+      - id: swallow_tiny
+        differs: "dip phase removed; toss_flip 12 frames; work_back 12 frames; swallow_travel 16 frames. Total 84 frames."
+      - id: swallow_big_struggle
+        differs: "secure_shake extended to 24 frames and toss_flip runs TWICE (first re-catch still crosswise at fish_orient 60, second achieves 0). Total 150 frames. This is the only variant where a phase repeats — as authored data, not chance."
+
+  step_cycle:
+    canonical_frames: 24
+    loop: true
+    note: >-
+      ONE step (near leg), authored. A stride = this cycle played for near,
+      then far (offset by the root advance), i.e. cycles alternate legs; the
+      chart is written for the stepping leg generically (leg_step / leg_stance).
+      The freeze between steps is NOT in the cycle — the scheduler holds
+      idle_hunt between steps. Body advance happens ONLY while both feet are
+      planted or the new foot has landed: the body passes over the plant.
+    phases:
+      - name: weight_commit
+        frames: 4
+        keys: {root_y: 0.3}
+        note: "weight settles onto the stance leg; body lowers a fraction and LOCKS; stepping foot still planted"
+      - name: lift_fold
+        frames: 6
+        keys: {leg_step.fy: -7, leg_step.toe: -55}
+        note: >-
+          THE fold: the ankle (intertarsal joint) flexes and the
+          tarsometatarsus tucks up under the shin; foot rises AT MOST 7 design
+          units (v1.1 lifted 21 — the marching step that read as clunk);
+          toes point down (toe -55 deg) so the swinging profile is a slim
+          folded stilt, never a flat boot.
+      - name: advance
+        frames: 8
+        keys: {leg_step.fx: +14}
+        note: "folded leg swings forward LOW, foot traveling beneath the shin; root_x does NOT move in this phase"
+      - name: place
+        frames: 6
+        keys: {leg_step.fy: 0, leg_step.toe: 0}
+        note: "foot unfolds late, descends TOE-FIRST, toes spread as weight arrives at the final frame"
+        events: [{frame: 6, type: step, note: "ripple fires exactly on plant — 100% match required"}]
+      - name: body_pass
+        frames: 0
+        note: >-
+          body_pass is distributed across the NEXT cycle's weight_commit and
+          lift_fold phases: root_x advances by the stride length (14 units)
+          during those 10 frames while the just-planted leg is in stance.
+          Head-lock: neck_sway carries a compensation track equal and opposite
+          to the root advance so the head's WORLD position is constant through
+          the pass (translational-saccade hold); the head thrusts to its next
+          fixation only during a scheduler freeze, never mid-pass.
+    stride_units: 14
+    speed_note: "14 units per 24-frame step = deliberate stalk pace when steps run back-to-back; with scheduler freezes the effective pace is far slower, as in the animal."
+    lead_lag:
+      - "head is the stillest thing in the chart: world-locked through weight_commit, lift_fold, advance, place, and the pass"
+      - "plume lags root by 3 frames during body_pass"
+    gates:
+      - "foot lift apex <= 8 design units on every step"
+      - "swing-leg silhouette width at mid-advance <= 1.3x stance-leg width (the anti-boot gate)"
+      - "stance slip < 0.5 cell/frame; step events match ripple events 100%"
+      - "head world-x displacement during body_pass <= 1 cell"
+    variants:
+      - id: step_cycle_land
+        differs: "for walking on the bank (no water): lift_fold foot rise 5 units, place has no ripple event (dust instead, per environment effect map). Same timings."
+
+  turn:
+    canonical_frames: 72
+    note: >-
+      Jimmy's hard rule: drawn progressively through the orientation stops or
+      not at all. No squash (silhouette area gate ±5%), no mirror, no flip.
+      Choreography is the animal's: gaze saccades first, the body walks
+      around underneath on pivot steps, the head counter-stabilizes in
+      space until the body arrives.
+    phases:
+      - name: gaze_saccade
+        frames: 4
+        keys: {head_yaw: 150}
+        note: "head snaps to look at the target in the NEW facing direction (head_yaw is relative to the still-unturned body — the head turns almost fully before the body moves)"
+      - name: pivot_step_1
+        frames: 15
+        keys: {yaw: 45}
+        note: "near foot re-plants ~45 degrees around (step fold at small radius, lift <= 5 units); body yaws 0 -> 45, passing no stop early; head counter-rotates (head_yaw 150 -> 105) so its WORLD yaw stays on target"
+      - name: pivot_step_2
+        frames: 15
+        keys: {yaw: 90}
+        note: "far foot pivots; front stop at the end of this phase — the authored FRONT pose holds for 2 of these frames; head_yaw -> 60"
+      - name: pivot_step_3
+        frames: 15
+        keys: {yaw: 135}
+        note: "near foot pivots again; head_yaw -> 15"
+      - name: pivot_step_4
+        frames: 11
+        keys: {yaw: 180}
+        note: "far foot completes the rotation; body arrives at profile_left"
+      - name: realign_settle
+        frames: 12
+        keys: {head_yaw: 0, yaw: 180}
+        note: "head and body realign (head's world yaw never left the target); plume overshoots and decays over >= 8 frames; ends exactly on idle_hunt base pose at yaw 180"
+    lead_lag:
+      - "head leads the body by ~60 frames at the start (saccade at f0-4, body finishes at f60)"
+      - "within each pivot step, the stepping foot leads the yaw change by 2 frames (plant, then rotate over it)"
+      - "neck base crosses the body midline 3 frames after yaw passes 90"
+    gates:
+      - "silhouette area within ±5% of idle on EVERY frame (the anti-squash gate)"
+      - "horizontal scale factor within ±10% on every frame"
+      - "gate frames at yaw 45 / 90 / 135 each read correctly as filled silhouettes"
+      - "head world-yaw error vs target <= 10 degrees on every frame after the saccade"
+    variants:
+      - id: turn_reverse
+        differs: "the return trip, authored with its own keys (yaw 180 -> 0, saccade to head_yaw -150). Playing turn backwards is FORBIDDEN (foot plants would un-fire and ripples would predate steps)."
+
+  alert:
+    canonical_frames: 61
+    note: "the take formula (craft skill) — check, snap, held accent, settle. v1.1 eased up over 0.28 s and wobbled; this snaps and then is STILL."
+    phases:
+      - {name: check_dip, frames: 4, keys: {head_pitch: 5, neck_coil: 0.8}, note: "the current motion checks; head dips a fraction"}
+      - {name: snap_tall, frames: 3, keys: {body_tilt: -39, neck_coil: 0.25, root_y: -0.9, head_pitch: -8}, note: "accent reached within 3 frames — a snap, not a ramp"}
+      - {name: accent_hold, frames: 36, hold: true, note: "frozen tall; ONE gaze saccade permitted inside the hold (3 frames, at frame 20 of the phase) — freezing the body, never the gaze"}
+      - {name: settle, frames: 18, keys: {body_tilt: -33, neck_coil: 0.85, root_y: 0, head_pitch: 0}, note: "eased return is correct HERE (leaving a pose, not performing an action); ends on idle base pose"}
+    gates: ["accent reached <= 4 frames after snap start", "bird-region change ~0 across accent_hold except the saccade frames"]
+
+  takeoff:
+    canonical_frames: 96
+    phases:
+      - {name: crouch_deepen, frames: 12, keys: {root_y: 2.6, neck_coil: 0.3}, note: "monotonic deepen (craft brief item 2) — arrives loaded, never early-and-waiting"}
+      - name: leap_first_beat
+        frames: 12
+        keys: {flying: 1, wing_amt: 1, flap: "downstroke_1"}
+        note: "first downstroke BEGINS while the feet are still planted (frames 1-4); legs extend and leave at frame 5; neck EXTENDS straight (neck_retract 0) — the real liftoff beat v1.1 skipped"
+      - name: dangle_and_fold
+        frames: 30
+        keys: {neck_retract: 1.0, neck_coil: 0.6}
+        note: "legs dangle below the body (frames 1-12), then swing back to trail (frames 13-30); neck folds into the flight S across frames 6-30 — a second beat, after the extension"
+      - name: climb_beats
+        frames: 42
+        note: "3.5 flight_cycle beats at deep amplitude (envelope: beat 1-2 at 1.0, beat 3 at 0.9, beat 4 at 0.8); exits into flight_cycle loop or glide"
+    gates: ["first downstroke starts before feet leave", "legs read as dangling (feet below body line, toes down) for >= 8 frames"]
+
+  flight_cycle:
+    canonical_frames: 12
+    loop: true
+    note: "2.0 Hz at 24 fps = 12 frames per beat. Authored cycle, NOT a sine: downstroke 5 frames (42%), upstroke 7 frames. Replaces v1.1's 58*sin(2.1 Hz) metronome."
+    phases:
+      - {name: downstroke, frames: 5, keys: {flap: -52, flap_tip: -38}, note: "power stroke; flap_tip values are the ROOT's timing — the tip track is the same curve delayed 2 frames"}
+      - {name: upstroke, frames: 7, keys: {flap: 34, flap_tip: 30}, note: "slower recovery; wing folds slightly at the top (wing_amt dips to 0.92 at frames 10-11)"}
+    fixed_pose:
+      neck: "folded tight S: neck_retract 1.0, neck_coil 0.6, head back at the shoulders"
+      legs: "two thin near-parallel trailing lines within ±10 degrees of the body axis, extending beyond the tail"
+      body_tilt: -3
+    lead_lag: ["flap_tip lags flap by exactly 2 frames at every point of the cycle"]
+    gates: ["downstroke share of cycle within 40-45%", "phase plot tip-vs-root shows constant 2-frame lag", "loop-point pose distance 0"]
+    variants:
+      - id: flight_cycle_climb
+        differs: "same 12-frame timing; amplitude envelope +15% and body_tilt -8. Used inside takeoff only."
+
+  glide:
+    canonical_frames: 24
+    loop: true
+    note: wings locked in shallow dihedral (flap +12, held), neck/legs as flight_cycle. The scheduler inserts glide cycles into crossings > 3 s; flapping resumes from the loop point.
+    phases:
+      - {name: glide_hold, frames: 24, hold: true, keys: {flap: 12, flap_tip: 12}}
+    gates: ["wing angle drift <= 1 degree across the hold"]
+
+  landing:
+    canonical_frames: 120
+    phases:
+      - {name: approach_glide, frames: 24, note: "glide cycle x1, descending (root_y rising toward stand height), body_tilt -> -12"}
+      - {name: flare, frames: 12, keys: {flap: 48, body_tilt: -18}, note: "one authored braking stroke: wings high and HELD (replaces v1.1's flap frozen mid-sine); tail fans (tail_ang spread)"}
+      - {name: legs_reach, frames: 18, keys: {leg_near_toe: 0, leg_far_toe: 0}, note: "legs swing DOWN from trail and dangle (frames 1-8), then reach FORWARD (frames 9-18, feet ahead of their cruise position) — dangling before reaching, as the animal does"}
+      - name: touchdown
+        frames: 12
+        note: "feet meet the surface at frame 1 (landing event); legs compress: root_y +0.8 at frame 2, rebound -0.4 at frame 7, rest 0 at frame 12"
+        events: [{frame: 1, type: landing}]
+      - {name: momentum_steps, frames: 24, note: "two short step_cycles at walk amplitude to kill forward momentum (real birds step out of a landing); ripples fire on each plant"}
+      - {name: fold_and_unfold, frames: 30, keys: {wing_amt: 0, neck_retract: 0, neck_coil: 0.85}, note: "wing fold FINISHES no earlier than 10 frames after touchdown; the neck unfolds from its flight S to the hunting coil across this whole phase — after the feet, never before"}
+    gates:
+      - "flare pose present in the final 10 frames before touch"
+      - "both feet forward of cruise position >= 12 frames before touch"
+      - "wing_amt reaches 0 no earlier than 10 frames after touch"
+      - "root crosses the rest line and returns within 12 frames after touch"
+
+  stretch:
+    canonical_frames: 168
+    duration_s: 7.0
+    note: the same-side wing+leg stretch (the canonical GBH form). v1.1 stretched a wing slab alone; the animal stretches a SIDE.
+    phases:
+      - {name: weight_shift, frames: 18, keys: {root_x: "+2 toward stance side"}, note: "weight commits to the stance leg; body rises slightly"}
+      - {name: tuck_head, frames: 12, keys: {neck_coil: 0.95, head_pitch: 10}, note: "head/neck settle into the tucked perched position"}
+      - {name: wing_extend, frames: 24, keys: {wing_amt: 1.0}, note: "same-side wing extends DOWN and OUT, feathers fanning (trailing edge scallops open progressively — 3 fan steps at frames 8/16/24)"}
+      - {name: leg_extend, frames: 18, keys: {leg_step_fx: -20, leg_step_fy: -34, leg_step_toe: 25}, note: "same-side leg extends BACK until its segments align with the body line, toes stretching open; the leg ends at body height behind — the yoga pose"}
+      - {name: full_hold, frames: 48, hold: true, note: "the stretch is HELD 2 s (animal range 5-15 s total behavior; the hold is the point of a stretch)"}
+      - {name: leg_retract, frames: 12, keys: {leg_step_fy: 0}}
+      - {name: wing_fold, frames: 18, keys: {wing_amt: 0}}
+      - {name: settle, frames: 18, keys: {neck_coil: 0.85, head_pitch: 0}, note: "ends on idle base pose; plume follow-through >= 6 frames"}
+    gates: ["wing and leg extended are on the SAME side", "full_hold is a true hold (no drift)"]
+    variants:
+      - id: stretch_warble
+        differs: "both wings raised above the back + neck extended fully vertical (the GBH second form). 120 frames: rise 24 / hold 36 / fold 30 / settle 30."
+
+  oneleg:
+    canonical_frames: 36
+    note: ENTER chart; the hold is idle_hunt with the oneleg pose flag; EXIT is this chart's keys authored in reverse (never a fade — v1.1's hide_near made the leg cease to exist).
+    phases:
+      - {name: weight_shift, frames: 12, keys: {root_y: 0.4}, note: "weight commits fully to the stance leg; free foot unweights (toes lighten, last toe lifts at frame 12)"}
+      - name: fold_up
+        frames: 24
+        keys: {leg_near_fy: -38, leg_near_fx: 3, leg_near_toe: -70}
+        note: >-
+          the free leg folds at the ankle and draws UP, ending tucked FORWARD
+          under the belly with the foot visible against the body feathers,
+          toes curled — drawn in every frame of the hold. A tucked leg is a
+          DRAWING, not an absence.
+    pose_in_hold:
+      neck_coil: 0.7
+      note: "resting coil, shallower than the hunting coil; head may settle lower over the hold (scheduler may crossfade to doze after long holds)"
+    gates: ["the tucked foot is visible in 100% of hold frames", "no frame where a leg's cell count drops by > 20% vs the previous frame (the anti-vanish gate)"]
+
+  doze:
+    canonical_frames: 96
+    note: its own pose, never a damped idle. Enter chart; hold is indefinite (scheduler), exit reverses the keys.
+    phases:
+      - {name: sink, frames: 36, keys: {neck_retract: 0.85, neck_coil: 0.9, head_pitch: 14, root_y: 0.6}, note: "neck folds fully, head draws back and DOWN until the bill rests toward the neck; body settles"}
+      - {name: eye_close, frames: 12, keys: {blink: 1}, note: "a SLOW close (12 frames, not the 3-frame blink) — the difference between a blink and sleep"}
+      - {name: doze_hold, frames: 48, hold: true, note: "still. Grey-heron sleep is intermittent: the scheduler may insert a 3-frame eye-open inside long dozes; the pose does not change."}
+    gates: ["doze silhouette differs from idle silhouette (head low, neck gone into the S) — if it reads as 'idle but slower' it fails"]
+
+  preen:
+    canonical_frames: 240
+    duration_s: 10.0
+    loop: false
+    note: pose-to-pose bout; nibble beats separated by true holds. The middle bout works the chest — where the powder down lives.
+    phases:
+      - {name: reach_shoulder, frames: 24, keys: {head_yaw: 120, neck_coil: 0.95, head_pitch: 18}, note: "head turns to the shoulder THROUGH the 3/4 head stop (head_turn machinery), anticipation dip in the first 4 frames"}
+      - {name: nibble_beat_1, frames: 8, note: "2-3 small bill strokes (head_pitch ±3 at 3-frame spacing)"}
+      - {name: hold_pose, frames: 16, hold: true}
+      - {name: nibble_beat_2, frames: 8, note: "same rhythm, 5 cells further along the feather tract"}
+      - {name: draw_through, frames: 20, keys: {beak_open: 0.4}, note: "one feather drawn through the bill along its length — the re-zip stroke; beak_open tracks the feather passing"}
+      - {name: reposition, frames: 18, keys: {head_yaw: 60, head_pitch: 24}, note: "head moves to the chest (powder-down tract)"}
+      - {name: nibble_chest, frames: 16, note: "2 beats of 8 frames on the chest fringe"}
+      - {name: wing_half_open, frames: 18, keys: {wing_amt: 0.45}, note: "wing half-opens; head goes UNDER its leading edge"}
+      - {name: nibble_wing, frames: 16, note: "2 beats of 8 frames under the wing"}
+      - {name: shake, frames: 12, keys: {wing_amt: 0}, note: "whole-body shake (root_x ±0.7 at 3-frame spacing, decaying); plume + chest fringe follow-through continues >= 8 frames past the shake"}
+      - {name: settle, frames: 24, keys: {head_yaw: 0, head_pitch: 0, neck_coil: 0.85}, note: "ends on idle base pose"}
+      - {name: tail_hold, frames: 60, hold: true, note: "the bout ENDS in stillness — preening is something the statue does between statues"}
+    gates: ["at least 2 holds of >= 8 frames inside the bout (there are 4)", "nibble-pose silhouette reads correctly filled black"]
+    variants:
+      - id: preen_powder_comb
+        differs: "the species-signature beat replaces nibble_chest — the near FOOT raises to the chest (leg fold at the ankle, pectinate claw out) and combs the powder down while the head lowers to meet it. Same 240-frame envelope, phases re-authored around the foot beat."
+
+  scratch:
+    canonical_frames: 48
+    note: "head scratch, heron-style — the leg comes straight UP and the head lowers to meet it (never the wing-droop method)."
+    phases:
+      - {name: leg_raise, frames: 14, keys: {leg_near_fy: -52, leg_near_fx: 9}, note: "near leg lifts high beside the body, foot at head height"}
+      - {name: head_lower, frames: 8, keys: {head_pitch: 22, neck_coil: 0.8}, note: "head comes DOWN to the foot"}
+      - {name: scratch_beats, frames: 12, note: "3 quick foot strokes (4 frames each) against the head/neck"}
+      - {name: withdraw, frames: 14, keys: {leg_near_fy: 0, head_pitch: 0}, note: "foot returns to the water (step event + ripple at the final frame); head rises"}
+    gates: ["head and foot meet in space (anchor distance < 6 cells at the beats)"]
+
+  relocate:
+    canonical_frames: 120
+    duration_s: 5.0
+    note: >-
+      TRACK B ADDITION (2026-11-03, deep-dive §1.2 / work item 1): the
+      post-strike walk-off. "After a strike, successful or not, herons
+      often walk quickly away, generally more than 2-3 m, before
+      resuming a stealthy search" (Warrick 1992). The strike advertises
+      the spot; the bird moves. This is the repertoire's ONE brisk
+      walk — step_cycle's phases at step_cycle's cadence but with NO
+      scheduler freeze between steps. Choreography: 5 alternating
+      steps from the fishing stand (root 40) to the east dwell stand
+      (root 95); plants spaced one stride (11 units — the statue's own
+      stagger), so at every step end the stance reads lead +6 /
+      trail -5, exactly the statue stagger it started from; the
+      stepping foot swings 2 strides of ground (22 units) while the
+      body advances 11 — the swing-speed asymmetry of a real walk.
+      The scheduler aims it: east stand -> west stand is the same
+      chart with the root track re-based (poses are root-relative);
+      a facing change, when wanted, is the turn chart's job, never a
+      mirrored or reversed playback of this one.
+    phases:
+      - {name: step_far, frames: 24, note: "weight_commit 4 / lift_fold 6 / advance 8 / place 6, as step_cycle; foot lift apex 7, toe -55 in the fold"}
+      - {name: step_near, frames: 24, note: "pass distributed across weight_commit + lift_fold (10 frames), as step_cycle's body_pass"}
+      - {name: step_far, frames: 24}
+      - {name: step_near, frames: 24}
+      - {name: step_far, frames: 24, note: "arrives at the new stand in statue stagger; hands off to a held stand (stealth resumes — Track B), never directly to another strike"}
+    lead_lag:
+      - "head carried WITH the body at the statue offset (hx ~19) with a small per-step bob — an early draft world-locked the head as in step_cycle, which is right for one +14 pass but over 55 units stretched the neck back toward the start stand; caught on the contact strip and fixed before delivery"
+    gates:
+      - "foot lift apex <= 8 design units on every step (the step_cycle gate, inherited)"
+      - "step/ripple events would match 100% at the effect layer (5 plants, 5 ripples)"
+      - "end pose == statue stagger at the new root (lead +6 / trail -5, roles swapped)"
+      - "no freeze frames between steps: root_x advances in every phase of every step"
+    variants:
+      - id: relocate_short
+        differs: "3 steps (72 frames, 33 units) — for a half-distance stand change; same gait, same phases, fewer steps."
+
+  body_shake:
+    canonical_frames: 152
+    duration_s: 6.3
+    note: >-
+      TRACK B ADDITION (2026-11-03, deep-dive §1.5 / work item 2): the
+      standalone body shake, previously only a 12-frame embryo inside
+      preen. Maxwell & Putnam's ardeid ethogram: the bird erects its
+      contour feathers and shakes vigorously, a session of 5-10 s;
+      GBH accounts describe the whole body shaking "like a dog,"
+      plumes rippling — after immersion, after flight, and as the
+      hinge of the maintenance bout (stretch -> shake -> preen).
+      Structure here: erection BEFORE oscillation (the silhouette
+      visibly puffs first), 5 whole-body oscillations, then a settle
+      where the plumage re-lays over >= 1 s. BRIDGE NOTE: the wing
+      in-out beat of the ethogram has no folded-mode channel in the
+      shipped art2 bridge (same class of gap as head_yaw); the shake
+      is carried by root_x / head_roll / plume_sway, and the erection
+      by plume_sway + neck_w. If a wing channel ever ships, the beats
+      slot into the shake phase at the same 16-frame period.
+    phases:
+      - {name: erect, frames: 24, keys: {plume_sway: 1.8, neck_w: 1.05, head_pitch: 2}, note: "feather erection ramps first — the puff precedes the shake by a full second"}
+      - {name: shake, frames: 80, note: "5 oscillations, 16-frame period: root_x ±0.7, head_roll ±5 counter-phase, plume ripple at 2x frequency; envelope ramps in over 12 frames and decays across the last 20"}
+      - {name: settle, frames: 48, note: "plumage re-lays over 36 frames (eased), then a 12-frame true hold; ends exactly on the statue base pose"}
+    gates:
+      - "erection visibly precedes oscillation: plume envelope at frame 24 >= 90% of its peak before the first full root_x swing"
+      - "oscillation count 5 ± 0 (authored, not emergent)"
+      - "final 12 frames are a true hold (bird-region change ~0)"
+    variants:
+      - id: body_shake_wet
+        differs: "after a strike or landing (soaked bird): shake phase 96 frames (6 oscillations) and the settle's re-lay stretches to 60 frames. Total 180. Same erection."
+
+  strike_miss:
+    canonical_frames: 64
+    duration_s: 2.7
+    note: >-
+      TRACK B PROMOTION (2026-11-03, deep-dive §1.2 / work item 7):
+      the strike_miss VARIANT of the strike chart, promoted to a
+      first-class chart because Track B makes it a COMMON outcome
+      (~44% of strikes at the animal's ~56% success), not a rarity.
+      Frames are the strike chart's own through withdrawal — same
+      coil, same release spacing, same smear frame; a miss must be
+      indistinguishable from a catch until the bill comes up empty.
+      grab_dwell closes on nothing; the authored head_shake of the
+      old variant (12 frames, neck_sway ±1.6 decaying, 3
+      oscillations) sits between withdrawal and recover. Hands off
+      to relocate like every strike resolution (Track B §1.2).
+    phases:
+      - {name: coil_deepen, frames: 12, note: "as strike"}
+      - {name: loaded_hold, frames: 12, hold: true, note: "as strike"}
+      - {name: release, frames: 4, note: "as strike: spacing 25/60/100%, beak opens frames 3-4, smear at frame 3, splash event at contact"}
+      - {name: grab_dwell, frames: 2, keys: {beak_open: 0, fish: none}, note: "the bill closes on water — the ONLY frame where a miss differs from a catch before withdrawal"}
+      - {name: withdrawal, frames: 12, note: "as strike, empty bill; drips event spans the phase"}
+      - {name: head_shake, frames: 12, note: "3 oscillations, neck_sway ±1.6 decaying to 0 — the bird clears the water and resets; follow-through, not frustration"}
+      - {name: recover_to_coil, frames: 10, note: "as strike; ends on idle base pose at the stand"}
+    gates:
+      - "frames 0-27 are pose-identical to the strike chart's (a miss is a catch until the bill opens empty)"
+      - "head_shake oscillation count 3, amplitude monotonically decaying"
+      - "no fish state anywhere in the chart (fish: none throughout)"
+    variants: []
+
+scheduling_notes:
+  variety_engine: >-
+    The behavior scheduler chooses: which chart, which variant, which zone,
+    tiny vs big, and HOW LONG the holds between actions last (by repeating
+    held frames/phases). It never alters a chart's internal frames.
+  forbidden:
+    - per-instance random perturbation of any key value, timing, or phase length
+    - easing functions not named in a chart (each chart's spacing is authored in its phase notes)
+    - playing any chart backwards (reverse trips are separate authored charts, e.g. turn_reverse)
+    - crossfading between orientations (yaw is drawn, never blended between flips)
+  quality_gate_per_cycle: >-
+    No cycle enters the corpus until it passes its chart's gates, measured on
+    rendered frames: silhouette stops, spacing audits, held fractions,
+    fish-orientation freeze check (swallow), loop-point distance 0 (cycles).
