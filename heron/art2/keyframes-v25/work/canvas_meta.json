@@ -1,0 +1,123 @@
+{
+ "stills": {
+  "audubon_rest": {
+   "black": 0.2593,
+   "paper": [
+    240.0,
+    225.0,
+    199.0
+   ],
+   "content_px": 100580
+  },
+  "audubon_strike": {
+   "black": 0.3144,
+   "paper": [
+    244.0,
+    227.0,
+    204.0
+   ],
+   "content_px": 131497
+  }
+ },
+ "mechanism": {
+  "alert": {
+   "torso_px": 493.85,
+   "neckbase": [
+    601.2,
+    219.4
+   ],
+   "skull": [
+    740.8,
+    42.5
+   ],
+   "eye": [
+    754.7,
+    35.7
+   ],
+   "design_chord_base": 0.456,
+   "design_chord76": 0.471,
+   "design_arc": 0.707,
+   "design_arc_over_chord": 1.55,
+   "visible_stations_from_skull": {
+    "0.25": [
+     719.3,
+     123.8
+    ],
+    "0.5": [
+     730.8,
+     209.4
+    ],
+    "0.75": [
+     671.5,
+     263.9
+    ]
+   }
+  },
+  "deep_coil": {
+   "torso_px": 493.85,
+   "neckbase": [
+    598.9,
+    226.5
+   ],
+   "skull": [
+    689.0,
+    128.7
+   ],
+   "eye": [
+    704.5,
+    128.6
+   ],
+   "design_chord_base": 0.269,
+   "design_chord76": 0.365,
+   "design_arc": 0.695,
+   "design_arc_over_chord": 2.58,
+   "visible_stations_from_skull": {
+    "0.25": [
+     703.6,
+     201.8
+    ],
+    "0.5": [
+     708.5,
+     278.8
+    ],
+    "0.75": [
+     632.5,
+     299.9
+    ]
+   }
+  },
+  "strike_peak": {
+   "torso_px": 493.85,
+   "neckbase": [
+    599.3,
+    226.4
+   ],
+   "skull": [
+    797.4,
+    489.1
+   ],
+   "eye": [
+    811.1,
+    496.2
+   ],
+   "design_chord_base": 0.666,
+   "design_chord76": 0.516,
+   "design_arc": 0.695,
+   "design_arc_over_chord": 1.04,
+   "visible_stations_from_skull": {
+    "0.25": [
+     725.1,
+     443.2
+    ],
+    "0.5": [
+     664.5,
+     382.9
+    ],
+    "0.75": [
+     621.3,
+     309.1
+    ]
+   }
+  }
+ }
+}

@@ -1,0 +1,38 @@
+{
+ "alert_c1": {
+  "black": 0.2501,
+  "iou_vs_rigmask": 0.2441,
+  "iou_vs_rest": 0.7468,
+  "iou_vs_strike": 0.2856
+ },
+ "alert_c2": {
+  "black": 0.2477,
+  "iou_vs_rigmask": 0.2416,
+  "iou_vs_rest": 0.7925,
+  "iou_vs_strike": 0.2612
+ },
+ "coil_c1": {
+  "black": 0.2674,
+  "iou_vs_rigmask": 0.4601,
+  "iou_vs_rest": 0.3876,
+  "iou_vs_strike": 0.4251
+ },
+ "coil_c2": {
+  "black": 0.2757,
+  "iou_vs_rigmask": 0.5022,
+  "iou_vs_rest": 0.4349,
+  "iou_vs_strike": 0.4022
+ },
+ "peak_c1": {
+  "black": 0.3129,
+  "iou_vs_rigmask": 0.4818,
+  "iou_vs_rest": 0.2422,
+  "iou_vs_strike": 0.8269
+ },
+ "peak_c2": {
+  "black": 0.3216,
+  "iou_vs_rigmask": 0.4781,
+  "iou_vs_rest": 0.2382,
+  "iou_vs_strike": 0.848
+ }
+}
