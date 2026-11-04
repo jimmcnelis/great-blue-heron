@@ -1,0 +1,15 @@
+{
+ "runs": 8,
+ "unique_hashes": 1,
+ "max_pairwise_pixel_diff": 0.0,
+ "hashes": [
+  "0c0a4ca3f2f904eaf539c86b9313f92b",
+  "0c0a4ca3f2f904eaf539c86b9313f92b",
+  "0c0a4ca3f2f904eaf539c86b9313f92b",
+  "0c0a4ca3f2f904eaf539c86b9313f92b",
+  "0c0a4ca3f2f904eaf539c86b9313f92b",
+  "0c0a4ca3f2f904eaf539c86b9313f92b",
+  "0c0a4ca3f2f904eaf539c86b9313f92b",
+  "0c0a4ca3f2f904eaf539c86b9313f92b"
+ ]
+}

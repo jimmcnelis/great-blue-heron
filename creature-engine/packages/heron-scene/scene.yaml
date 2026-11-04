@@ -1,0 +1,66 @@
+schema_version: 1
+id: heron-scene
+display_name: The Heron (proof of concept, scene form)
+environment: implied-water
+style: flat-storybook
+grid: {width: 160, height: 120}
+fps: 12
+characters:
+  - {id: heron, species: great-blue-heron, role: creature, start_zone: L}
+  - {id: fish, species: heron-fish, role: prop}
+inputs:
+  raw:
+    approach:           {kind: edge, source: "LD2410-class mmWave presence flag 0->1", description: "rising edge of presence"}
+    presence_sustained: {kind: level, source: "mmWave presence flag held high", description: "someone is in the room and staying"}
+    room_empty:         {kind: edge, source: "presence flag low continuously for >120 s", description: "the room has emptied"}
+    ambient_light:      {kind: level, source: "BH1750-class lux sensor", description: "below night threshold -> dim + sleep weights. No camera, no microphone, ever."}
+    button:             {kind: pulse, source: "the one physical button ('fish now')", description: "forces the fishing behavior"}
+  derived_modes:
+    unwatched: {enter: "default", priority: 0}
+    watched:   {enter: "presence_sustained high", priority: 10}
+    empty:     {enter: "room_empty fired", priority: 20}
+    night:     {enter: "ambient_light below night threshold", priority: 30}
+interactions:
+  - id: heron-strikes-fish
+    between: [heron, fish]
+    roles: [predator, prey]
+    trigger: {kind: schedule, per_minute: 0.125}   # policy layer re-times this per mode via behaviors.yaml 'fish' pacing
+    note: >-
+      v1 FORM: EMBEDDED. The prey has no independent track — it lives as pose
+      state inside the predator's strike clips (held -> toss -> swallow,
+      with splash + drips as shared events). This definition names the
+      interaction and its outcome split; the Phase-5 extraction gives the
+      fish its own track and makes the outcomes literal scene data.
+    outcomes:
+      - label: catch-tiny
+        weight: 52.5
+        play: {heron: {clip_kind: strike}}
+        shared_events: [{type: splash}, {type: drips}]
+      - label: catch-big
+        weight: 22.5
+        play: {heron: {clip_kind: strike}}
+        shared_events: [{type: splash}, {type: drips}]
+      - label: miss
+        weight: 25.0
+        play: {heron: {clip_kind: strike}}
+        shared_events: [{type: splash}]
+# The v1 preview episode, transcribed from sim.py's hard-coded script —
+# same clips, same order, same presence beats; data now, not code.
+episode_script:
+  - {of: heron, clip: idle_L_0, frames: 132, presence: empty}
+  - {of: heron, clip: walk_LC_0, presence: empty}
+  - {of: heron, clip: strike_tiny_0, presence: empty}
+  - {of: heron, clip: idle_C_1, frames: 48, presence: empty}
+  - {of: heron, clip: stretch_1, presence: empty}
+  - {of: heron, clip: walk_CR_0, presence: empty}
+  - {of: heron, clip: turn_R_0, presence: empty}
+  - {of: heron, clip: idle_L_1_m, frames: 84, presence: empty}
+  - {of: heron, clip: turn_L_0_m, presence: empty}
+  - {of: heron, clip: takeoff_R_0, presence: empty}
+  - {of: heron, clip: empty, frames: 48, presence: empty}
+  - {of: heron, clip: flyin_L_0, presence: empty}
+  - {of: heron, clip: idle_L_2, frames: 36, presence: empty}
+  - {of: heron, clip: alert_L_0, presence: approach}
+  - {of: heron, clip: walk_LC_1, presence: sustained}
+  - {of: heron, clip: strike_big_0, presence: sustained}
+  - {of: heron, clip: idle_C_3, frames: 72, presence: sustained}

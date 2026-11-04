@@ -1,0 +1,32 @@
+schema_version: 1
+id: firefly
+display_name: Firefly (plug-test species 2 — the interaction partner)
+design_space: {width: 96, height: 72}
+palette:
+  white:    {rgb: [255, 255, 255], role: canvas}
+  glow:     {rgb: [255, 214, 90], role: lit body}
+  halo:     {rgb: [255, 240, 170], role: glow halo}
+  bodydark: {rgb: [60, 54, 30], role: unlit body core}
+  wing:     {rgb: [214, 214, 204], role: wings}
+pose_params:
+  root_x: {default: 20.0}
+  root_y: {default: 30.0, note: absolute design y (it flies)}
+  glow:   {default: 0.5, note: light output 0..1; drives halo size}
+  wing:   {default: 0.0, kind: flag}
+anchors:
+  - {name: body, use: interaction proximity + snap target}
+life_layer:
+  - {param: glow, waveform: sine, period_s: 2.3, amplitude: 0.25}
+rig:
+  module: rig.py
+  render_fn: render
+  default_pose_fn: default_pose
+clips:
+  module: clips.py
+  roster:
+    - {name: drift_in, kind: drift, kwargs: {x0: -6.0, y0: 26.0, x1: 66.0, y1: 34.0, dur: 8.0, seed: 7}, mirror: false, ambient: true}
+    - {name: drift_loop, kind: drift, kwargs: {x0: 66.0, y0: 34.0, x1: 58.0, y1: 30.0, dur: 6.0, seed: 13}, mirror: false, ambient: true}
+    - {name: pulse, kind: pulse, kwargs: {x: 62.0, y: 32.0, dur: 3.0, seed: 19}, mirror: false}
+    - {name: exit, kind: exit, kwargs: {x: 62.0, y: 32.0, dur: 2.5, seed: 23}, mirror: false}
+    - {name: gone, kind: gone, kwargs: {dur: 2.0}, mirror: false}
+behaviors_file: behaviors.yaml

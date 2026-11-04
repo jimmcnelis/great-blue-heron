@@ -1,0 +1,139 @@
+{
+ "control_v2": {
+  "raw": 0.525664927734542,
+  "prm": {
+   "rot": 6,
+   "scale": 1.1,
+   "dx": -24,
+   "dy": 6
+  },
+  "bird": 0.5641798173901861
+ },
+ "control_v21": {
+  "raw": 0.5501250211048488,
+  "prm": {
+   "rot": 6,
+   "scale": 1.175,
+   "dx": 24,
+   "dy": 18
+  },
+  "bird": 0.5879195209168067
+ },
+ "control_v22": {
+  "raw": 0.6140523182823616,
+  "prm": {
+   "rot": 3,
+   "scale": 1.175,
+   "dx": 24,
+   "dy": 12
+  },
+  "bird": 0.656722989707744
+ },
+ "control_v22_bands": {
+  "bands": {
+   "band0": 0.2749,
+   "band1": 0.418,
+   "band2": 0.3203
+  },
+  "band_err": 0.1268,
+  "mid": 0.418,
+  "mid_err": 0.07,
+  "centroid": [
+   -0.3301,
+   0.1143
+  ],
+  "fwd_err": 0.0259,
+  "vert_err": 0.0033,
+  "torso_w": 0.849,
+  "torso_d": 0.409,
+  "len_err": 0.049,
+  "sec_err": 0.0749
+ },
+ "control_v23": {
+  "raw": 0.7121424284856971,
+  "prm": {
+   "rot": 0,
+   "scale": 1.2,
+   "dx": 24,
+   "dy": 12
+  },
+  "bird": 0.7655624460318706
+ },
+ "control_v23_bands": {
+  "bands": {
+   "band0": 0.2615,
+   "band1": 0.4349,
+   "band2": 0.318
+  },
+  "band_err": 0.1594,
+  "mid": 0.4349,
+  "mid_err": 0.0869,
+  "centroid": [
+   -0.2855,
+   0.1136
+  ],
+  "fwd_err": 0.0705,
+  "vert_err": 0.0026,
+  "torso_w": 0.849,
+  "torso_d": 0.409,
+  "len_err": 0.049,
+  "sec_err": 0.1195
+ },
+ "zero_delta": {
+  "raw": 0.7121424284856971,
+  "bird": 0.7655624460318706,
+  "metrics": {
+   "bands": {
+    "band0": 0.2615,
+    "band1": 0.4349,
+    "band2": 0.318
+   },
+   "band_err": 0.1594,
+   "mid": 0.4349,
+   "mid_err": 0.0869,
+   "centroid": [
+    -0.2855,
+    0.1136
+   ],
+   "fwd_err": 0.0705,
+   "vert_err": 0.0026,
+   "torso_w": 0.849,
+   "torso_d": 0.409,
+   "len_err": 0.049,
+   "sec_err": 0.1195,
+   "raw": 0.7121,
+   "bird": 0.7656,
+   "prm": {
+    "rot": 0,
+    "scale": 1.2,
+    "dx": 24,
+    "dy": 12
+   },
+   "neck_ok": true,
+   "endp_ok": true,
+   "ik_ok": true,
+   "clip": false,
+   "ok": true,
+   "floors_ok": true
+  },
+  "stack_pixel_identical_to_v23": true,
+  "channels_identical": [
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true
+  ]
+ },
+ "asserts": {
+  "v2_ok": true,
+  "v21_ok": true,
+  "v22_ok": true,
+  "v23_ok": true,
+  "zero_ok": true,
+  "v23_bands_ok": true
+ }
+}

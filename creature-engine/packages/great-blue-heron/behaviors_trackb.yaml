@@ -1,0 +1,131 @@
+schema_version: 1
+species: great-blue-heron
+# TRACK B BEHAVIOR DATA (2026-11-03) — the heron-behavior-deep-dive's
+# scheduling mathematics as executable package data, consumed by
+# scheduler_trackb.py (package code; the engine core is untouched).
+#
+# This file supersedes behaviors.yaml's v1 pacing table FOR THE
+# ROSTER-BASED BIRD. behaviors.yaml remains the v1 cartesian package's
+# contract. The two deliberate theatre knobs of the v1 contract —
+# watched strike pacing (165 s) and the approach->fish boost — are NOT
+# carried over: per deep-dive §3.4, unwatched rates are the animal's
+# values, and this scheduler is the unwatched bird. Watched-mode
+# boosts, if ever wanted, belong in a scene-level override that names
+# itself theatre.
+#
+# Grading follows the deep dive: [Documented] a cited source states
+# it; [Estimate] our design number derived from graded facts.
+
+world:
+  # The sim's stage: the art2 roster's own geography (design units,
+  # 150-wide space). L-dwell charts live at root 26; everything in the
+  # living-bird stage chains at the fishing stand (40) and the east
+  # stand (95) that relocate walks to.
+  stands: {creek_stand: 40, east_stand: 95}
+  # Semidiurnal tide, period 12.42 h. Phase anchored so low water
+  # falls at 08:10 and 20:32 on the sim date [Estimate — Chesapeake
+  # semidiurnal character is Documented; the phase is a sim input].
+  tide: {period_h: 12.42, low_water_h: [8.17, 20.53]}
+  # Light phases for the sim date (mid-October, Chesapeake latitude)
+  # [Estimate]: night -> dawn 06:30, day 07:30, dusk 17:50,
+  # night 18:50.
+  light: {dawn: 6.5, day: 7.5, dusk: 17.83, night: 18.83}
+  # Moon gate for night hunting (deep-dive §2): only the brightest
+  # bucket (m3) unlocks a night hunt. Sim date flies m2 — gate shut.
+  moon_bucket: m2
+
+scheduler:
+  # Stillness budget (deep-dive §3.1): >= 90% of all displayed frames
+  # are a held pose. Met structurally: bouts are separated by
+  # heavy-tailed gaps filled with held poses, and within hunt bouts
+  # the bird stands (held) between strikes.
+  held_frame_target: 0.90
+  # Inter-bout gaps: lognormal, heavy-tailed (§3.2) — median 16 min,
+  # sigma 0.75, hard floor 3 min, soft ceiling 150 min.
+  gap_lognormal: {median_min: 16, sigma: 0.75, floor_min: 3, ceil_min: 150}
+
+hunting:
+  # Time budget [Documented — Brandman 1976]: hunting is 30-50% of
+  # the day. The folklore 90% figure is NOT used (§1.4).
+  day_share_target: [0.30, 0.50]
+  # Bout length [Estimate from §1.3/§3.2 bout structure].
+  bout_lognormal: {median_min: 30, sigma: 0.5, floor_min: 10, ceil_min: 80}
+  # Strike rate [Documented — Hodgens 2004]: ~4 strikes/hour of
+  # foraging (828 in 202 h). Inter-strike gaps inside a bout:
+  # lognormal median 13 min (~4.3/h), floor 3.5 min (refractory).
+  strike_gap_lognormal: {median_min: 11, sigma: 0.45, floor_min: 3.5, ceil_min: 40}
+  # Success [Documented — Hodgens 2004]: 56% overall (467/828).
+  # Tide NEVER touches success (§1.2); it moves rate only, mildly.
+  success_rate: 0.56
+  # Prey size [Documented — Hodgens]: 87% of captures <= 14 cm;
+  # big-fish events ~1 in 8 catches [Estimate from the distribution].
+  big_share_of_hits: 0.13
+  # Post-strike relocation [Documented — Warrick 1992]: after a
+  # strike, hit or miss, the bird walks >2-3 m before resuming
+  # stealth. Implemented at 0.9 probability per strike resolution,
+  # and MANDATORY after 2 consecutive strikes without one (§3.2
+  # refractory-with-memory). At the east stand the relocation is a
+  # short flight back to the creek stand (stand change by air —
+  # disclosed in the sim log as a flight relocation).
+  relocate_probability: 0.9
+  relocate_mandatory_after: 2
+  # Satiation (§3.2): after a big catch, strike rate x0.35 for
+  # 45 min; after any catch, x0.6 for 20 min.
+  satiation: {big_factor: 0.35, big_min: 45, any_factor: 0.6, any_min: 20}
+  # Tide effect on strike RATE only [Probable, §1.2/§3.3]: ebbing
+  # water and low water concentrate prey — up to x1.45 on the ebb
+  # near low, down to x0.75 on the flood near high. Success exempt.
+  tide_rate: {ebb_low_max: 1.45, flood_high_min: 0.75}
+  # Light weights for entering a hunt bout [Estimate from §1.3]:
+  # dawn/dusk emphasis, day continues lower, night gated by moon.
+  light_weight: {dawn: 1.0, day: 0.55, dusk: 1.0, night: 0.0}
+
+maintenance:
+  # Bouts per day [Estimate, §2 table]: 2-5, midday-weighted, and
+  # boosted after long hunt bouts. Internal order is AUTHORED
+  # (deep-dive §1.5): stretch -> body_shake -> preen, early stop
+  # allowed (a bout can be just a stretch).
+  bouts_per_day_target: [2, 5]
+  base_weight: 0.5               # scheduler weight before boosts
+  order: [stretch, body_shake, preen]
+  early_stop: {after_stretch: 0.25, after_shake: 0.35}
+  midday_window_h: [10.0, 15.0]
+  midday_weight: 2.2
+  after_long_hunt_boost: 1.8     # following a hunt bout > 40 min
+  refractory_min: 120            # no second bout within 2 h (§3.2)
+  scratch_after_preen_probability: 0.4
+  # Standalone shake: after a landing (soaked/arrived bird resettles
+  # feathers, §1.5) with probability 0.7 inside 10 min.
+  shake_after_landing: {probability: 0.7, within_min: 10}
+
+loaf:
+  # The third state (§1.4): awake, upright, doing nothing in
+  # particular — one-leg rest, head turns, long held stands. Real
+  # schedule share, not a rounding error.
+  oneleg_probability: 0.45       # of loaf bouts that settle to one leg
+  head_turn_probability: 0.3     # per loaf bout
+
+flight:
+  # 0-3 flights/day unwatched (§2 table); suppressed while watched
+  # by the v1 contract — this scheduler is unwatched, so flights are
+  # rare repositioning, plus two caused cases: the alert ladder's
+  # flush (step 3) and the dusk return from the east stand.
+  max_per_day: 3
+  autumn_factor: 1.3             # Aug-Oct dispersal (§1.8) [Estimate]
+
+alert_ladder:
+  # [Documented — Vennesland 2000, posture translation §1.7]:
+  # step 1 freeze-check (the common response — most disturbance ends
+  # here), step 2 alert (sustained disturbance), step 3 flush
+  # (repeated/escalating provocation — rare, and suppressed while
+  # watched under the v1 contract; this sim is unwatched).
+  freeze_check_hold_s: [1.0, 3.0]
+  escalate_to_alert_min: 1.5     # sustained disturbance beyond this
+  escalate_to_flush: repeated    # a further event while still alert
+
+caps:
+  # Rarity protected by caps, not dice (§3.2). Yawn is data-only this
+  # phase (no chart rendered); listed so the cap survives to the
+  # phase that authors it.
+  yawn_per_day: 1
+  flights_per_day: 3

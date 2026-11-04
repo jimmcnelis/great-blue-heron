@@ -1,0 +1,173 @@
+{
+ "gateA": {
+  "fracs": {
+   "black": 0.2656,
+   "rust": 0.0395,
+   "yellow": 0.0234,
+   "slate": 0.4635
+  },
+  "gold_fracs": {
+   "black": 0.2389,
+   "rust": 0.0348,
+   "yellow": 0.0171,
+   "slate": 0.474
+  },
+  "iou_vs_gold": 0.8591,
+  "mad_bird": 38.31,
+  "bill_y": 174.3,
+  "bill_y_gold": 175.9
+ },
+ "gateB": {
+  "fracs": {
+   "black": 0.3714,
+   "rust": 0.032,
+   "yellow": 0.0196,
+   "slate": 0.4042
+  },
+  "gold_fracs": {
+   "black": 0.3709,
+   "rust": 0.021,
+   "yellow": 0.0054,
+   "slate": 0.4478
+  },
+  "iou_vs_gold": 0.4844,
+  "mad_bird": 91.57,
+  "bill_y": 526.2,
+  "bill_y_gold": 562.7
+ },
+ "logA": {
+  "base_donor": "idle_f0011",
+  "regions": {
+   "torso": {
+    "donor": "idle_f0013",
+    "donor_black": 0.2393
+   },
+   "wing": {
+    "donor": "idle_f0018",
+    "donor_black": 0.255
+   },
+   "tail": {
+    "donor": "idle_f0008",
+    "donor_black": 0.0463
+   },
+   "leg_far": {
+    "donor": "idle_f0015",
+    "donor_black": 0.3875
+   },
+   "leg_near": {
+    "donor": "idle_f0012",
+    "donor_black": 0.3626
+   },
+   "plume": {
+    "donor": "idle_f0013",
+    "donor_black": 0.1563
+   }
+  },
+  "part": {
+   "donor": "idle_f0013",
+   "donor_part_black": 0.1425,
+   "target": 0.1466,
+   "warp": [
+    1.0,
+    0.0,
+    -0.0,
+    -0.0
+   ],
+   "anchor_rms": 0.0
+  },
+  "trim": {
+   "iters": [
+    0.3377,
+    0.2656
+   ],
+   "final_black": 0.2656,
+   "part_black_final": 0.1616
+  }
+ },
+ "logB": {
+  "base_donor": "strike_f0029",
+  "regions": {
+   "torso": {
+    "donor": "strike_f0026",
+    "donor_black": 0.208
+   },
+   "wing": {
+    "donor": "strike_f0020",
+    "donor_black": 0.2709
+   },
+   "tail": {
+    "donor": "strike_f0024",
+    "donor_black": 0.0382
+   },
+   "leg_far": {
+    "donor": "strike_f0020",
+    "donor_black": 0.4086
+   },
+   "leg_near": {
+    "donor": "strike_f0022",
+    "donor_black": 0.145
+   },
+   "plume": {
+    "donor": "strike_f0026",
+    "donor_black": 0.0017
+   }
+  },
+  "part": {
+   "donor": "strike_f0026",
+   "donor_part_black": 0.0856,
+   "target": 0.0888,
+   "warp": [
+    1.0,
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "anchor_rms": 0.0
+  },
+  "trim": {
+   "iters": [
+    0.4224,
+    0.3714
+   ],
+   "final_black": 0.3714,
+   "part_black_final": 0.0994
+  }
+ },
+ "neck_frontback_A": {
+  "front": {
+   "mine": 0.071,
+   "gold": 0.0131
+  },
+  "back": {
+   "mine": 0.0742,
+   "gold": 0.0654
+  }
+ },
+ "part_A": {
+  "part_iou_vs_gold": 0.8933,
+  "part_mad": 25.43
+ },
+ "part_B": {
+  "part_iou_vs_gold": 0.316,
+  "part_mad": 100.39
+ },
+ "targetsA": {
+  "part": 0.1466,
+  "saddle": 0.2547,
+  "4": 0.3855,
+  "5": 0.4229,
+  "6": 0.045,
+  "7": 0.1698,
+  "overhang": 0.1572
+ },
+ "targetsB": {
+  "part": 0.0888,
+  "saddle": 0.3233,
+  "4": 0.138,
+  "5": 0.4436,
+  "6": 0.0382,
+  "7": 0.0,
+  "overhang": 0.386
+ },
+ "determinism_hold": true
+}

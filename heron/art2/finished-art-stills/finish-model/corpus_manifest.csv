@@ -1,0 +1,80 @@
+pair_id,family,chart_frame,canvas,canvas_md5,target,target_md5,role,approved_still,note
+idle_f0008,idle,8,canvas/idle_hold.png,e975dc97acf87bbf4b6bde1e4a0f5c45,target/idle_f0008.png,6c5a97987ec074568627bae62f84f75d,train,False,hold canvas byte-identical across chart f0-f70 (md5 verified)
+idle_f0009,idle,9,canvas/idle_hold.png,e975dc97acf87bbf4b6bde1e4a0f5c45,target/idle_f0009.png,9fb928b3a54f980bde204c2a28ef1fe7,train,False,hold canvas byte-identical across chart f0-f70 (md5 verified)
+idle_f0011,idle,11,canvas/idle_hold.png,e975dc97acf87bbf4b6bde1e4a0f5c45,target/idle_f0011.png,e2604be3a7e2919131d5190379394762,train,False,hold canvas byte-identical across chart f0-f70 (md5 verified)
+idle_f0012,idle,12,canvas/idle_hold.png,e975dc97acf87bbf4b6bde1e4a0f5c45,target/idle_f0012.png,a4a579c4701a9f8d874acdfe61488d7b,train,False,hold canvas byte-identical across chart f0-f70 (md5 verified)
+idle_f0013,idle,13,canvas/idle_hold.png,e975dc97acf87bbf4b6bde1e4a0f5c45,target/idle_f0013.png,0f8ea9e8523812c31c7d1e88edd8c1f2,train,False,hold canvas byte-identical across chart f0-f70 (md5 verified)
+idle_f0015,idle,15,canvas/idle_hold.png,e975dc97acf87bbf4b6bde1e4a0f5c45,target/idle_f0015.png,c8d9cfd78a09cd5b7e0193031ea777c5,train,False,hold canvas byte-identical across chart f0-f70 (md5 verified)
+idle_f0016,idle,16,canvas/idle_hold.png,e975dc97acf87bbf4b6bde1e4a0f5c45,target/idle_f0016.png,77812d403a26d52b43843aaece309748,train,False,hold canvas byte-identical across chart f0-f70 (md5 verified)
+idle_f0018,idle,18,canvas/idle_hold.png,e975dc97acf87bbf4b6bde1e4a0f5c45,target/idle_f0018.png,dfb43acf7f2cec32fe44f0344fca14a1,train,False,hold canvas byte-identical across chart f0-f70 (md5 verified)
+idle_f0019,idle,19,canvas/idle_hold.png,e975dc97acf87bbf4b6bde1e4a0f5c45,target/idle_f0019.png,e22b55ac4c5425e6cfddfe586569b4fc,train,False,hold canvas byte-identical across chart f0-f70 (md5 verified)
+idle_f0020,idle,20,canvas/idle_hold.png,e975dc97acf87bbf4b6bde1e4a0f5c45,target/idle_f0020.png,c5cb3bb14144dadf64f0ef5efc9916ca,train,False,hold canvas byte-identical across chart f0-f70 (md5 verified)
+idle_f0023,idle,23,canvas/idle_hold.png,e975dc97acf87bbf4b6bde1e4a0f5c45,target/idle_f0023.png,2bb1b8c21ba6289c36918dfa9121921a,train,False,hold canvas byte-identical across chart f0-f70 (md5 verified)
+idle_f0024,idle,24,canvas/idle_hold.png,e975dc97acf87bbf4b6bde1e4a0f5c45,target/idle_f0024.png,9e45ab4b2926c74860af30d99ff3f39a,train,False,hold canvas byte-identical across chart f0-f70 (md5 verified)
+idle_f0025,idle,25,canvas/idle_hold.png,e975dc97acf87bbf4b6bde1e4a0f5c45,target/idle_f0025.png,91e85b59fa730ae5ae8aa670c8f49edf,train,False,hold canvas byte-identical across chart f0-f70 (md5 verified)
+idle_f0029,idle,29,canvas/idle_hold.png,e975dc97acf87bbf4b6bde1e4a0f5c45,target/idle_f0029.png,e400d6bd2739c336a5df15cf850574ea,train,False,hold canvas byte-identical across chart f0-f70 (md5 verified)
+idle_f0030,idle,30,canvas/idle_hold.png,e975dc97acf87bbf4b6bde1e4a0f5c45,target/idle_f0030.png,c2226bf85b4664445dc3b159fb4ee1a0,train,True,hold canvas byte-identical across chart f0-f70 (md5 verified)
+idle_f0031,idle,31,canvas/idle_hold.png,e975dc97acf87bbf4b6bde1e4a0f5c45,target/idle_f0031.png,ea8ddc628d7331a3127c2f55a36abc4a,train,False,hold canvas byte-identical across chart f0-f70 (md5 verified)
+idle_f0034,idle,34,canvas/idle_hold.png,e975dc97acf87bbf4b6bde1e4a0f5c45,target/idle_f0034.png,09456ef12ddae020010cbdc243a27af4,train,False,hold canvas byte-identical across chart f0-f70 (md5 verified)
+idle_f0035,idle,35,canvas/idle_hold.png,e975dc97acf87bbf4b6bde1e4a0f5c45,target/idle_f0035.png,cc82fd1f7c41be98cee74b5bbf7bc9cd,train,False,hold canvas byte-identical across chart f0-f70 (md5 verified)
+idle_f0036,idle,36,canvas/idle_hold.png,e975dc97acf87bbf4b6bde1e4a0f5c45,target/idle_f0036.png,e565b98a5e8773d9ae59916839e3ccf6,train,False,hold canvas byte-identical across chart f0-f70 (md5 verified)
+idle_f0037,idle,37,canvas/idle_hold.png,e975dc97acf87bbf4b6bde1e4a0f5c45,target/idle_f0037.png,81e398d5dfc1f98724ac3db3120b684d,train,False,hold canvas byte-identical across chart f0-f70 (md5 verified)
+idle_f0038,idle,38,canvas/idle_hold.png,e975dc97acf87bbf4b6bde1e4a0f5c45,target/idle_f0038.png,8f7e69e21e50f56391a5798e2df066e4,train,False,hold canvas byte-identical across chart f0-f70 (md5 verified)
+idle_f0040,idle,40,canvas/idle_hold.png,e975dc97acf87bbf4b6bde1e4a0f5c45,target/idle_f0040.png,7700d7ea5b7af84b7a3123c99173ed6b,train,False,hold canvas byte-identical across chart f0-f70 (md5 verified)
+idle_f0041,idle,41,canvas/idle_hold.png,e975dc97acf87bbf4b6bde1e4a0f5c45,target/idle_f0041.png,d6e6a6d831b68a27f7da11a21cc8f376,train,False,hold canvas byte-identical across chart f0-f70 (md5 verified)
+idle_f0045,idle,45,canvas/idle_hold.png,e975dc97acf87bbf4b6bde1e4a0f5c45,target/idle_f0045.png,932a311d2f3adba58a3b6b808d0caf56,train,False,hold canvas byte-identical across chart f0-f70 (md5 verified)
+idle_f0046,idle,46,canvas/idle_hold.png,e975dc97acf87bbf4b6bde1e4a0f5c45,target/idle_f0046.png,38cf5e07c61d5e0a63d9896274e8ecda,train,False,hold canvas byte-identical across chart f0-f70 (md5 verified)
+idle_f0047,idle,47,canvas/idle_hold.png,e975dc97acf87bbf4b6bde1e4a0f5c45,target/idle_f0047.png,2acbbfe49afce6b531d39e42225fae93,train,False,hold canvas byte-identical across chart f0-f70 (md5 verified)
+idle_f0049,idle,49,canvas/idle_hold.png,e975dc97acf87bbf4b6bde1e4a0f5c45,target/idle_f0049.png,d48f9948049c7a4e47f964f32b2d5ea2,train,False,hold canvas byte-identical across chart f0-f70 (md5 verified)
+strike_f0000,strike,0,canvas/strike_f0000.png,d704c9983a7d2dadaec363fb854b2a49,target/strike_f0000.png,2054685d85e78f27adfa0d9afeaf0311,train,False,
+strike_f0001,strike,1,canvas/strike_f0001.png,841e2412913b3df5b49b106a8b0aea5e,target/strike_f0001.png,2f57880e83b6978eff7ce87283e9e8d7,train,False,
+strike_f0002,strike,2,canvas/strike_f0002.png,4af7aab5a8e70027baa7833be9bca75b,target/strike_f0002.png,e12dc844944cf10db2cce75f8e023a6d,train,False,
+strike_f0003,strike,3,canvas/strike_f0003.png,8bcdaec2772e95cee9901f0795d01c11,target/strike_f0003.png,a6f8fd26df4cb5732d1e6c19ac2d63ce,train,False,
+strike_f0004,strike,4,canvas/strike_f0004.png,29062c7d34d7b92db0dd0077ee5b9906,target/strike_f0004.png,257302abdf7425dc3defac0900ed77d0,train,False,
+strike_f0005,strike,5,canvas/strike_f0005.png,3cdd78b7859aad7ed007f74e6b5d2041,target/strike_f0005.png,31ce2d619b0b909d70f3cd3a8ddbcc4e,train,False,
+strike_f0006,strike,6,canvas/strike_f0006.png,6ab1a551c54d200c38a3f84e1145a40a,target/strike_f0006.png,16f9309e38079e9164781a122f90222f,probe,False,
+strike_f0007,strike,7,canvas/strike_f0007.png,4c7b4c89725af6145947567608fece3f,target/strike_f0007.png,47cb4ecc67ece0a4b052eb3424b8a8a9,train,False,
+strike_f0008,strike,8,canvas/strike_f0008.png,f9162a2d967ecf5dba7a649b7211b23e,target/strike_f0008.png,8e4e23c1cf6880c05570b69ae7d18dfb,train,False,
+strike_f0009,strike,9,canvas/strike_f0009.png,6bb0a7b94c4d633da1cf923804eafee3,target/strike_f0009.png,be30793b48846abb8469a685fac7ec60,train,False,
+strike_f0010,strike,10,canvas/strike_f0010.png,a9d74f977980cb38a49f1a39fc3c688d,target/strike_f0010.png,cc293873181bde0349ddd3d791ea8d17,train,False,
+strike_f0011,strike,11,canvas/strike_f0011.png,e0da27ea852c08f25d488ea78f004635,target/strike_f0011.png,2ec61e74b780b71118cf601a7280520a,train,False,
+strike_f0012,strike,12,canvas/strike_f0012.png,68951f3e81110c3e11516442f7802b40,target/strike_f0012.png,3b207542cbc0accce0ffa7714a311445,train,False,
+strike_f0013,strike,13,canvas/strike_f0013.png,7b47f40c00233ac97241e924184492d8,target/strike_f0013.png,7e45540e62ad5c7f64e83152c54588b2,train,False,
+strike_f0014,strike,14,canvas/strike_f0014.png,346fc978f06f02f1dcfe6d61fb3b5f17,target/strike_f0014.png,8e5959fc4a95bd371388665c0c50670a,train,False,
+strike_f0015,strike,15,canvas/strike_f0015.png,f3bc649b08c1023bc5766bf4590fe372,target/strike_f0015.png,f505b2f302bc307a6fad6a7e343c2042,train,False,
+strike_f0016,strike,16,canvas/strike_f0016.png,00d7b6a9f7d6e7c948a19fd062c269d8,target/strike_f0016.png,07c3667ee0635fcfbb72c90a56c40a97,train,False,
+strike_f0017,strike,17,canvas/strike_f0017.png,31886c2824d82b1b575d1fb1dabe44c2,target/strike_f0017.png,c148f0dca79949daa3b5e1693d5836d8,train,False,
+strike_f0018,strike,18,canvas/strike_f0018.png,5b6e0971f2417c8bcdb1ce4b536c7fbc,target/strike_f0018.png,b20e0cc4a140755a74203d0a4554034a,train,False,
+strike_f0019,strike,19,canvas/strike_f0019.png,556a9f01cc5622ca80a5c53492d962d2,target/strike_f0019.png,111ce7655e116a966fa141acdec51cc5,train,False,
+strike_f0020,strike,20,canvas/strike_f0020.png,c7b041abdff48ed4db6ef77e4ace83d3,target/strike_f0020.png,ce2fee02abb37145fb67a0bedfb9de84,train,False,
+strike_f0021,strike,21,canvas/strike_f0021.png,94db697723b734804e4d2512fe412061,target/strike_f0021.png,ac4b77b91c4b48818ee75e56fc458cc9,train,False,
+strike_f0022,strike,22,canvas/strike_f0022.png,902655e4bd2442981e3c1980d21db90b,target/strike_f0022.png,56cbc8fce81f8a358c2d38310cf1958d,train,False,
+strike_f0023,strike,23,canvas/strike_f0023.png,a26df1675883a6b73ec50707ae4e9b25,target/strike_f0023.png,43cde55e602030dc0d1984f1b0669881,train,False,
+strike_f0024,strike,24,canvas/strike_f0024.png,f1d3cbc41c436023d8f16a74ebd2f717,target/strike_f0024.png,e0720b3a5cbfd9a25a70cbe3c4ae3eb2,train,False,
+strike_f0025,strike,25,canvas/strike_f0025.png,cfee688e38256c2c058d1a2a545820cb,target/strike_f0025.png,410de04c9975edf17fe5855a75a527b0,probe,False,
+strike_f0026,strike,26,canvas/strike_f0026.png,8b222fe1e573a2c411fa63158c4d8166,target/strike_f0026.png,523f03057b726e3126d1c4ab3a00ab54,train,False,
+strike_f0027,strike,27,canvas/strike_f0027.png,b2c8624223365b8e389bec22f842141f,target/strike_f0027.png,53442f4f538e42f2f9d7d7ecbd8fda1e,train,True,
+strike_f0028,strike,28,canvas/strike_f0028.png,8b222fe1e573a2c411fa63158c4d8166,target/strike_f0028.png,ae0f6c4518812bf598a505bbb79566a5,train,False,
+strike_f0029,strike,29,canvas/strike_f0029.png,2b0ac6cd6839f142c88794091ca2d16a,target/strike_f0029.png,3dda7ad392c90fbec2baa92e6864d66a,train,False,
+strike_f0030,strike,30,canvas/strike_f0030.png,b0989b9c85fa2157141bb653a2d83956,target/strike_f0030.png,70d56df4976f423859b5f91d1b19c70f,train,False,
+strike_f0031,strike,31,canvas/strike_f0031.png,b9486721e901400cd65a5a1882918d88,target/strike_f0031.png,342e465bb2199b35e5465f524c02a2da,train,False,
+strike_f0032,strike,32,canvas/strike_f0032.png,c32d5c3b07b26932bb8b5959a3f4765e,target/strike_f0032.png,220b3674f2b345fd4c4795ecb2bb5a84,train,False,
+strike_f0033,strike,33,canvas/strike_f0033.png,241dbc1a3f5ebe181871a926a9fc7ab7,target/strike_f0033.png,7ee35f6809899367af10c2acfeb16034,train,False,
+strike_f0034,strike,34,canvas/strike_f0034.png,0dafd20bd168bba2b470db6804eb8df0,target/strike_f0034.png,60c8a7d66632b3009a37e4cc2cd6f125,probe,False,
+strike_f0035,strike,35,canvas/strike_f0035.png,606f912cd7ca269e4f5a844262f141d3,target/strike_f0035.png,6dae74d7536ac5f6c128de26d4456805,train,False,
+strike_f0036,strike,36,canvas/strike_f0036.png,255483c5206713cb397e1473169ac00b,target/strike_f0036.png,092f56fad41684901f5b6ba7a730f8a1,train,False,
+strike_f0037,strike,37,canvas/strike_f0037.png,1b9a5268cca7d194de2db51b330e313a,target/strike_f0037.png,31ce68683001bfe54f088fb03b37789a,train,False,
+strike_f0038,strike,38,canvas/strike_f0038.png,4a2f50beee917ea4aea28ae29519d766,target/strike_f0038.png,50ac3f4cff84877f934dbd0cd416aa4f,train,False,
+strike_f0039,strike,39,canvas/strike_f0039.png,574233f6947488a1018d7055699c6a72,target/strike_f0039.png,681ee747b19174107f5e97a4515b43f0,train,False,
+strike_f0040,strike,40,canvas/strike_f0040.png,6f0bbb7f029655d155255097f78dd591,target/strike_f0040.png,4191ef7a5a93749c538f40d1ea2e043f,train,False,
+strike_f0041,strike,41,canvas/strike_f0041.png,ff1ba1dbe93a3e991ae382c969812361,target/strike_f0041.png,50cd2be878385685b64341e1d33db3d9,train,False,
+strike_f0042,strike,42,canvas/strike_f0042.png,73e83eb9159bb7ea63b7e88f224dfeb0,target/strike_f0042.png,ced916bd9367fc00e49ea911f136f151,train,False,
+strike_f0043,strike,43,canvas/strike_f0043.png,daea018c3f1277e6755bb1a5ff2b1b23,target/strike_f0043.png,e3ae9e8149c3224c1ac3089a37e99214,train,False,
+strike_f0044,strike,44,canvas/strike_f0044.png,02b174cf52353b232af77bdc89361477,target/strike_f0044.png,d50a4d2846ccac153665885a95cdbbf4,train,False,
+strike_f0045,strike,45,canvas/strike_f0045.png,6db018747c6280427fbebc938ef90c54,target/strike_f0045.png,c3053ec3ee1893781cdd5bfcc7c4cfbe,probe,False,
+strike_f0046,strike,46,canvas/strike_f0046.png,0e2a77c370e4252391c084c21556567b,target/strike_f0046.png,b879305a1b0a6175ea0f66ae52b38020,train,False,
+strike_f0047,strike,47,canvas/strike_f0047.png,942dea6096af58d19cab1fa738669f46,target/strike_f0047.png,54cada44a4006ba047c403a36a118017,train,False,
+strike_f0048,strike,48,canvas/strike_f0048.png,dffadcdeae1f4f618be94efc58f8cd9d,target/strike_f0048.png,a3c8f364c56311b90ec9fd0327e4e648,train,False,
+strike_f0049,strike,49,canvas/strike_f0049.png,5648ba78ba0165124dbb7dad256509d1,target/strike_f0049.png,fc6e1d061b336d9f0f57bf193dec01df,train,False,
+strike_f0050,strike,50,canvas/strike_f0050.png,9f3f0a3d6c33fe34c14e576054a07cb8,target/strike_f0050.png,6e7bd1a56fdfb9250c1912b0e2a4b782,train,False,
+strike_f0051,strike,51,canvas/strike_f0051.png,4309b7948ed8a6d02abe4543e8d6030c,target/strike_f0051.png,4db198f704fd50d2d9b1aa3817bcbee7,train,False,

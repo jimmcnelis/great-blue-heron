@@ -1,0 +1,23 @@
+schema_version: 1
+id: heron-fish
+display_name: Heron Prey Fish (prop — extraction target)
+design_space: {width: 120, height: 90}
+palette:
+  white:     {rgb: [255, 255, 255], role: canvas}
+  ink:       {rgb: [0, 0, 0], role: eye}
+  fish:      {rgb: [150, 163, 105], role: body}
+  fishback:  {rgb: [94, 110, 66], role: back}
+  fishbelly: {rgb: [216, 222, 182], role: belly}
+pose_params:
+  root_x: {default: 60.0}
+  root_y: {default: 70.0}
+  length: {default: 5.5, note: "5.5 = tiny, 10.5 = big (v1 measured: 96 vs 188 cells on screen)"}
+  ang:    {default: -65.0}
+  flip:   {default: 1.0, kind: flag}
+rig:
+  module: rig.py
+  render_fn: render
+  default_pose_fn: default_pose
+clips:
+  module: clips.py
+  roster: []

@@ -1,0 +1,256 @@
+{
+ "approved": {
+  "mask_area": 96492,
+  "torso_zone": {
+   "area": 79490,
+   "cx": 382.4,
+   "cy": 323.1,
+   "x0": 88,
+   "x1": 876,
+   "y0": 31,
+   "y1": 593,
+   "centroid_minus_breast_px": [
+    -182.6,
+    102.1
+   ],
+   "centroid_minus_breast_over_H": [
+    -0.3249,
+    0.1817
+   ]
+  },
+  "torso_core": {
+   "area": 40187,
+   "cx": 370.1,
+   "cy": 280.2,
+   "x0": 156,
+   "x1": 598,
+   "y0": 61,
+   "y1": 392,
+   "centroid_minus_breast_px": [
+    -194.9,
+    59.2
+   ],
+   "centroid_minus_breast_over_H": [
+    -0.3468,
+    0.1053
+   ]
+  },
+  "hanging_components": [
+   {
+    "id": 2,
+    "area": 23586,
+    "x0": 156,
+    "x1": 561,
+    "y0": 266,
+    "y1": 593,
+    "cx": 375.2,
+    "cy": 441.6
+   },
+   {
+    "id": 5,
+    "area": 278,
+    "x0": 575,
+    "x1": 598,
+    "y0": 581,
+    "y1": 593,
+    "cx": 586.6,
+    "cy": 587.4
+   }
+  ],
+  "legs_found": [
+   {
+    "area": 23586,
+    "hip_xy": [
+     560.3,
+     266
+    ],
+    "foot_xy": [
+     353.1,
+     593
+    ],
+    "mid_xy": [
+     360.6,
+     429
+    ],
+    "bbox": [
+     156,
+     561,
+     266,
+     593
+    ]
+   }
+  ],
+  "scenery_y_ge_558": 8023,
+  "thin_grass_comps": [
+   {
+    "id": 5,
+    "area": 278,
+    "x0": 575,
+    "x1": 598,
+    "y0": 581,
+    "y1": 593,
+    "cx": 586.6,
+    "cy": 587.4
+   }
+  ]
+ },
+ "rig_v21": {
+  "H_px": 479.4,
+  "breast_px": [
+   442.8,
+   284.1
+  ],
+  "anchor_px": [
+   526.5,
+   137.7
+  ],
+  "torso_mass": {
+   "area": 45390,
+   "cx": 278.1,
+   "cy": 320.0,
+   "x0": 84,
+   "x1": 454,
+   "y0": 226,
+   "y1": 410,
+   "centroid_minus_breast_over_H": [
+    -0.3437,
+    0.0749
+   ]
+  },
+  "torso_core": {
+   "area": 36224,
+   "cx": 278.9,
+   "cy": 319.9,
+   "x0": 99,
+   "x1": 443,
+   "y0": 238,
+   "y1": 398,
+   "centroid_minus_breast_over_H": [
+    -0.342,
+    0.0747
+   ]
+  },
+  "plume": {
+   "area": 14772,
+   "cx": 453.0,
+   "cy": 328.5,
+   "x0": 404,
+   "x1": 502,
+   "y0": 236,
+   "y1": 440,
+   "centroid_minus_breast_over_H": [
+    0.0212,
+    0.0926
+   ],
+   "drop_max_over_H": 0.3252,
+   "drop_p95_over_H": 0.2689
+  },
+  "legs_kp": {
+   "n": {
+    "hip": [
+     325.3,
+     324.9
+    ],
+    "knee": [
+     308.3,
+     459.8
+    ],
+    "foot": [
+     325.3,
+     586.7
+    ],
+    "hip_minus_breast_over_H": [
+     -0.2451,
+     0.0851
+    ],
+    "foot_minus_breast_over_H": [
+     -0.2451,
+     0.6312
+    ]
+   },
+   "f": {
+    "hip": [
+     284.3,
+     338.4
+    ],
+    "knee": [
+     226.1,
+     461.3
+    ],
+    "foot": [
+     252.0,
+     586.7
+    ],
+    "hip_minus_breast_over_H": [
+     -0.3308,
+     0.1133
+    ],
+    "foot_minus_breast_over_H": [
+     -0.3981,
+     0.6312
+    ]
+   }
+  },
+  "hip_separation_over_H": 0.0855,
+  "stance_over_H": 0.1529
+ },
+ "controls": {
+  "v2_mask_iou": [
+   0.525664927734542,
+   {
+    "rot": 6,
+    "scale": 1.1,
+    "dx": -24,
+    "dy": 6
+   }
+  ],
+  "v21_mask_iou": [
+   0.5501250211048488,
+   {
+    "rot": 6,
+    "scale": 1.175,
+    "dx": 24,
+    "dy": 18
+   }
+  ]
+ },
+ "zone_decomposition_v21": {
+  "head": {
+   "approved": 6899,
+   "miss": 3980,
+   "extra": 857
+  },
+  "neck": {
+   "approved": 10103,
+   "miss": 5143,
+   "extra": 1474
+  },
+  "legs": {
+   "approved": 28805,
+   "miss": 13213,
+   "extra": 6606
+  },
+  "plume": {
+   "approved": 0,
+   "miss": 0,
+   "extra": 0
+  },
+  "scenery": {
+   "approved": 1986,
+   "miss": 1986,
+   "extra": 0
+  },
+  "torso_rest": {
+   "approved": 48699,
+   "miss": 3746,
+   "extra": 18950
+  },
+  "TOTAL": {
+   "approved": 96492,
+   "miss": 28068,
+   "extra": 27887,
+   "union": 124379,
+   "inter": 68424
+  }
+ }
+}

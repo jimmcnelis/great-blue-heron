@@ -1,0 +1,532 @@
+[
+ {
+  "tag": "idle_hold",
+  "torso_w": 55.6,
+  "torso_d": 27.7,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0000",
+  "torso_w": 55.6,
+  "torso_d": 27.7,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0001",
+  "torso_w": 55.6,
+  "torso_d": 27.6,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0002",
+  "torso_w": 55.6,
+  "torso_d": 27.6,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0003",
+  "torso_w": 55.6,
+  "torso_d": 27.5,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0004",
+  "torso_w": 55.7,
+  "torso_d": 27.5,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0005",
+  "torso_w": 55.7,
+  "torso_d": 27.4,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0006",
+  "torso_w": 55.7,
+  "torso_d": 27.3,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0007",
+  "torso_w": 55.7,
+  "torso_d": 27.3,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0008",
+  "torso_w": 55.8,
+  "torso_d": 27.2,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0009",
+  "torso_w": 55.8,
+  "torso_d": 27.1,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0010",
+  "torso_w": 55.8,
+  "torso_d": 27.1,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0011",
+  "torso_w": 55.8,
+  "torso_d": 27.1,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0012",
+  "torso_w": 55.8,
+  "torso_d": 27.1,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0013",
+  "torso_w": 55.8,
+  "torso_d": 27.1,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0014",
+  "torso_w": 55.8,
+  "torso_d": 27.1,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0015",
+  "torso_w": 55.8,
+  "torso_d": 27.1,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0016",
+  "torso_w": 55.8,
+  "torso_d": 27.1,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0017",
+  "torso_w": 55.8,
+  "torso_d": 27.1,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0018",
+  "torso_w": 55.8,
+  "torso_d": 27.1,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0019",
+  "torso_w": 55.8,
+  "torso_d": 27.1,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0020",
+  "torso_w": 55.8,
+  "torso_d": 27.1,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0021",
+  "torso_w": 55.8,
+  "torso_d": 27.1,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0022",
+  "torso_w": 55.8,
+  "torso_d": 27.1,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0023",
+  "torso_w": 55.8,
+  "torso_d": 27.1,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0024",
+  "torso_w": 55.9,
+  "torso_d": 27.0,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0025",
+  "torso_w": 55.9,
+  "torso_d": 26.8,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0026",
+  "torso_w": 56.0,
+  "torso_d": 26.5,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0027",
+  "torso_w": 56.0,
+  "torso_d": 26.5,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0028",
+  "torso_w": 56.0,
+  "torso_d": 26.5,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0029",
+  "torso_w": 56.0,
+  "torso_d": 26.5,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0030",
+  "torso_w": 56.0,
+  "torso_d": 26.7,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0031",
+  "torso_w": 55.9,
+  "torso_d": 26.8,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0032",
+  "torso_w": 55.9,
+  "torso_d": 26.9,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0033",
+  "torso_w": 55.9,
+  "torso_d": 27.0,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0034",
+  "torso_w": 55.8,
+  "torso_d": 27.0,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0035",
+  "torso_w": 55.8,
+  "torso_d": 27.1,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0036",
+  "torso_w": 55.8,
+  "torso_d": 27.2,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0037",
+  "torso_w": 55.8,
+  "torso_d": 27.2,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0038",
+  "torso_w": 55.8,
+  "torso_d": 27.2,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0039",
+  "torso_w": 55.7,
+  "torso_d": 27.3,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0040",
+  "torso_w": 55.7,
+  "torso_d": 27.3,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0041",
+  "torso_w": 55.7,
+  "torso_d": 27.3,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0042",
+  "torso_w": 55.7,
+  "torso_d": 27.3,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0043",
+  "torso_w": 55.7,
+  "torso_d": 27.3,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0044",
+  "torso_w": 55.7,
+  "torso_d": 27.4,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0045",
+  "torso_w": 55.7,
+  "torso_d": 27.4,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0046",
+  "torso_w": 55.6,
+  "torso_d": 27.5,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0047",
+  "torso_w": 55.6,
+  "torso_d": 27.5,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0048",
+  "torso_w": 55.6,
+  "torso_d": 27.6,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0049",
+  "torso_w": 55.6,
+  "torso_d": 27.6,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0050",
+  "torso_w": 55.6,
+  "torso_d": 27.7,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ },
+ {
+  "tag": "strike_f0051",
+  "torso_w": 55.6,
+  "torso_d": 27.7,
+  "head_tip": 21.9,
+  "leg_n": [
+   20.4,
+   19.2
+  ]
+ }
+]

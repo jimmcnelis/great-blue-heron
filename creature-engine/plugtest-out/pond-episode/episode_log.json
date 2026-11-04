@@ -1,0 +1,80 @@
+{
+ "segments": [
+  {
+   "char": "frog",
+   "clip": "idle_pond_0",
+   "start": 0,
+   "count": 72,
+   "presence": "unwatched"
+  },
+  {
+   "char": "firefly",
+   "clip": "drift_in",
+   "start": 30,
+   "count": 96,
+   "presence": "unwatched"
+  },
+  {
+   "char": "frog",
+   "clip": "alert_0",
+   "start": 72,
+   "count": 17,
+   "presence": "unwatched"
+  },
+  {
+   "char": "frog",
+   "clip": "snap_r",
+   "start": 89,
+   "count": 14,
+   "presence": "unwatched"
+  },
+  {
+   "char": "firefly",
+   "clip": "gone",
+   "start": 95,
+   "count": 24,
+   "presence": "unwatched"
+  },
+  {
+   "char": "frog",
+   "clip": "croak_0",
+   "start": 103,
+   "count": 29,
+   "presence": "unwatched"
+  },
+  {
+   "char": "frog",
+   "clip": "hop_mid_left",
+   "start": 132,
+   "count": 21,
+   "presence": "unwatched"
+  },
+  {
+   "char": "frog",
+   "clip": "idle_left_0",
+   "start": 153,
+   "count": 48,
+   "presence": "unwatched"
+  }
+ ],
+ "events": [
+  {
+   "f": 94,
+   "type": "snap",
+   "x": 74.2,
+   "y": 35.8,
+   "x_design": 74.2,
+   "y_design": 35.8,
+   "char": "frog"
+  },
+  {
+   "f": 149,
+   "type": "land",
+   "x": 20.0,
+   "x_design": 20.0,
+   "char": "frog"
+  }
+ ],
+ "total_frames": 201,
+ "fps": 12.0
+}

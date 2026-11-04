@@ -1,0 +1,34 @@
+schema_version: 1
+species: pond-frog
+behaviors:
+  - id: idle
+    clip_kinds: [idle]
+    zones: [perch_left, perch_mid, perch_right]
+    weight: 1.0
+    pacing: {}
+  - id: doze
+    clip_kinds: [doze]
+    weight: 0.7
+    pacing: {empty: 200}
+  - id: croak
+    clip_kinds: [croak]
+    weight: 1.0
+    pacing: {unwatched: 50, watched: 18, empty: 80}
+  - id: hop
+    clip_kinds: [hop]
+    weight: 1.0
+    pacing: {unwatched: 120, watched: 75, empty: 150}
+  - id: alert
+    clip_kinds: [alert]
+    weight: 1.0
+    pacing: {}
+reactions:
+  - trigger: approach
+    interrupt_current: true
+    play: alert
+    to_mode: watched
+    then_weight_boost: {croak: 1.8}
+    cooldown_s: 10
+  - trigger: room_empty
+    interrupt_current: false
+    to_mode: empty

@@ -1,0 +1,51 @@
+schema_version: 1
+species: great-blue-heron
+# The v1 report's proposed real-time pacing table (unwatched vs watched),
+# plus the presence_interface.json contract — now executable data.
+# Modes come from the scene's input bus (heron-scene): unwatched (default),
+# watched, empty, night.
+behaviors:
+  - id: idle
+    clip_kinds: [idle]
+    zones: [L, C, R]
+    weight: 1.0
+    pacing: {}            # baseline filler: no pacing = always available
+  - id: doze
+    clip_kinds: [idle]    # v1 approximates doze with one-leg idles (roster kwargs oneleg)
+    zones: [L, R]
+    weight: 0.6
+    pacing: {empty: 240}
+  - id: walk
+    clip_kinds: [walk]
+    weight: 1.0
+    pacing: {unwatched: 390, watched: 240, empty: 390}
+  - id: fish
+    clip_kinds: [aim, strike]
+    requires_zone_role: fishing
+    weight: 1.0
+    pacing: {unwatched: 480, watched: 165, empty: 480}
+  - id: stretch
+    clip_kinds: [stretch]
+    weight: 1.0
+    pacing: {unwatched: 1650, watched: 1650, empty: 1650}
+  - id: flight
+    clip_kinds: [takeoff, flyin]
+    weight: 1.0
+    pacing: {unwatched: 4950, empty: 4950}   # suppressed while watched: no watched entry
+  - id: alert
+    clip_kinds: [alert]
+    weight: 1.0
+    pacing: {}            # reaction-only (see reactions), never policy-sampled
+reactions:
+  - trigger: approach
+    interrupt_current: true
+    play: alert
+    to_mode: watched
+    then_weight_boost: {fish: 2.0}
+    cooldown_s: 20
+  - trigger: room_empty
+    interrupt_current: false
+    to_mode: empty
+  - trigger: nightfall
+    interrupt_current: false
+    to_mode: night

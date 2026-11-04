@@ -1,0 +1,29 @@
+schema_version: 1
+id: flat-storybook
+display_name: Flat Storybook (cartoonist-drawn)
+skill_ref: ~/workspace/custom-skills/cartoon-animation-craft/SKILL.md
+principles:
+  - "Every frame is a drawing first and a grid second; the grid never votes on posing, timing, or shape."
+  - "Bold unbroken shapes, decisive flat color, minimal interior detail; no dither, no gradients, no chunky-pixel styling."
+  - "Corpus trajectories only — the model rides recorded motion; no straight-line latent paths."
+  - "Effects are procedural and caused, never learned: the net never generates the world's marks."
+render_rules:
+  supersample: 4
+  downsample: majority
+  gradients: forbidden
+  dithering: forbidden
+  aa_halo: forbidden
+  outline: drawn
+  interior_detail_max_features: 3
+boil:
+  enabled: false
+  note: "Authored line boil is Jimmy's decision (skill: recommend, never apply silently). Off for the heron line."
+qa_checks:
+  - {id: palette_exactness, severity: gate}
+  - {id: ink_at_rest, severity: gate, params: {tail_frames: 30, max_ink_cells: 0, band_half: 6, segment_filter: [idle, doze, empty, gone]}}
+  - {id: event_causality, severity: gate, params: {window_frames: 5, band_half: 6}}
+  - {id: join_smoothness, severity: gate, params: {max_join_over_median: 10.0}}
+  - {id: held_fraction, severity: warn, params: {segment_filter: [idle], min_fraction: 0.6, cell_change_threshold: 8}}
+  - {id: flicker_metric, severity: warn, params: {segment_filter: [idle], max_per_1000: 40.0}}
+  - {id: silhouette_test, severity: info}
+  - {id: anticipation_audit, severity: info}

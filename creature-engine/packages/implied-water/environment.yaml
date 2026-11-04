@@ -1,0 +1,24 @@
+schema_version: 1
+id: implied-water
+display_name: Implied Water (the heron's void)
+canvas_law:
+  background: white
+  note: >-
+    Water is IMPLIED, never drawn: a blank white canvas until disturbed.
+    The surface sits just below the bird's knee; everything below the
+    surface plane is hidden under the blank. Color exists only on living
+    things. Stillness is the default — every mark is CAUSED.
+  static_marks: []
+  clip_planes:
+    - {axis: y, at: 74, hide: below, applies_to: all}
+effect_region: {y_center: 74, half_height: 4.5}
+effect_map:
+  step:    [{effect: ripple, scale: 1.0}]
+  splash:  [{effect: splash, scale: 1.0}]
+  takeoff: [{effect: splash, scale: 1.25}, {effect: ripple, params: {rmax: 13.0, dur: 1.6}}]
+  landing: [{effect: splash, scale: 1.1}, {effect: ripple, params: {rmax: 12.0, dur: 1.5}}]
+  drips:   [{effect: drips}]
+zones:
+  L: {x: 27.0, role: dwell, mirror_of: R}
+  C: {x: 60.0, role: fishing}
+  R: {x: 93.0, role: dwell, mirror_of: L}

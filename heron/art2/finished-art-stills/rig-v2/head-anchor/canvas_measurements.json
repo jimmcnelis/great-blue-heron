@@ -1,0 +1,52 @@
+{
+ "v2": {
+  "T200": {
+   "canvas_iou_vs_approved": 0.4670847669944768,
+   "params": {
+    "rot": 0,
+    "scale": 1.35,
+    "dx": -12,
+    "dy": -6
+   },
+   "canvas_area": 45837,
+   "decoder_self_iou_raw": 0.3850363851338997
+  },
+  "T220": {
+   "canvas_iou_vs_approved": 0.4839498862467666,
+   "params": {
+    "rot": 0,
+    "scale": 1.35,
+    "dx": -12,
+    "dy": -6
+   },
+   "canvas_area": 51651,
+   "decoder_self_iou_raw": 0.4327647425747325
+  },
+  "silhouette_area": 67790
+ },
+ "v21": {
+  "T200": {
+   "canvas_iou_vs_approved": 0.4467086752901202,
+   "params": {
+    "rot": -6,
+    "scale": 1.075,
+    "dx": -24,
+    "dy": -24
+   },
+   "canvas_area": 55467,
+   "decoder_self_iou_raw": 0.19295156700579597
+  },
+  "T220": {
+   "canvas_iou_vs_approved": 0.49831610633892415,
+   "params": {
+    "rot": -6,
+    "scale": 1.15,
+    "dx": -24,
+    "dy": -24
+   },
+   "canvas_area": 63047,
+   "decoder_self_iou_raw": 0.21031977273555014
+  },
+  "silhouette_area": 69880
+ }
+}

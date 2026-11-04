@@ -1,0 +1,68 @@
+{
+ "state": {
+  "theta": -6.75,
+  "fxn": 5.5,
+  "fxf": -7.0,
+  "pdx": 6.0,
+  "pdy": -18.5,
+  "pl_len": 1.0,
+  "pl_wid": 1.0,
+  "pl_bot": 0.0,
+  "hnx": 0.0,
+  "hfx": 0.0,
+  "t_bk": 0.0,
+  "t_crown": 0.0,
+  "t_bl": 0.0,
+  "t_keel": 4.8,
+  "t_brdx": 0.0,
+  "t_taildx": 0.0,
+  "t_taildy": 0.0,
+  "w_bot": 0.0,
+  "w_top": 0.0,
+  "w_fwd": 0.0,
+  "h_nape": 0.0,
+  "h_crown": 0.0,
+  "h_cheek": 0.0,
+  "h_napedy": 0.0,
+  "tp1y": -0.6,
+  "tp3y": -0.6,
+  "tp4y": 0.6,
+  "tp9x": -0.6
+ },
+ "delta": {
+  "t_keel": 4.8,
+  "tp1y": -0.6,
+  "tp3y": -0.6,
+  "tp4y": 0.6,
+  "tp9x": -0.6
+ },
+ "metrics": {
+  "raw": 0.6908,
+  "bird": 0.7401,
+  "bands": {
+   "band0": 0.2448,
+   "band1": 0.4024,
+   "band2": 0.3668
+  },
+  "band_err": 0.0948,
+  "mid_err": 0.0544,
+  "centroid": [
+   -0.2655,
+   0.1217
+  ],
+  "fwd_err": 0.0905,
+  "vert_err": 0.0107,
+  "torso_w": 0.882,
+  "torso_d": 0.404,
+  "len_err": 0.082,
+  "sec_err": 0.1725
+ },
+ "accepted": [
+  "t_keel",
+  "tp1y",
+  "tp3y",
+  "tp4y",
+  "tp9x"
+ ],
+ "n_evals": 115
+}

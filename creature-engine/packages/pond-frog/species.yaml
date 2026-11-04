@@ -1,0 +1,55 @@
+schema_version: 1
+id: pond-frog
+display_name: Pond Frog (plug-test species)
+design_space:
+  width: 96
+  height: 72
+  note: A different stage size from the heron's 120x90 on purpose — the plug test must prove stage size is data.
+palette:
+  white:  {rgb: [255, 255, 255], role: canvas}
+  ink:    {rgb: [20, 26, 20], role: "ink: world marks, pupils"}
+  body:   {rgb: [96, 168, 84], role: body green}
+  dark:   {rgb: [58, 122, 54], role: back + folded legs}
+  belly:  {rgb: [232, 240, 200], role: belly}
+  throat: {rgb: [250, 236, 160], role: vocal sac}
+  tongue: {rgb: [240, 120, 140], role: tongue}
+pose_params:
+  root_x:      {default: 48.0}
+  root_y:      {default: 0.0, note: offset from the sitting baseline}
+  squash:      {default: 1.0, note: "body y-scale; under 1 compressed (anticipation/landing), over 1 stretched"}
+  throat:      {default: 0.0, note: vocal sac inflation 0..1}
+  blink:       {default: 0.0, kind: flag}
+  mouth_open:  {default: 0.0}
+  tongue:      {default: 0.0, note: tongue extension 0..1}
+  tongue_dx:   {default: 14.0, note: tongue target offset from mouth}
+  tongue_dy:   {default: -5.0}
+  leg_stretch: {default: 0.0, note: "hind legs folded 0 to extended 1 (mid-hop)"}
+  eye_look:    {default: 0.0, note: "pupil offset, design units"}
+anchors:
+  - {name: mouth, use: tongue origin; snap event position}
+  - {name: body_center, use: QA reference}
+life_layer:
+  - {param: throat, waveform: sine, period_s: 3.1, amplitude: 0.06}
+  - {param: squash, waveform: sine, period_s: 2.7, amplitude: 0.015}
+model_sheet: model_sheet.md
+rig:
+  module: rig.py
+  render_fn: render
+  default_pose_fn: default_pose
+clips:
+  module: clips.py
+  roster:
+    - {name: idle_pond_0, kind: idle, kwargs: {zone: perch_mid, dur: 6.0, seed: 11}, mirror: true, ambient: true}
+    - {name: idle_pond_1, kind: idle, kwargs: {zone: perch_mid, dur: 6.0, seed: 23}, mirror: true, ambient: true}
+    - {name: idle_left_0, kind: idle, kwargs: {zone: perch_left, dur: 6.0, seed: 37}, mirror: true, ambient: true}
+    - {name: doze_0, kind: doze, kwargs: {zone: perch_mid, dur: 6.0, seed: 41}, mirror: true, ambient: true}
+    - {name: alert_0, kind: alert, kwargs: {zone: perch_mid, seed: 53}, mirror: true}
+    - {name: croak_0, kind: croak, kwargs: {zone: perch_mid, seed: 67}, mirror: true}
+    - {name: croak_1, kind: croak, kwargs: {zone: perch_left, seed: 71}, mirror: true}
+    - {name: hop_mid_left, kind: hop, kwargs: {from_zone: perch_mid, to_zone: perch_left, seed: 83}, mirror: false}
+    - {name: hop_left_mid, kind: hop, kwargs: {from_zone: perch_left, to_zone: perch_mid, seed: 89}, mirror: false}
+    - {name: hop_mid_right, kind: hop, kwargs: {from_zone: perch_mid, to_zone: perch_right, seed: 97}, mirror: false}
+    - {name: hop_right_mid, kind: hop, kwargs: {from_zone: perch_right, to_zone: perch_mid, seed: 101}, mirror: false}
+    - {name: snap_r, kind: tongue_snap, kwargs: {zone: perch_mid, target_dx: 15.0, target_dy: -6.0, seed: 103}, mirror: true}
+    - {name: empty, kind: empty, kwargs: {}, mirror: false}
+behaviors_file: behaviors.yaml

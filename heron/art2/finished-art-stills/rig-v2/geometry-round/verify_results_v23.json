@@ -1,0 +1,322 @@
+{
+ "control_v2": {
+  "raw": 0.525664927734542,
+  "prm": {
+   "rot": 6,
+   "scale": 1.1,
+   "dx": -24,
+   "dy": 6
+  },
+  "bird": 0.5641798173901861
+ },
+ "control_v21": {
+  "raw": 0.5501250211048488,
+  "prm": {
+   "rot": 6,
+   "scale": 1.175,
+   "dx": 24,
+   "dy": 18
+  },
+  "bird": 0.5879195209168067
+ },
+ "control_v22": {
+  "raw": 0.6140523182823616,
+  "prm": {
+   "rot": 3,
+   "scale": 1.175,
+   "dx": 24,
+   "dy": 12
+  },
+  "bird": 0.656722989707744
+ },
+ "v23": {
+  "raw": 0.7121424284856971,
+  "prm": {
+   "rot": 0,
+   "scale": 1.2,
+   "dx": 24,
+   "dy": 12
+  },
+  "bird": 0.7655624460318706
+ },
+ "invariants": {
+  "neck_ch1_pixel_identical_to_v22": true,
+  "breast_v22": [
+   442.8430909712339,
+   284.0972020805901
+  ],
+  "breast_v23": [
+   442.8430909712339,
+   284.0972020805901
+  ],
+  "anchor_v22": [
+   526.4666666666667,
+   137.73333333333335
+  ],
+  "anchor_v23": [
+   526.4666666666667,
+   137.73333333333335
+  ],
+  "breast_bit_identical": true,
+  "anchor_bit_identical": true,
+  "bill_tip_v22": [
+   671.5720314349475,
+   155.1477926485679
+  ],
+  "bill_tip_v23": [
+   671.5720314349475,
+   155.1477926485679
+  ],
+  "bill_tip_identical": true
+ },
+ "neck_v22": {
+  "arc_units": 32.62,
+  "widths_on_neck_channel_px": {
+   "t=0.45": 47,
+   "t=0.6": 44,
+   "t=0.75": 35
+  }
+ },
+ "neck_v23": {
+  "arc_units": 32.62,
+  "widths_on_neck_channel_px": {
+   "t=0.45": 47,
+   "t=0.6": 44,
+   "t=0.75": 35
+  }
+ },
+ "landmarks_v22": {
+  "height_units": 71.9,
+  "torso_w_over_H": 0.75,
+  "torso_d_over_H": 0.424,
+  "head_tip_over_H": 0.305,
+  "plume_drop_over_H": 0.089,
+  "leg_n": [
+   20.4,
+   19.2
+  ],
+  "torso_bbox_units": [
+   53.9,
+   30.5
+  ]
+ },
+ "landmarks_v23": {
+  "height_units": 71.9,
+  "torso_w_over_H": 0.849,
+  "torso_d_over_H": 0.409,
+  "head_tip_over_H": 0.305,
+  "plume_drop_over_H": 0.089,
+  "leg_n": [
+   20.4,
+   19.2
+  ],
+  "torso_bbox_units": [
+   61.1,
+   29.4
+  ]
+ },
+ "bbox_v22": {
+  "x0": 96,
+  "x1": 671,
+  "y0": 106,
+  "y1": 587,
+  "area": 67000
+ },
+ "clipping_v22": [],
+ "bbox_v23": {
+  "x0": 66,
+  "x1": 671,
+  "y0": 111,
+  "y1": 587,
+  "area": 63820
+ },
+ "clipping_v23": [],
+ "body_v22": {
+  "torso_core_centroid_minus_breast_over_H": [
+   -0.3301,
+   0.1143
+  ],
+  "torso_core_row_bands": {
+   "band0": 0.2749,
+   "band1": 0.418,
+   "band2": 0.3203
+  },
+  "plume": {
+   "centroid_minus_breast_over_H": [
+    0.1046,
+    -0.1451
+   ],
+   "drop_max_over_H": 0.0874,
+   "drop_p95_over_H": 0.0311
+  }
+ },
+ "body_v23": {
+  "torso_core_centroid_minus_breast_over_H": [
+   -0.2855,
+   0.1136
+  ],
+  "torso_core_row_bands": {
+   "band0": 0.2615,
+   "band1": 0.4349,
+   "band2": 0.318
+  },
+  "plume": {
+   "centroid_minus_breast_over_H": [
+    0.0928,
+    -0.1503
+   ],
+   "drop_max_over_H": 0.0874,
+   "drop_p95_over_H": 0.0248
+  }
+ },
+ "decomp_v22": {
+  "total": {
+   "miss": 24592,
+   "extra": 20599,
+   "inter": 71900,
+   "union": 117091
+  },
+  "by_zone": {
+   "head": {
+    "approved": 11784,
+    "miss": 3599,
+    "extra": 3066
+   },
+   "neck": {
+    "approved": 8500,
+    "miss": 916,
+    "extra": 2584
+   },
+   "legs": {
+    "approved": 5293,
+    "miss": 2224,
+    "extra": 858
+   },
+   "plume": {
+    "approved": 10433,
+    "miss": 5914,
+    "extra": 632
+   },
+   "scenery": {
+    "approved": 8023,
+    "miss": 7715,
+    "extra": 54
+   },
+   "torso_rest": {
+    "approved": 52459,
+    "miss": 4224,
+    "extra": 13405
+   }
+  },
+  "by_channel": {
+   "torso": {
+    "placed": 62780,
+    "extra": 20518
+   },
+   "neck": {
+    "placed": 13112,
+    "extra": 2460
+   },
+   "head": {
+    "placed": 5376,
+    "extra": 81
+   },
+   "wing": {
+    "placed": 29534,
+    "extra": 2928
+   },
+   "leg_near": {
+    "placed": 4039,
+    "extra": 808
+   },
+   "leg_far": {
+    "placed": 4104,
+    "extra": 964
+   },
+   "tail": {
+    "placed": 1988,
+    "extra": 70
+   },
+   "plume": {
+    "placed": 20424,
+    "extra": 3089
+   }
+  },
+  "iou_excluding_scenery_band": 0.6567
+ },
+ "decomp_v23": {
+  "total": {
+   "miss": 18172,
+   "extra": 13486,
+   "inter": 78320,
+   "union": 109978
+  },
+  "by_zone": {
+   "head": {
+    "approved": 11784,
+    "miss": 1530,
+    "extra": 2320
+   },
+   "neck": {
+    "approved": 8500,
+    "miss": 59,
+    "extra": 2167
+   },
+   "legs": {
+    "approved": 5293,
+    "miss": 2366,
+    "extra": 802
+   },
+   "plume": {
+    "approved": 10433,
+    "miss": 2273,
+    "extra": 1524
+   },
+   "scenery": {
+    "approved": 8023,
+    "miss": 7723,
+    "extra": 43
+   },
+   "torso_rest": {
+    "approved": 52459,
+    "miss": 4221,
+    "extra": 6630
+   }
+  },
+  "by_channel": {
+   "torso": {
+    "placed": 63629,
+    "extra": 27789
+   },
+   "neck": {
+    "placed": 13628,
+    "extra": 2521
+   },
+   "head": {
+    "placed": 5081,
+    "extra": 80
+   },
+   "wing": {
+    "placed": 20089,
+    "extra": 2649
+   },
+   "leg_near": {
+    "placed": 4281,
+    "extra": 941
+   },
+   "leg_far": {
+    "placed": 4351,
+    "extra": 1104
+   },
+   "tail": {
+    "placed": 3866,
+    "extra": 162
+   },
+   "plume": {
+    "placed": 15171,
+    "extra": 2210
+   }
+  },
+  "iou_excluding_scenery_band": 0.7656
+ }
+}

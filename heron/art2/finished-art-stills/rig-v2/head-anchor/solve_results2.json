@@ -1,0 +1,180 @@
+{
+ "finalists": {
+  "36.17,-26.34": {
+   "tag": "anatomical",
+   "iou": 0.5501250211048488,
+   "params": {
+    "rot": 6,
+    "scale": 1.175,
+    "dx": 24,
+    "dy": 18
+   },
+   "neck": {
+    "params": {
+     "T1": 0.53,
+     "K1": 0.364,
+     "T2": 0.395,
+     "K2": -0.805
+    },
+    "arc_units": 32.62,
+    "arc_err_pct": -0.95,
+    "chord_rms": 0.0283,
+    "max_tangent_step_deg": 14.6
+   }
+  },
+  "40.17,-29.34": {
+   "tag": "local",
+   "iou": 0.5336465710308093,
+   "params": {
+    "rot": 0,
+    "scale": 1.225,
+    "dx": 24,
+    "dy": 24
+   },
+   "neck": {
+    "params": {
+     "T1": 0.655,
+     "K1": -0.003,
+     "T2": 0.28,
+     "K2": -0.43
+    },
+    "arc_units": 33.26,
+    "arc_err_pct": 1.0,
+    "chord_rms": 0.0376,
+    "max_tangent_step_deg": 8.4
+   }
+  },
+  "39.17,-29.34": {
+   "tag": "local",
+   "iou": 0.5296386357048536,
+   "params": {
+    "rot": 3,
+    "scale": 1.15,
+    "dx": 24,
+    "dy": 18
+   },
+   "neck": {
+    "params": {
+     "T1": 0.57,
+     "K1": 0.081,
+     "T2": 0.3,
+     "K2": -0.498
+    },
+    "arc_units": 33.24,
+    "arc_err_pct": 0.93,
+    "chord_rms": 0.0277,
+    "max_tangent_step_deg": 9.2
+   }
+  },
+  "40.17,-28.34": {
+   "tag": "local",
+   "iou": 0.5375655256891134,
+   "params": {
+    "rot": 0,
+    "scale": 1.225,
+    "dx": 24,
+    "dy": 24
+   },
+   "neck": {
+    "params": {
+     "T1": 0.535,
+     "K1": 0.128,
+     "T2": 0.33,
+     "K2": -0.535
+    },
+    "arc_units": 33.25,
+    "arc_err_pct": 0.98,
+    "chord_rms": 0.0223,
+    "max_tangent_step_deg": 9.6
+   }
+  }
+ },
+ "decision": {
+  "adopted": "anatomical",
+  "hx": 36.17,
+  "hy": -26.34,
+  "mask_iou": 0.5501250211048488,
+  "stage1_mask_iou_same_anchor": 0.5401345731966865,
+  "v2_mask_iou_same_protocol": 0.525664927734542
+ },
+ "final_mask_iou_recheck": [
+  0.5501250211048488,
+  {
+   "rot": 6,
+   "scale": 1.175,
+   "dx": 24,
+   "dy": 18
+  }
+ ],
+ "landmarks_v21": {
+  "height_units": 71.9,
+  "torso_w_over_H": 0.773,
+  "torso_d_over_H": 0.385,
+  "head_tip_over_H": 0.305,
+  "plume_drop_over_H": 0.325,
+  "leg_n": [
+   20.4,
+   19.2
+  ],
+  "torso_bbox_units": [
+   55.6,
+   27.7
+  ]
+ },
+ "final_sil_bbox": {
+  "x0": 84,
+  "x1": 671,
+  "y0": 106,
+  "y1": 587,
+  "area": 69880
+ },
+ "final_clipping": [],
+ "final_neck": {
+  "arc_dense_units": 32.62,
+  "arc_dense_over_H": 0.4536,
+  "arc_polyline_units": 31.6,
+  "arc_polyline_over_H": 0.4394,
+  "chord_rms": 0.0283,
+  "max_tangent_step_deg": 14.6,
+  "H_units_new": 71.91,
+  "tune": {
+   "params": {
+    "T1": 0.53,
+    "K1": 0.364,
+    "T2": 0.395,
+    "K2": -0.805
+   },
+   "arc_units": 32.62,
+   "arc_err_pct": -0.95,
+   "chord_rms": 0.0283,
+   "max_tangent_step_deg": 14.6
+  },
+  "silhouette_widths_px": {
+   "t=0.45": 47,
+   "t=0.6": 44,
+   "t=0.75": 35
+  },
+  "silhouette_widths_over_H": {
+   "t=0.45": 0.098,
+   "t=0.6": 0.0918,
+   "t=0.75": 0.073
+  }
+ },
+ "final_pose": {
+  "root_x": 26.0,
+  "root_y": 0.0,
+  "body_tilt": 16.0,
+  "hx": 36.17,
+  "hy": -26.34,
+  "coil": 0.85,
+  "neck_w": 1.0,
+  "head_pitch": 4.0,
+  "yaw": 0.0
+ },
+ "baked_neck_constants": {
+  "T1": 0.53,
+  "K1": 0.364,
+  "T2": 0.395,
+  "K2": -0.805
+ }
+}

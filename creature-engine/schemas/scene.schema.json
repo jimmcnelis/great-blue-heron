@@ -1,0 +1,382 @@
+{
+ "$id": "creature-engine/scene.schema.json",
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "additionalProperties": false,
+ "properties": {
+  "characters": {
+   "items": {
+    "additionalProperties": false,
+    "properties": {
+     "behaviors": {
+      "description": "Package-relative path to the character's behavior set.",
+      "type": "string"
+     },
+     "id": {
+      "description": "Instance name used by interactions and the episode script.",
+      "type": "string"
+     },
+     "role": {
+      "default": "creature",
+      "description": "creature = full species package; prop = lightweight participant driven by interaction definitions (v2 target: extract the heron's fish into this class).",
+      "enum": [
+       "creature",
+       "prop"
+      ],
+      "type": "string"
+     },
+     "species": {
+      "description": "Species package id (directory under packages/).",
+      "type": "string"
+     },
+     "start_zone": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "id",
+     "species"
+    ],
+    "type": "object"
+   },
+   "minItems": 1,
+   "type": "array"
+  },
+  "display_name": {
+   "type": "string"
+  },
+  "environment": {
+   "description": "Environment package id.",
+   "type": "string"
+  },
+  "episode_script": {
+   "description": "Optional deterministic episode (the v1 preview pattern): an ordered list of segments for previews and QA. Real-time play uses the behavior policy instead; both consume the same corpus + effects runtime.",
+   "items": {
+    "additionalProperties": false,
+    "properties": {
+     "clip": {
+      "description": "Roster clip instance name.",
+      "type": "string"
+     },
+     "frames": {
+      "maximum": 100000,
+      "minimum": 1,
+      "type": "integer"
+     },
+     "note": {
+      "type": "string"
+     },
+     "of": {
+      "description": "Character instance id.",
+      "type": "string"
+     },
+     "presence": {
+      "description": "External mode in force during this segment.",
+      "type": "string"
+     },
+     "at_frame": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Absolute start frame (parallel tracks); omit for sequential-after-this-character's-last-segment."
+     }
+    },
+    "required": [
+     "of",
+     "clip"
+    ],
+    "type": "object"
+   },
+   "type": "array"
+  },
+  "fps": {
+   "default": 12,
+   "exclusiveMinimum": 0,
+   "type": "number"
+  },
+  "grid": {
+   "additionalProperties": false,
+   "properties": {
+    "height": {
+     "minimum": 8,
+     "type": "integer"
+    },
+    "width": {
+     "minimum": 8,
+     "type": "integer"
+    }
+   },
+   "required": [
+    "width",
+    "height"
+   ],
+   "type": "object"
+  },
+  "id": {
+   "pattern": "^[a-z0-9][a-z0-9-]*$",
+   "type": "string"
+  },
+  "inputs": {
+   "additionalProperties": false,
+   "description": "The external event bus. Derived modes (watched/empty/night) are computed from raw inputs by these rules; behavior pacing keys off modes. Generalizes presence_interface.json.",
+   "properties": {
+    "derived_modes": {
+     "additionalProperties": {
+      "additionalProperties": false,
+      "properties": {
+       "enter": {
+        "description": "Condition expression over inputs, e.g. 'presence == 0 for 120s'.",
+        "type": "string"
+       },
+       "priority": {
+        "description": "Higher wins when several modes match.",
+        "type": "integer"
+       }
+      },
+      "required": [
+       "enter"
+      ],
+      "type": "object"
+     },
+     "description": "Named external modes. Exactly one is 'default'.",
+     "type": "object"
+    },
+    "raw": {
+     "additionalProperties": {
+      "additionalProperties": false,
+      "properties": {
+       "description": {
+        "type": "string"
+       },
+       "kind": {
+        "enum": [
+         "edge",
+         "level",
+         "pulse"
+        ],
+        "type": "string"
+       },
+       "source": {
+        "description": "Hardware binding description (firmware-side); the engine only needs the semantics.",
+        "type": "string"
+       }
+      },
+      "required": [
+       "kind"
+      ],
+      "type": "object"
+     },
+     "description": "Raw inputs: presence (mmWave), ambient_light (lux), button, clock.",
+     "type": "object"
+    }
+   },
+   "required": [
+    "raw",
+    "derived_modes"
+   ],
+   "type": "object"
+  },
+  "interactions": {
+   "description": "MULTI-CHARACTER INTERACTIONS as data: who, what triggers it, and the weighted joint outcomes. Heron<->fish (predator/prey) is instance #1.",
+   "items": {
+    "additionalProperties": false,
+    "properties": {
+     "between": {
+      "description": "Participant instance ids, in role order matching 'roles'. Participants are usually characters; an OBJECT instance may also take part (its outcomes use set_state instead of clip_kind/behavior).",
+      "items": {
+       "type": "string"
+      },
+      "minItems": 2,
+      "type": "array"
+     },
+     "cooldown_s": {
+      "default": 0,
+      "type": "number"
+     },
+     "id": {
+      "type": "string"
+     },
+     "note": {
+      "type": "string"
+     },
+     "outcomes": {
+      "description": "Weighted outcomes; each names what each participant plays and any shared effect events spawned (with the environment effect_map resolving them).",
+      "items": {
+       "additionalProperties": false,
+       "properties": {
+        "label": {
+         "type": "string"
+        },
+        "play": {
+         "type": "object",
+         "description": "Map of character instance id -> what that participant performs.",
+         "additionalProperties": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+           "clip_kind": {
+            "type": "string"
+           },
+           "behavior": {
+            "type": "string"
+           },
+           "set_state": {
+            "type": "object",
+            "description": "For OBJECT participants only: state overrides applied to the placed instance (e.g. {lamp: 1}). An object never plays a clip or a behavior; an interaction changes its state and its rig re-renders from it."
+           }
+          },
+          "anyOf": [
+           {
+            "required": [
+             "clip_kind"
+            ]
+           },
+           {
+            "required": [
+             "behavior"
+            ]
+           },
+           {
+            "required": [
+             "set_state"
+            ]
+           }
+          ]
+         }
+        },
+        "shared_events": {
+         "items": {
+          "additionalProperties": false,
+          "properties": {
+           "anchor_of": {
+            "type": "string"
+           },
+           "type": {
+            "type": "string"
+           }
+          },
+          "required": [
+           "type"
+          ],
+          "type": "object"
+         },
+         "type": "array"
+        },
+        "weight": {
+         "default": 1,
+         "exclusiveMinimum": 0,
+         "type": "number"
+        }
+       },
+       "required": [
+        "label",
+        "play"
+       ],
+       "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+     },
+     "roles": {
+      "description": "Semantic roles, e.g. [predator, prey] or [greeter, greeted].",
+      "items": {
+       "type": "string"
+      },
+      "type": "array"
+     },
+     "trigger": {
+      "additionalProperties": false,
+      "properties": {
+       "kind": {
+        "description": "proximity: characters within range; event: a named bus/clip event fires; schedule: pacing-driven chance per minute.",
+        "enum": [
+         "proximity",
+         "event",
+         "schedule"
+        ],
+        "type": "string"
+       },
+       "on_event": {
+        "type": "string"
+       },
+       "per_minute": {
+        "type": "number"
+       },
+       "range_cells": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "kind"
+      ],
+      "type": "object"
+     }
+    },
+    "required": [
+     "id",
+     "between",
+     "trigger",
+     "outcomes"
+    ],
+    "type": "object"
+   },
+   "type": "array"
+  },
+  "objects": {
+   "description": "OBJECT instances placed in the scene (landmarks, structures, vegetation, vessels — the non-living cast). An object is drawn by its own package rig from state, never trained, never behavior-driven; creatures reach it through its declared affordances/anchors. Placement: exactly one of 'zone' (an environment zone name) or explicit design coords x/y; 'layer' composites it behind (back, default) or in front of (front) the creature tracks. 'state' overrides the package's state defaults for this placement (e.g. lamp: 1 at night).",
+   "items": {
+    "additionalProperties": false,
+    "properties": {
+     "id": {
+      "description": "Instance name used by interactions and affordance lookups.",
+      "type": "string"
+     },
+     "layer": {
+      "default": "back",
+      "enum": ["back", "front"],
+      "type": "string"
+     },
+     "package": {
+      "description": "Object package id (directory under packages/).",
+      "type": "string"
+     },
+     "scale": {
+      "default": 1,
+      "exclusiveMinimum": 0,
+      "type": "number"
+     },
+     "state": {
+      "description": "State overrides merged over the package defaults.",
+      "type": "object"
+     },
+     "x": {"type": "number"},
+     "y": {"type": "number"},
+     "zone": {
+      "description": "Environment zone to stand in (its x, and y if the zone declares one).",
+      "type": "string"
+     }
+    },
+    "required": ["id", "package"],
+    "type": "object"
+   },
+   "type": "array"
+  },
+  "schema_version": {
+   "const": 1
+  },
+  "style": {
+   "description": "Style pack id.",
+   "type": "string"
+  }
+ },
+ "required": [
+  "schema_version",
+  "id",
+  "display_name",
+  "environment",
+  "style",
+  "characters",
+  "grid",
+  "fps"
+ ],
+ "title": "Scene / composition (creature-engine v1)",
+ "type": "object"
+}

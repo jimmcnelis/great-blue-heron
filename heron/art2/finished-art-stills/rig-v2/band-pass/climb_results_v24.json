@@ -1,0 +1,36 @@
+{
+ "climb": {
+  "raw": 0.6906,
+  "bird": 0.7401,
+  "band_err": 0.028,
+  "bands": {
+   "band0": 0.2784,
+   "band1": 0.3685,
+   "band2": 0.3661
+  },
+  "centroid": [
+   -0.2783,
+   0.1187
+  ],
+  "torso_w": 0.85,
+  "sec_err": 0.1277
+ },
+ "search": {
+  "raw": 0.6908,
+  "bird": 0.7401,
+  "band_err": 0.0948,
+  "bands": {
+   "band0": 0.2448,
+   "band1": 0.4024,
+   "band2": 0.3668
+  },
+  "centroid": [
+   -0.2655,
+   0.1217
+  ],
+  "torso_w": 0.882,
+  "sec_err": 0.1725
+ },
+ "climb_n_evals": 120,
+ "winner": "climb"
+}

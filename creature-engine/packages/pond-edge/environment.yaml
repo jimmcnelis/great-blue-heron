@@ -1,0 +1,24 @@
+schema_version: 1
+id: pond-edge
+display_name: Pond Edge (plug-test environment)
+canvas_law:
+  background: white
+  note: >-
+    A DIFFERENT LAW from the heron's void: this world has ONE static mark —
+    the shore line the animals sit on — drawn at rest, plus a water band
+    below it where caused marks live. Above the line: blank sky. No clip
+    plane: nothing is hidden, things simply leave the frame.
+  static_marks:
+    - {kind: hline, y: 52, color: ink, thickness: 1}
+  clip_planes: []
+effect_region: {y_center: 61, half_height: 7}
+effect_map:
+  land:  [{effect: ripple, scale: 0.8}]
+  step:  [{effect: ripple, scale: 0.7}]
+  splash: [{effect: splash, scale: 0.7}]
+  snap:  [{effect: ring, scale: 0.8}]
+zones:
+  perch_left:  {x: 20.0, role: perch, mirror_of: perch_right}
+  perch_mid:   {x: 48.0, role: perch}
+  perch_right: {x: 76.0, role: perch, mirror_of: perch_left}
+  water:       {x: 48.0, role: water}

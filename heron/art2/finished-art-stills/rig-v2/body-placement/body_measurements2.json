@@ -1,0 +1,273 @@
+{
+ "approved_legs": [
+  {
+   "hip_xy": [
+    334.5,
+    388
+   ],
+   "foot_xy": [
+    293.5,
+    548
+   ],
+   "mid_xy": [
+    297.5,
+    468
+   ],
+   "hip_minus_breast_over_H": [
+    -0.4101,
+    0.2972
+   ],
+   "foot_minus_breast_over_H": [
+    -0.4831,
+    0.5819
+   ],
+   "lean_deg": -14.37
+  },
+  {
+   "hip_xy": [
+    357.0,
+    388
+   ],
+   "foot_xy": [
+    352.5,
+    548
+   ],
+   "mid_xy": [
+    341.0,
+    468
+   ],
+   "hip_minus_breast_over_H": [
+    -0.3701,
+    0.2972
+   ],
+   "foot_minus_breast_over_H": [
+    -0.3781,
+    0.5819
+   ],
+   "lean_deg": -1.61
+  }
+ ],
+ "approved_torso_core": {
+  "area": 39086,
+  "cx": 364.8,
+  "cy": 283.2,
+  "centroid_minus_breast_over_H": [
+   -0.3562,
+   0.1107
+  ],
+  "bbox": [
+   156,
+   555,
+   178,
+   392
+  ],
+  "row_bands": {
+   "band0": 0.2844,
+   "band1": 0.4479,
+   "band2": 0.2788
+  }
+ },
+ "plume_variants": {
+  "ymax500": {
+   "strand_area": 8073,
+   "strand_centroid_minus_breast_over_H": [
+    -0.1766,
+    0.2162
+   ],
+   "envelope_area": 14221,
+   "envelope_centroid_minus_breast_over_H": [
+    -0.1725,
+    0.234
+   ],
+   "fill": 0.568,
+   "drop_strand_p95_over_H": 0.3246,
+   "drop_env_over_H": 0.4947
+  },
+  "ymax530": {
+   "strand_area": 8166,
+   "strand_centroid_minus_breast_over_H": [
+    -0.1773,
+    0.2198
+   ],
+   "envelope_area": 14316,
+   "envelope_centroid_minus_breast_over_H": [
+    -0.1729,
+    0.2359
+   ],
+   "fill": 0.57,
+   "drop_strand_p95_over_H": 0.3381,
+   "drop_env_over_H": 0.548
+  }
+ },
+ "_plume_main": {
+  "strand_area": 8073,
+  "strand_centroid_minus_breast_over_H": [
+   -0.1766,
+   0.2162
+  ],
+  "envelope_area": 14221,
+  "envelope_centroid_minus_breast_over_H": [
+   -0.1725,
+   0.234
+  ],
+  "fill": 0.568,
+  "drop_strand_p95_over_H": 0.3246,
+  "drop_env_over_H": 0.4947
+ },
+ "rig": {
+  "H_px": 479.4,
+  "breast_px": [
+   442.8,
+   284.1
+  ]
+ },
+ "rig_legs_silhouette": [
+  {
+   "hip_xy": [
+    252.0,
+    406
+   ],
+   "foot_xy": [
+    243.5,
+    548
+   ],
+   "mid_xy": [
+    229.0,
+    477
+   ],
+   "hip_minus_breast_over_H": [
+    -0.3981,
+    0.2543
+   ],
+   "foot_minus_breast_over_H": [
+    -0.4158,
+    0.5505
+   ],
+   "lean_deg": -3.43
+  },
+  {
+   "hip_xy": [
+    315.5,
+    393
+   ],
+   "foot_xy": [
+    320.0,
+    548
+   ],
+   "mid_xy": [
+    310.0,
+    471
+   ],
+   "hip_minus_breast_over_H": [
+    -0.2656,
+    0.2272
+   ],
+   "foot_minus_breast_over_H": [
+    -0.2563,
+    0.5505
+   ],
+   "lean_deg": 1.66
+  }
+ ],
+ "rig_legs_kp": {
+  "n": {
+   "hip_minus_breast_over_H": [
+    -0.2451,
+    0.0851
+   ],
+   "foot_minus_breast_over_H": [
+    -0.2451,
+    0.6312
+   ]
+  },
+  "f": {
+   "hip_minus_breast_over_H": [
+    -0.3308,
+    0.1133
+   ],
+   "foot_minus_breast_over_H": [
+    -0.3981,
+    0.6312
+   ]
+  }
+ },
+ "rig_torso_core_channels": {
+  "area": 36224,
+  "centroid_minus_breast_over_H": [
+   -0.342,
+   0.0746
+  ],
+  "row_bands": {
+   "band0": 0.2751,
+   "band1": 0.4228,
+   "band2": 0.3172
+  }
+ },
+ "rig_torso_core_geometric": {
+  "area": 31643,
+  "centroid_minus_breast_over_H": [
+   -0.3669,
+   0.0744
+  ]
+ },
+ "rig_plume": {
+  "area": 14772,
+  "centroid_minus_breast_over_H": [
+   0.0211,
+   0.0927
+  ],
+  "envelope_area": 14772,
+  "envelope_centroid_minus_breast_over_H": [
+   0.0211,
+   0.0927
+  ],
+  "drop_max_over_H": 0.3252,
+  "drop_p95_over_H": 0.2689
+ },
+ "zone_decomposition_v21_fixed": {
+  "head": {
+   "approved": 11784,
+   "miss": 7231,
+   "extra": 2129
+  },
+  "neck": {
+   "approved": 8500,
+   "miss": 2631,
+   "extra": 2342
+  },
+  "legs": {
+   "approved": 5293,
+   "miss": 3539,
+   "extra": 644
+  },
+  "plume": {
+   "approved": 10433,
+   "miss": 2723,
+   "extra": 3364
+  },
+  "scenery": {
+   "approved": 8023,
+   "miss": 7830,
+   "extra": 301
+  },
+  "torso_rest": {
+   "approved": 52459,
+   "miss": 4114,
+   "extra": 19107
+  },
+  "TOTAL": {
+   "approved": 96492,
+   "miss": 28068,
+   "extra": 27887
+  }
+ },
+ "v21_iou": [
+  0.5501250211048488,
+  {
+   "rot": 6,
+   "scale": 1.175,
+   "dx": 24,
+   "dy": 18
+  }
+ ]
+}

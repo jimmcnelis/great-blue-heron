@@ -1,0 +1,59 @@
+{
+ "control_v2": {
+  "raw": 0.525664927734542,
+  "prm": {
+   "rot": 6,
+   "scale": 1.1,
+   "dx": -24,
+   "dy": 6
+  },
+  "bird": 0.5641798173901861
+ },
+ "control_v21": {
+  "raw": 0.5501250211048488,
+  "prm": {
+   "rot": 6,
+   "scale": 1.175,
+   "dx": 24,
+   "dy": 18
+  },
+  "bird": 0.5879195209168067
+ },
+ "control_v22": {
+  "raw": 0.6140523182823616,
+  "prm": {
+   "rot": 3,
+   "scale": 1.175,
+   "dx": 24,
+   "dy": 12
+  },
+  "bird": 0.656722989707744
+ },
+ "v23_zero_delta": {
+  "raw": 0.6140523182823616,
+  "prm": {
+   "rot": 3,
+   "scale": 1.175,
+   "dx": 24,
+   "dy": 12
+  },
+  "bird": 0.656722989707744,
+  "stack_pixel_identical_to_v22": true,
+  "channels_identical": [
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true
+  ]
+ },
+ "asserts": {
+  "v2_ok": true,
+  "v21_ok": true,
+  "v22_ok": true,
+  "v23_zero_ok": true
+ }
+}

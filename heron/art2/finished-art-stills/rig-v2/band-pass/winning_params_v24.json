@@ -1,0 +1,76 @@
+{
+ "state": {
+  "theta": -6.75,
+  "fxn": 5.5,
+  "fxf": -7.0,
+  "pdx": 6.0,
+  "pdy": -18.5,
+  "pl_len": 1.0,
+  "pl_wid": 1.0,
+  "pl_bot": 0.0,
+  "hnx": 0.0,
+  "hfx": 0.0,
+  "t_bk": 0.0,
+  "t_crown": 0.0,
+  "t_bl": 1.2,
+  "t_keel": 0.6,
+  "t_brdx": 0.0,
+  "t_taildx": 0.0,
+  "t_taildy": 0.0,
+  "w_bot": 0.0,
+  "w_top": 0.0,
+  "w_fwd": 0.0,
+  "h_nape": 0.0,
+  "h_crown": 0.0,
+  "h_cheek": 0.0,
+  "h_napedy": 0.0,
+  "tp9y": 0.6,
+  "tp3y": -1.8,
+  "tp6x": 2.7,
+  "tp7y": -3.3,
+  "tp2y": 0.6,
+  "tp4y": 0.6
+ },
+ "delta": {
+  "t_bl": 1.2,
+  "t_keel": 0.6,
+  "tp9y": 0.6,
+  "tp3y": -1.8,
+  "tp6x": 2.7,
+  "tp7y": -3.3,
+  "tp2y": 0.6,
+  "tp4y": 0.6
+ },
+ "metrics": {
+  "raw": 0.6907,
+  "bird": 0.7402,
+  "bands": {
+   "band0": 0.2781,
+   "band1": 0.368,
+   "band2": 0.3667
+  },
+  "band_err": 0.0272,
+  "mid_err": 0.02,
+  "centroid": [
+   -0.279,
+   0.1189
+  ],
+  "fwd_err": 0.077,
+  "vert_err": 0.0079,
+  "torso_w": 0.85,
+  "torso_d": 0.404,
+  "len_err": 0.05,
+  "sec_err": 0.127
+ },
+ "accepted": [
+  "t_bl",
+  "tp9y",
+  "tp3y",
+  "tp6x",
+  "tp7y",
+  "tp2y",
+  "tp4y",
+  "t_keel"
+ ],
+ "source": "log-best:climb_log_v24.jsonl:c5-tp7y"
+}

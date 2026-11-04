@@ -1,0 +1,19 @@
+schema_version: 1
+species: firefly
+behaviors:
+  - id: drift
+    clip_kinds: [drift]
+    weight: 1.0
+    pacing: {}
+  - id: pulse
+    clip_kinds: [pulse]
+    weight: 1.0
+    pacing: {unwatched: 25, watched: 25, empty: 25}
+  - id: depart
+    clip_kinds: [exit]
+    weight: 0.4
+    pacing: {unwatched: 300, empty: 300}
+reactions:
+  - trigger: approach
+    interrupt_current: false
+    play: pulse

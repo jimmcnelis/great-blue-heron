@@ -1,0 +1,79 @@
+{
+ "approved_rest": {
+  "x0": 88,
+  "x1": 876,
+  "y0": 18,
+  "y1": 593,
+  "area": 96492
+ },
+ "approved_strike": {
+  "x0": 97,
+  "x1": 919,
+  "y0": 66,
+  "y1": 592,
+  "area": 130946
+ },
+ "rig_v1_idle_sil": {
+  "x0": 156,
+  "x1": 550,
+  "y0": 100,
+  "y1": 586,
+  "area": 33878
+ },
+ "rig_v2_idle_sil": {
+  "x0": 84,
+  "x1": 557,
+  "y0": 95,
+  "y1": 587,
+  "area": 67790
+ },
+ "iou_v1_idle_vs_approved_rest": [
+  0.4097916437804387,
+  {
+   "rot": 6,
+   "scale": 1.35,
+   "dx": 24,
+   "dy": 0
+  }
+ ],
+ "iou_v2_idle_vs_approved_rest": [
+  0.525664927734542,
+  {
+   "rot": 6,
+   "scale": 1.1,
+   "dx": -24,
+   "dy": 6
+  }
+ ],
+ "landmarks_v1_idle": {
+  "height_units": 72.8,
+  "torso_w_over_H": 0.472,
+  "torso_d_over_H": 0.254,
+  "head_tip_over_H": 0.287,
+  "plume_drop_over_H": 0.178,
+  "leg_n": [
+   21.5,
+   18.1
+  ],
+  "torso_bbox_units": [
+   34.4,
+   18.5
+  ]
+ },
+ "landmarks_v2_idle": {
+  "height_units": 73.6,
+  "torso_w_over_H": 0.755,
+  "torso_d_over_H": 0.376,
+  "head_tip_over_H": 0.298,
+  "plume_drop_over_H": 0.318,
+  "leg_n": [
+   20.4,
+   19.2
+  ],
+  "torso_bbox_units": [
+   55.6,
+   27.7
+  ]
+ },
+ "v2_clipping": []
+}

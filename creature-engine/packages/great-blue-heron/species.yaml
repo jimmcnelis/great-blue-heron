@@ -1,0 +1,962 @@
+schema_version: 1
+id: great-blue-heron
+display_name: Great Blue Heron
+design_space:
+  width: 120
+  height: 90
+  note: 'Normalized design space: character proportions are stage-independent; grid mapping scales by frame height
+    (engine rigcore rule, from v1 rig.py).'
+palette:
+  white:
+    rgb:
+    - 255
+    - 255
+    - 255
+    role: canvas
+  ink:
+    rgb:
+    - 0
+    - 0
+    - 0
+    role: 'ink: water marks, eye, shoulder patch, plume'
+  outline:
+    rgb:
+    - 30
+    - 48
+    - 74
+    role: outline dark navy
+  slate:
+    rgb:
+    - 105
+    - 130
+    - 155
+    role: body
+  darkslate:
+    rgb:
+    - 66
+    - 93
+    - 122
+    role: flight feathers / folded wing
+  pale:
+    rgb:
+    - 176
+    - 203
+    - 224
+    role: neck + chest fringe
+  orange:
+    rgb:
+    - 240
+    - 133
+    - 36
+    role: beak
+  rusty:
+    rgb:
+    - 154
+    - 82
+    - 60
+    role: thighs
+  leg:
+    rgb:
+    - 74
+    - 48
+    - 36
+    role: legs
+  fish:
+    rgb:
+    - 150
+    - 163
+    - 105
+    role: prey body
+  fishback:
+    rgb:
+    - 94
+    - 110
+    - 66
+    role: prey back
+  fishbelly:
+    rgb:
+    - 216
+    - 222
+    - 182
+    role: prey belly
+pose_params:
+  root_x:
+    default: 30.0
+  root_y:
+    default: 0.0
+  body_tilt:
+    default: 0.0
+  neck_coil:
+    default: 0.0
+  neck_extend:
+    default: 0.0
+  neck_sway:
+    default: 0.0
+  neck_retract:
+    default: 0.0
+  head_pitch:
+    default: 0.0
+  plume_sway:
+    default: 0.0
+  blink:
+    default: 0.0
+    kind: flag
+  look_back:
+    default: 0.0
+    kind: flag
+  wing_amt:
+    default: 0.0
+  flap:
+    default: 0.0
+  flying:
+    default: 0.0
+    kind: flag
+  leg_far.fx:
+    default: -2.0
+  leg_far.fy:
+    default: 86.0
+  leg_near.fx:
+    default: 5.0
+  leg_near.fy:
+    default: 86.0
+  tail_ang:
+    default: 0.0
+  hide_near:
+    default: 0.0
+    kind: flag
+  fish:
+    default: none
+    kind: discrete
+    values:
+    - none
+    - held
+    - free
+  fish_size:
+    default: tiny
+    kind: discrete
+    values:
+    - tiny
+    - big
+  fish_ang:
+    default: -65.0
+  fish_slide:
+    default: 0.0
+  fish_x:
+    default: 0.0
+  fish_y:
+    default: 0.0
+  fish_free_ang:
+    default: 0.0
+anchors:
+- name: beak_tip
+  use: strike point; drip source; toss origin; spacing audits track it
+- name: head
+  use: alert/QA reference
+life_layer:
+- param: root_y
+  waveform: sine
+  period_s: 4.1
+  amplitude: 0.3
+  damped_by: neck_coil
+  skip_when: flying
+- param: neck_sway
+  waveform: sine
+  period_s: 5.7
+  amplitude: 0.45
+  damped_by: neck_coil
+- param: plume_sway
+  waveform: sine
+  period_s: 3.3
+  amplitude: 0.9
+- param: head_pitch
+  waveform: sine
+  period_s: 6.9
+  amplitude: 1.1
+  damped_by: neck_coil
+model_sheet: model_sheet.md
+rig:
+  module: rig.py
+  render_fn: render
+  default_pose_fn: default_pose
+clips:
+  module: clips.py
+  roster:
+  - name: idle_L_0
+    kind: idle
+    kwargs:
+      zone: L
+      dur: 20.0
+      seed: 100
+    mirror: true
+    ambient: true
+    split: train
+  - name: idle_L_1
+    kind: idle
+    kwargs:
+      zone: L
+      dur: 20.0
+      seed: 107
+    mirror: true
+    ambient: true
+    split: train
+  - name: idle_L_2
+    kind: idle
+    kwargs:
+      zone: L
+      dur: 20.0
+      seed: 114
+    mirror: true
+    ambient: true
+    split: train
+  - name: idle_L_3
+    kind: idle
+    kwargs:
+      zone: L
+      dur: 20.0
+      seed: 121
+    mirror: true
+    ambient: true
+    split: train
+  - name: idle_L_4
+    kind: idle
+    kwargs:
+      zone: L
+      dur: 20.0
+      seed: 128
+    mirror: true
+    ambient: true
+    split: train
+  - name: idle_L_5
+    kind: idle
+    kwargs:
+      zone: L
+      dur: 20.0
+      seed: 135
+    mirror: true
+    ambient: true
+    split: train
+  - name: idle_L_6
+    kind: idle
+    kwargs:
+      zone: L
+      dur: 20.0
+      seed: 142
+    mirror: true
+    ambient: true
+    split: train
+  - name: idle_L_7
+    kind: idle
+    kwargs:
+      zone: L
+      dur: 20.0
+      seed: 149
+    mirror: true
+    ambient: true
+    split: train
+  - name: idle_L_8
+    kind: idle
+    kwargs:
+      zone: L
+      dur: 20.0
+      seed: 156
+    mirror: true
+    ambient: true
+    split: train
+  - name: idle_L_9
+    kind: idle
+    kwargs:
+      zone: L
+      dur: 20.0
+      seed: 163
+    mirror: true
+    ambient: true
+    split: val
+  - name: oneleg_L_0
+    kind: idle
+    kwargs:
+      zone: L
+      dur: 18.0
+      seed: 300
+      oneleg: true
+    mirror: true
+    ambient: true
+    split: train
+  - name: oneleg_L_1
+    kind: idle
+    kwargs:
+      zone: L
+      dur: 18.0
+      seed: 311
+      oneleg: true
+    mirror: true
+    ambient: true
+    split: train
+  - name: oneleg_L_2
+    kind: idle
+    kwargs:
+      zone: L
+      dur: 18.0
+      seed: 322
+      oneleg: true
+    mirror: true
+    ambient: true
+    split: train
+  - name: oneleg_L_3
+    kind: idle
+    kwargs:
+      zone: L
+      dur: 18.0
+      seed: 333
+      oneleg: true
+    mirror: true
+    ambient: true
+    split: train
+  - name: oneleg_L_4
+    kind: idle
+    kwargs:
+      zone: L
+      dur: 18.0
+      seed: 344
+      oneleg: true
+    mirror: true
+    ambient: true
+    split: train
+  - name: oneleg_L_5
+    kind: idle
+    kwargs:
+      zone: L
+      dur: 18.0
+      seed: 355
+      oneleg: true
+    mirror: true
+    ambient: true
+    split: train
+  - name: idle_C_0
+    kind: idle
+    kwargs:
+      zone: C
+      dur: 20.0
+      seed: 103
+    mirror: true
+    ambient: true
+    split: train
+  - name: idle_C_1
+    kind: idle
+    kwargs:
+      zone: C
+      dur: 20.0
+      seed: 110
+    mirror: true
+    ambient: true
+    split: train
+  - name: idle_C_2
+    kind: idle
+    kwargs:
+      zone: C
+      dur: 20.0
+      seed: 117
+    mirror: true
+    ambient: true
+    split: train
+  - name: idle_C_3
+    kind: idle
+    kwargs:
+      zone: C
+      dur: 20.0
+      seed: 124
+    mirror: true
+    ambient: true
+    split: train
+  - name: idle_C_4
+    kind: idle
+    kwargs:
+      zone: C
+      dur: 20.0
+      seed: 131
+    mirror: true
+    ambient: true
+    split: train
+  - name: idle_C_5
+    kind: idle
+    kwargs:
+      zone: C
+      dur: 20.0
+      seed: 138
+    mirror: true
+    ambient: true
+    split: train
+  - name: idle_C_6
+    kind: idle
+    kwargs:
+      zone: C
+      dur: 20.0
+      seed: 145
+    mirror: true
+    ambient: true
+    split: train
+  - name: idle_C_7
+    kind: idle
+    kwargs:
+      zone: C
+      dur: 20.0
+      seed: 152
+    mirror: true
+    ambient: true
+    split: train
+  - name: idle_C_8
+    kind: idle
+    kwargs:
+      zone: C
+      dur: 20.0
+      seed: 159
+    mirror: true
+    ambient: true
+    split: train
+  - name: idle_C_9
+    kind: idle
+    kwargs:
+      zone: C
+      dur: 20.0
+      seed: 166
+    mirror: true
+    ambient: true
+    split: val
+  - name: oneleg_C_0
+    kind: idle
+    kwargs:
+      zone: C
+      dur: 18.0
+      seed: 305
+      oneleg: true
+    mirror: true
+    ambient: true
+    split: train
+  - name: oneleg_C_1
+    kind: idle
+    kwargs:
+      zone: C
+      dur: 18.0
+      seed: 316
+      oneleg: true
+    mirror: true
+    ambient: true
+    split: train
+  - name: oneleg_C_2
+    kind: idle
+    kwargs:
+      zone: C
+      dur: 18.0
+      seed: 327
+      oneleg: true
+    mirror: true
+    ambient: true
+    split: train
+  - name: oneleg_C_3
+    kind: idle
+    kwargs:
+      zone: C
+      dur: 18.0
+      seed: 338
+      oneleg: true
+    mirror: true
+    ambient: true
+    split: train
+  - name: oneleg_C_4
+    kind: idle
+    kwargs:
+      zone: C
+      dur: 18.0
+      seed: 349
+      oneleg: true
+    mirror: true
+    ambient: true
+    split: train
+  - name: oneleg_C_5
+    kind: idle
+    kwargs:
+      zone: C
+      dur: 18.0
+      seed: 360
+      oneleg: true
+    mirror: true
+    ambient: true
+    split: train
+  - name: walk_LC_0
+    kind: walk
+    kwargs:
+      x_from: L
+      x_to: C
+      seed: 500
+    mirror: true
+    ambient: false
+    split: train
+  - name: walk_LC_1
+    kind: walk
+    kwargs:
+      x_from: L
+      x_to: C
+      seed: 513
+    mirror: true
+    ambient: false
+    split: train
+  - name: walk_LC_2
+    kind: walk
+    kwargs:
+      x_from: L
+      x_to: C
+      seed: 526
+    mirror: true
+    ambient: false
+    split: train
+  - name: walk_LC_3
+    kind: walk
+    kwargs:
+      x_from: L
+      x_to: C
+      seed: 539
+    mirror: true
+    ambient: false
+    split: train
+  - name: walk_LC_4
+    kind: walk
+    kwargs:
+      x_from: L
+      x_to: C
+      seed: 552
+    mirror: true
+    ambient: false
+    split: train
+  - name: walk_CR_0
+    kind: walk
+    kwargs:
+      x_from: C
+      x_to: R
+      seed: 500
+    mirror: true
+    ambient: false
+    split: train
+  - name: walk_CR_1
+    kind: walk
+    kwargs:
+      x_from: C
+      x_to: R
+      seed: 513
+    mirror: true
+    ambient: false
+    split: train
+  - name: walk_CR_2
+    kind: walk
+    kwargs:
+      x_from: C
+      x_to: R
+      seed: 526
+    mirror: true
+    ambient: false
+    split: train
+  - name: walk_CR_3
+    kind: walk
+    kwargs:
+      x_from: C
+      x_to: R
+      seed: 539
+    mirror: true
+    ambient: false
+    split: train
+  - name: walk_CR_4
+    kind: walk
+    kwargs:
+      x_from: C
+      x_to: R
+      seed: 552
+    mirror: true
+    ambient: false
+    split: train
+  - name: walk_LR_0
+    kind: walk
+    kwargs:
+      x_from: L
+      x_to: R
+      seed: 500
+    mirror: true
+    ambient: false
+    split: train
+  - name: walk_LR_1
+    kind: walk
+    kwargs:
+      x_from: L
+      x_to: R
+      seed: 513
+    mirror: true
+    ambient: false
+    split: train
+  - name: walk_LR_2
+    kind: walk
+    kwargs:
+      x_from: L
+      x_to: R
+      seed: 526
+    mirror: true
+    ambient: false
+    split: train
+  - name: walk_LR_3
+    kind: walk
+    kwargs:
+      x_from: L
+      x_to: R
+      seed: 539
+    mirror: true
+    ambient: false
+    split: train
+  - name: walk_LR_4
+    kind: walk
+    kwargs:
+      x_from: L
+      x_to: R
+      seed: 552
+    mirror: true
+    ambient: false
+    split: train
+  - name: strike_tiny_0
+    kind: strike
+    kwargs:
+      size: tiny
+      seed: 700
+    mirror: true
+    ambient: false
+    split: train
+    hooks:
+    - toss_patch
+  - name: strike_tiny_1
+    kind: strike
+    kwargs:
+      size: tiny
+      seed: 717
+    mirror: true
+    ambient: false
+    split: train
+    hooks:
+    - toss_patch
+  - name: strike_tiny_2
+    kind: strike
+    kwargs:
+      size: tiny
+      seed: 734
+    mirror: true
+    ambient: false
+    split: train
+    hooks:
+    - toss_patch
+  - name: strike_tiny_3
+    kind: strike
+    kwargs:
+      size: tiny
+      seed: 751
+    mirror: true
+    ambient: false
+    split: train
+    hooks:
+    - toss_patch
+  - name: strike_tiny_4
+    kind: strike
+    kwargs:
+      size: tiny
+      seed: 768
+    mirror: true
+    ambient: false
+    split: train
+    hooks:
+    - toss_patch
+  - name: strike_tiny_5
+    kind: strike
+    kwargs:
+      size: tiny
+      seed: 785
+    mirror: true
+    ambient: false
+    split: train
+    hooks:
+    - toss_patch
+  - name: strike_big_0
+    kind: strike
+    kwargs:
+      size: big
+      seed: 760
+    mirror: true
+    ambient: false
+    split: train
+    hooks:
+    - toss_patch
+  - name: strike_big_1
+    kind: strike
+    kwargs:
+      size: big
+      seed: 779
+    mirror: true
+    ambient: false
+    split: train
+    hooks:
+    - toss_patch
+  - name: strike_big_2
+    kind: strike
+    kwargs:
+      size: big
+      seed: 798
+    mirror: true
+    ambient: false
+    split: train
+    hooks:
+    - toss_patch
+  - name: strike_big_3
+    kind: strike
+    kwargs:
+      size: big
+      seed: 817
+    mirror: true
+    ambient: false
+    split: val
+    hooks:
+    - toss_patch
+  - name: strike_miss_0
+    kind: strike
+    kwargs:
+      size: tiny
+      seed: 790
+      miss: true
+    mirror: true
+    ambient: false
+    split: train
+    hooks:
+    - toss_patch
+  - name: strike_miss_1
+    kind: strike
+    kwargs:
+      size: tiny
+      seed: 791
+      miss: true
+    mirror: true
+    ambient: false
+    split: train
+    hooks:
+    - toss_patch
+  - name: aimrelax_0
+    kind: aim
+    kwargs:
+      seed: 820
+    mirror: true
+    ambient: false
+    split: train
+  - name: aimrelax_1
+    kind: aim
+    kwargs:
+      seed: 827
+    mirror: true
+    ambient: false
+    split: train
+  - name: aimrelax_2
+    kind: aim
+    kwargs:
+      seed: 834
+    mirror: true
+    ambient: false
+    split: train
+  - name: aimrelax_3
+    kind: aim
+    kwargs:
+      seed: 841
+    mirror: true
+    ambient: false
+    split: train
+  - name: stretch_0
+    kind: stretch
+    kwargs:
+      seed: 900
+    mirror: true
+    ambient: false
+    split: train
+  - name: stretch_1
+    kind: stretch
+    kwargs:
+      seed: 923
+    mirror: true
+    ambient: false
+    split: train
+  - name: stretch_2
+    kind: stretch
+    kwargs:
+      seed: 946
+    mirror: true
+    ambient: false
+    split: train
+  - name: stretch_3
+    kind: stretch
+    kwargs:
+      seed: 969
+    mirror: true
+    ambient: false
+    split: train
+  - name: stretch_4
+    kind: stretch
+    kwargs:
+      seed: 992
+    mirror: true
+    ambient: false
+    split: train
+  - name: takeoff_L_0
+    kind: takeoff
+    kwargs:
+      zone: L
+      seed: 1000
+    mirror: true
+    ambient: false
+    split: train
+  - name: takeoff_L_1
+    kind: takeoff
+    kwargs:
+      zone: L
+      seed: 1029
+    mirror: true
+    ambient: false
+    split: train
+  - name: takeoff_C_0
+    kind: takeoff
+    kwargs:
+      zone: C
+      seed: 1000
+    mirror: true
+    ambient: false
+    split: train
+  - name: takeoff_C_1
+    kind: takeoff
+    kwargs:
+      zone: C
+      seed: 1029
+    mirror: true
+    ambient: false
+    split: train
+  - name: takeoff_R_0
+    kind: takeoff
+    kwargs:
+      zone: R
+      seed: 1000
+    mirror: true
+    ambient: false
+    split: train
+  - name: takeoff_R_1
+    kind: takeoff
+    kwargs:
+      zone: R
+      seed: 1029
+    mirror: true
+    ambient: false
+    split: train
+  - name: flyin_L_0
+    kind: flyin
+    kwargs:
+      zone: L
+      seed: 1200
+    mirror: true
+    ambient: false
+    split: train
+  - name: flyin_L_1
+    kind: flyin
+    kwargs:
+      zone: L
+      seed: 1231
+    mirror: true
+    ambient: false
+    split: train
+  - name: flyin_C_0
+    kind: flyin
+    kwargs:
+      zone: C
+      seed: 1200
+    mirror: true
+    ambient: false
+    split: train
+  - name: flyin_C_1
+    kind: flyin
+    kwargs:
+      zone: C
+      seed: 1231
+    mirror: true
+    ambient: false
+    split: train
+  - name: flyin_R_0
+    kind: flyin
+    kwargs:
+      zone: R
+      seed: 1200
+    mirror: true
+    ambient: false
+    split: train
+  - name: flyin_R_1
+    kind: flyin
+    kwargs:
+      zone: R
+      seed: 1231
+    mirror: true
+    ambient: false
+    split: val
+  - name: turn_L_0
+    kind: turn
+    kwargs:
+      zone: L
+      seed: 1400
+    mirror: true
+    ambient: false
+    split: train
+    hooks:
+    - turn_squash
+  - name: turn_L_1
+    kind: turn
+    kwargs:
+      zone: L
+      seed: 1437
+    mirror: true
+    ambient: false
+    split: train
+    hooks:
+    - turn_squash
+  - name: turn_R_0
+    kind: turn
+    kwargs:
+      zone: R
+      seed: 1400
+    mirror: true
+    ambient: false
+    split: train
+    hooks:
+    - turn_squash
+  - name: turn_R_1
+    kind: turn
+    kwargs:
+      zone: R
+      seed: 1437
+    mirror: true
+    ambient: false
+    split: train
+    hooks:
+    - turn_squash
+  - name: empty
+    kind: empty
+    kwargs: {}
+    mirror: false
+    ambient: false
+    split: train
+  - name: alert_L_0
+    kind: alert
+    kwargs:
+      zone: L
+      seed: 2000
+    mirror: true
+    ambient: false
+    split: train
+  - name: alert_L_1
+    kind: alert
+    kwargs:
+      zone: L
+      seed: 2001
+    mirror: true
+    ambient: false
+    split: train
+behaviors_file: behaviors.yaml

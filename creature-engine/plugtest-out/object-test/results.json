@@ -1,0 +1,22 @@
+{
+ "scene_loaded": "heron-lighthouse-scene",
+ "objects": [
+  "thomas-point"
+ ],
+ "gallery_anchor": [
+  138.43333333333334,
+  59.45333333333333
+ ],
+ "lantern_anchor": [
+  133.33333333333331,
+  58.43333333333334
+ ],
+ "merged_palette_size": 25,
+ "day_object_cells": 1031,
+ "day_lamp_cells": 0,
+ "night_lamp_cells": 9,
+ "night_beam_cells": 156,
+ "composite_heron_cells": 259,
+ "composite_object_cells_visible": 1031,
+ "episode_render": "skipped: FileNotFoundError: [Errno 2] No such file or directory: '/home/hatch/workspace/creature-engine/plugtest-out/heron-corpus/fish_frames.npy'"
+}

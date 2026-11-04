@@ -1,0 +1,89 @@
+[
+ {
+  "id": "palette_exactness",
+  "status": "pass",
+  "severity": "gate",
+  "passed": true,
+  "measured": {
+   "grid_values": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "palette_size": 11
+  }
+ },
+ {
+  "id": "ink_at_rest",
+  "status": "pass",
+  "severity": "gate",
+  "passed": true,
+  "measured": {
+   "worst_ink_cells": 0,
+   "segments_checked": [
+    "idle_pond_0",
+    "gone",
+    "idle_left_0"
+   ]
+  }
+ },
+ {
+  "id": "event_causality",
+  "status": "pass",
+  "severity": "gate",
+  "passed": true,
+  "measured": {
+   "mapped_events": 2,
+   "events_with_marks": 2
+  }
+ },
+ {
+  "id": "join_smoothness",
+  "status": "pass",
+  "severity": "gate",
+  "passed": true,
+  "measured": {
+   "median_frame_change": 13.5,
+   "max_join_change": 89,
+   "limit_ratio": 10.0
+  }
+ },
+ {
+  "id": "held_fraction",
+  "status": "pass",
+  "severity": "warn",
+  "passed": true,
+  "measured": {
+   "held_fraction": 0.653,
+   "frames": 118
+  }
+ },
+ {
+  "id": "flicker_metric",
+  "status": "pass",
+  "severity": "warn",
+  "passed": true,
+  "measured": {
+   "aba_flips_per_1000_cell_frames": 0.07,
+   "total_flips": 60
+  }
+ },
+ {
+  "id": "silhouette_test",
+  "status": "not_implemented",
+  "note": "validator not registered in this engine build"
+ },
+ {
+  "id": "anticipation_audit",
+  "status": "not_implemented",
+  "note": "validator not registered in this engine build"
+ }
+]

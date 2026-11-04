@@ -1,0 +1,54 @@
+schema_version: 1
+id: thomas-point-lighthouse
+display_name: Thomas Point Shoal Lighthouse
+kind: landmark
+design_space:
+  width: 120
+  height: 90
+  note: >-
+    Authored in the heron's design space so it drops into heron scenes
+    unchanged. Cartoon scale is deliberate (see model sheet): the real
+    structure is ~10x the heron's height; here it is authored ~1 heron
+    tall so it can share the frame as a backdrop, and the scene's scale
+    placement shrinks it further when it should read as distance.
+palette:
+  white:    {rgb: [255, 255, 255], role: canvas (shared scene background)}
+  ink:      {rgb: [0, 0, 0],       role: 'lantern room + window glass'}
+  outline:  {rgb: [30, 48, 74],    role: outline dark navy}
+  wall:     {rgb: [250, 247, 238], role: 'cottage walls (warm white)'}
+  roof:     {rgb: [168, 58, 44],   role: red roof + gallery deck edge}
+  pile:     {rgb: [112, 62, 42],   role: rusty screwpile iron}
+  deck:     {rgb: [74, 64, 58],    role: platform timbers}
+  shutter:  {rgb: [43, 74, 92],    role: shutters + door}
+  lamp:     {rgb: [255, 199, 76],  role: 'the lamp (lit)'}
+  beam:     {rgb: [255, 232, 160], role: beam wedge when lit}
+state_params:
+  root_x: {default: 0.0, note: 'placement: design x of the waterline centre'}
+  root_y: {default: 74.0, note: 'placement: design y of the waterline (surface plane in implied-water)'}
+  scale:  {default: 1.0, note: 'scene scale; 1.0 = authored size (~54 design units above the waterline)'}
+  lamp:   {default: 0.0, kind: flag, note: '0 = dark (day), 1 = lit (night/fog). Set by scene state or the night mode; never by the object itself.'}
+  beam_angle: {default: -12.0, note: 'degrees, 0 = horizontal right, negative = raised; the beam wedge draws only when lamp is lit'}
+  glow:   {default: 0.0, note: '0..1 halo strength around a lit lamp'}
+anchors:
+  - {name: lantern,  use: 'the lamp itself: beam origin, glow centre, look_at target'}
+  - {name: gallery,  use: 'the gallery rail around the lantern: a PERCH point (ospreys and gulls sit here in life)'}
+  - {name: roof_peak, use: 'top of the roof beside the lantern: secondary perch / silhouette reference'}
+  - {name: waterline, use: 'where the piles meet the surface: the environment causality table rings/splashes here when a creature event lands at the base'}
+affordances:
+  - {action: perch,   anchor: gallery,  note: 'a bird standing on the gallery rail'}
+  - {action: perch,   anchor: roof_peak, note: 'a bird on the roof peak'}
+  - {action: look_at, anchor: lantern,  note: 'attention beats: a creature notices the light (night scenes)'}
+  - {action: circle,  anchor: lantern,  note: 'flight paths may orbit the lantern point'}
+footprint:
+  width: 38
+  height: 56
+  waterline_dy: 0.0
+model_sheet: model_sheet.md
+rig:
+  module: rig.py
+  render_fn: render
+  default_state_fn: default_state
+note: >-
+  Object package #1 and the reference implementation of the object class:
+  a named landmark with a drawn form, declared state, anchors and
+  affordances — and no behavior, no corpus, nothing learned.

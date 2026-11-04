@@ -1,0 +1,281 @@
+{
+ "control_v23": {
+  "raw": 0.7121424284856971,
+  "prm": {
+   "rot": 0,
+   "scale": 1.2,
+   "dx": 24,
+   "dy": 12
+  },
+  "bird": 0.7655624460318706
+ },
+ "v24": {
+  "raw": 0.690679371062597,
+  "prm": {
+   "rot": 0,
+   "scale": 1.2,
+   "dx": 24,
+   "dy": 12
+  },
+  "bird": 0.7401539327951943
+ },
+ "invariants": {
+  "neck_ch1_pixel_identical_to_v22": true,
+  "neck_ch1_pixel_identical_to_v23": true,
+  "head_ch2_pixel_identical_to_v23": true,
+  "plume_ch7_pixel_identical_to_v23": true,
+  "breast_bit_identical": true,
+  "anchor_bit_identical": true,
+  "bill_tip_identical": true,
+  "breast_v24": [
+   442.8430909712339,
+   284.0972020805901
+  ],
+  "anchor_v24": [
+   526.4666666666667,
+   137.73333333333335
+  ]
+ },
+ "neck_v24": {
+  "arc_units": 32.62,
+  "widths_on_neck_channel_px": {
+   "t=0.45": 47,
+   "t=0.6": 44,
+   "t=0.75": 35
+  }
+ },
+ "landmarks_v23": {
+  "height_units": 71.9,
+  "torso_w_over_H": 0.849,
+  "torso_d_over_H": 0.409,
+  "head_tip_over_H": 0.305,
+  "plume_drop_over_H": 0.089,
+  "leg_n": [
+   20.4,
+   19.2
+  ],
+  "torso_bbox_units": [
+   61.1,
+   29.4
+  ]
+ },
+ "landmarks_v24": {
+  "height_units": 71.9,
+  "torso_w_over_H": 0.85,
+  "torso_d_over_H": 0.404,
+  "head_tip_over_H": 0.305,
+  "plume_drop_over_H": 0.089,
+  "leg_n": [
+   20.4,
+   19.2
+  ],
+  "torso_bbox_units": [
+   61.2,
+   29.1
+  ]
+ },
+ "body_v23": {
+  "bands": {
+   "band0": 0.2615,
+   "band1": 0.4349,
+   "band2": 0.318
+  },
+  "band_err": 0.1594,
+  "mid": 0.4349,
+  "mid_err": 0.0869,
+  "centroid": [
+   -0.2855,
+   0.1136
+  ],
+  "fwd_err": 0.0705,
+  "vert_err": 0.0026,
+  "torso_w": 0.849,
+  "torso_d": 0.409,
+  "len_err": 0.049,
+  "sec_err": 0.1195
+ },
+ "body_v24": {
+  "bands": {
+   "band0": 0.2781,
+   "band1": 0.368,
+   "band2": 0.3667
+  },
+  "band_err": 0.0272,
+  "mid": 0.368,
+  "mid_err": 0.02,
+  "centroid": [
+   -0.279,
+   0.1189
+  ],
+  "fwd_err": 0.077,
+  "vert_err": 0.0079,
+  "torso_w": 0.849,
+  "torso_d": 0.409,
+  "len_err": 0.049,
+  "sec_err": 0.126
+ },
+ "bbox_v23": {
+  "x0": 66,
+  "x1": 671,
+  "y0": 111,
+  "y1": 587,
+  "area": 63820
+ },
+ "bbox_v24": {
+  "x0": 66,
+  "x1": 671,
+  "y0": 111,
+  "y1": 587,
+  "area": 67623
+ },
+ "decomp_v23": {
+  "total": {
+   "miss": 18172,
+   "extra": 13486,
+   "inter": 78320,
+   "union": 109978
+  },
+  "by_zone": {
+   "head": {
+    "approved": 11784,
+    "miss": 1530,
+    "extra": 2320
+   },
+   "neck": {
+    "approved": 8500,
+    "miss": 59,
+    "extra": 2167
+   },
+   "legs": {
+    "approved": 5293,
+    "miss": 2366,
+    "extra": 802
+   },
+   "plume": {
+    "approved": 10433,
+    "miss": 2273,
+    "extra": 1524
+   },
+   "scenery": {
+    "approved": 8023,
+    "miss": 7723,
+    "extra": 43
+   },
+   "torso_rest": {
+    "approved": 52459,
+    "miss": 4221,
+    "extra": 6630
+   }
+  },
+  "by_channel": {
+   "torso": {
+    "placed": 63629,
+    "extra": 27789
+   },
+   "neck": {
+    "placed": 13628,
+    "extra": 2521
+   },
+   "head": {
+    "placed": 5081,
+    "extra": 80
+   },
+   "wing": {
+    "placed": 20089,
+    "extra": 2649
+   },
+   "leg_near": {
+    "placed": 4281,
+    "extra": 941
+   },
+   "leg_far": {
+    "placed": 4351,
+    "extra": 1104
+   },
+   "tail": {
+    "placed": 3866,
+    "extra": 162
+   },
+   "plume": {
+    "placed": 15171,
+    "extra": 2210
+   }
+  },
+  "iou_excluding_scenery_band": 0.7656
+ },
+ "decomp_v24": {
+  "total": {
+   "miss": 17336,
+   "extra": 18114,
+   "inter": 79156,
+   "union": 114606
+  },
+  "by_zone": {
+   "head": {
+    "approved": 11784,
+    "miss": 1530,
+    "extra": 2320
+   },
+   "neck": {
+    "approved": 8500,
+    "miss": 65,
+    "extra": 2167
+   },
+   "legs": {
+    "approved": 5293,
+    "miss": 2342,
+    "extra": 988
+   },
+   "plume": {
+    "approved": 10433,
+    "miss": 1410,
+    "extra": 3548
+   },
+   "scenery": {
+    "approved": 8023,
+    "miss": 7723,
+    "extra": 43
+   },
+   "torso_rest": {
+    "approved": 52459,
+    "miss": 4266,
+    "extra": 9048
+   }
+  },
+  "by_channel": {
+   "torso": {
+    "placed": 71180,
+    "extra": 33346
+   },
+   "neck": {
+    "placed": 13628,
+    "extra": 2521
+   },
+   "head": {
+    "placed": 5081,
+    "extra": 80
+   },
+   "wing": {
+    "placed": 20089,
+    "extra": 2649
+   },
+   "leg_near": {
+    "placed": 4281,
+    "extra": 941
+   },
+   "leg_far": {
+    "placed": 4351,
+    "extra": 1104
+   },
+   "tail": {
+    "placed": 3866,
+    "extra": 162
+   },
+   "plume": {
+    "placed": 15171,
+    "extra": 2210
+   }
+  },
+  "iou_excluding_scenery_band": 0.7402
+ }
+}

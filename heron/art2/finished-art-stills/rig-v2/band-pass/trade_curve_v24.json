@@ -1,0 +1,72 @@
+[
+ {
+  "raw_floor": 0.7121,
+  "bird_floor": 0.7656,
+  "n": 20,
+  "best_band_err": 0.1513,
+  "best_mid": 0.4308,
+  "at_raw": 0.7128,
+  "at_bird": 0.7661,
+  "tag": "probe-tp3y-"
+ },
+ {
+  "raw_floor": 0.705,
+  "bird_floor": 0.755,
+  "n": 60,
+  "best_band_err": 0.1281,
+  "best_mid": 0.419,
+  "at_raw": 0.7081,
+  "at_bird": 0.7605,
+  "tag": "c1r-t_bl"
+ },
+ {
+  "raw_floor": 0.7,
+  "bird_floor": 0.75,
+  "n": 71,
+  "best_band_err": 0.0833,
+  "best_mid": 0.3963,
+  "at_raw": 0.7008,
+  "at_bird": 0.7515,
+  "tag": "c2-tp3y"
+ },
+ {
+  "raw_floor": 0.69,
+  "bird_floor": 0.74,
+  "n": 196,
+  "best_band_err": 0.0272,
+  "best_mid": 0.368,
+  "at_raw": 0.6907,
+  "at_bird": 0.7402,
+  "tag": "c5-tp7y"
+ },
+ {
+  "raw_floor": 0.69,
+  "bird_floor": 0.0,
+  "n": 231,
+  "best_band_err": 0.0246,
+  "best_mid": 0.3667,
+  "at_raw": 0.69,
+  "at_bird": 0.7393,
+  "tag": "c6-tp9y"
+ },
+ {
+  "raw_floor": 0.0,
+  "bird_floor": 0.74,
+  "n": 201,
+  "best_band_err": 0.0258,
+  "best_mid": 0.3674,
+  "at_raw": 0.6905,
+  "at_bird": 0.74,
+  "tag": "c5-tp6x"
+ },
+ {
+  "raw_floor": 0.0,
+  "bird_floor": 0.0,
+  "n": 299,
+  "best_band_err": 0.0229,
+  "best_mid": 0.3659,
+  "at_raw": 0.6897,
+  "at_bird": 0.7391,
+  "tag": "c5-tp2y"
+ }
+]

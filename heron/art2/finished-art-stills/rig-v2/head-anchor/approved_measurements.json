@@ -1,0 +1,242 @@
+{
+ "mask_matches_saved_phaseA": true,
+ "approved_mask_area": 96492,
+ "main_component_area": 96229,
+ "approved_H": {
+  "crown_y": 26,
+  "foot_y": 588,
+  "H_px": 562,
+  "note": "foot = waterline per Phase A; gate clips mask at y=594"
+ },
+ "eye_px": [
+  710.9,
+  46.4
+ ],
+ "bill": {
+  "comp_px": 1288,
+  "comp_x": [
+   698,
+   823
+  ],
+  "tip_px": [
+   828.0,
+   63.0
+  ],
+  "axis_deg": 3.31
+ },
+ "anchor": {
+  "bill_method": [
+   660.8,
+   53.3
+  ],
+  "eye_method": [
+   693.7,
+   56.6
+  ],
+  "skull_centroid": [
+   630.6,
+   54.4
+  ],
+  "adopted": [
+   660.8,
+   53.3
+  ],
+  "head_to_tip_px": 167.5
+ },
+ "centreline": {
+  "skel_start": [
+   637,
+   58
+  ],
+  "n_pts": 231,
+  "median_neck_dt": 23.0,
+  "breast_threshold_dt": 31.1
+ },
+ "breast_px": [
+  565,
+  221
+ ],
+ "breast_px_dt40": [
+  542,
+  239
+ ],
+ "neck": {
+  "arc_px": 251.5,
+  "arc_over_H": 0.4476,
+  "arc_px_dt40": 286.6,
+  "arc_over_H_dt40": 0.5099,
+  "chord_px": 193.1,
+  "mid_width_perp_px": 51.0,
+  "mid_width_perp_over_H": 0.0907,
+  "mid_width_2xDT_px": 46.0
+ },
+ "neck_width_profile_2xDT_px": [
+  18.0,
+  29.1,
+  40.0,
+  47.5,
+  36.9,
+  44.9,
+  44.3,
+  46.4,
+  48.0,
+  44.2,
+  45.7,
+  46.2,
+  44.9,
+  46.0,
+  46.0,
+  47.5,
+  44.9,
+  48.1,
+  52.3,
+  48.8,
+  62.8
+ ],
+ "centreline_pts": [
+  [
+   637,
+   58
+  ],
+  [
+   628,
+   59
+  ],
+  [
+   618,
+   58
+  ],
+  [
+   608,
+   58
+  ],
+  [
+   599,
+   64
+  ],
+  [
+   598,
+   74
+  ],
+  [
+   595,
+   84
+  ],
+  [
+   593,
+   94
+  ],
+  [
+   591,
+   104
+  ],
+  [
+   591,
+   114
+  ],
+  [
+   592,
+   125
+  ],
+  [
+   596,
+   135
+  ],
+  [
+   597,
+   145
+  ],
+  [
+   599,
+   155
+  ],
+  [
+   599,
+   165
+  ],
+  [
+   598,
+   175
+  ],
+  [
+   595,
+   185
+  ],
+  [
+   589,
+   194
+  ],
+  [
+   582,
+   202
+  ],
+  [
+   576,
+   212
+  ],
+  [
+   565,
+   221
+  ]
+ ],
+ "body_centroid_px": [
+  376.7,
+  335.3
+ ],
+ "anchor_fwd_of_body_centroid_px": 284.1,
+ "approved_sil_centroid_px": [
+  424.5,
+  289.1
+ ],
+ "rig_v2": {
+  "pose_hx": 19.0,
+  "pose_hy": -28.0,
+  "coil": 0.85,
+  "breast_units": [
+   49.63,
+   42.61
+  ],
+  "anchor_units": [
+   45.0,
+   19.0
+  ],
+  "H_units": 73.57,
+  "neck_arc_units": 27.37,
+  "neck_arc_over_H": 0.3721,
+  "neck_chord_units": 24.06,
+  "delta_anchor_minus_breast_units": [
+   -4.63,
+   -23.61
+  ],
+  "delta_over_H": [
+   -0.0629,
+   -0.321
+  ]
+ },
+ "approved_delta_anchor_minus_breast_over_H": [
+  0.1705,
+  -0.2983
+ ],
+ "approved_delta_anchor_minus_breast_px": [
+  95.8,
+  -167.7
+ ],
+ "rig_sil_area": 67790,
+ "rig_body_centroid_px": [
+  301.6,
+  338.2
+ ],
+ "rig_anchor_fwd_of_body_centroid_px": 110.4,
+ "rig_anchor_px": [
+  412.0,
+  126.7
+ ],
+ "rig_breast_px": [
+  442.8,
+  284.1
+ ],
+ "rig_sil_centroid_px": [
+  324.1,
+  312.4
+ ]
+}
