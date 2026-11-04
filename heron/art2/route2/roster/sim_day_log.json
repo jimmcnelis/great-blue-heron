@@ -1,0 +1,746 @@
+{
+ "total_frames": 2073603,
+ "held_frames": 2049254,
+ "held_share": 0.9883,
+ "per_behavior_min": {
+  "alert": 0.2,
+  "doze": 698.2,
+  "flight": 2.3,
+  "gap": 274.2,
+  "hunt": 356.3,
+  "loaf": 105.2,
+  "maintenance": 2.7,
+  "relocate": 0.8
+ },
+ "bouts": {
+  "hunt": 11,
+  "maintenance": 2,
+  "loaf": 7
+ },
+ "strikes": 19,
+ "hits": 7,
+ "misses": 12,
+ "success": 0.368,
+ "big_hits": 0,
+ "strikes_per_hunt_hour": 3.17,
+ "hunting_min": 359.8,
+ "hunt_share_waking": 0.486,
+ "relocations": {
+  "walk": 10,
+  "flight": 9
+ },
+ "relocate_share": 1.0,
+ "maintenance_bouts": 2,
+ "maintenance_sequences": [
+  [
+   "stretch",
+   "body_shake",
+   "preen",
+   "scratch"
+  ],
+  [
+   "stretch",
+   "body_shake",
+   "preen",
+   "scratch"
+  ]
+ ],
+ "flights_by_label": {
+  "relocate_flight": 9,
+  "reposition": 2,
+  "flush": 1
+ },
+ "drinks": 0,
+ "shakes_after_landing": 9,
+ "ladder": [
+  [
+   "freeze_check",
+   "brief"
+  ],
+  [
+   "freeze_check",
+   "sustained"
+  ],
+  [
+   "alert",
+   "sustained"
+  ],
+  [
+   "freeze_check",
+   "escalating"
+  ],
+  [
+   "flush",
+   "escalating"
+  ]
+ ],
+ "gap_min_median": 10.6,
+ "gap_min_p90": 39.4,
+ "gap_min_max": 46.1,
+ "comparisons": [
+  {
+   "metric": "held_share",
+   "target": ">= 0.90 of all frames held (deep-dive \u00a73.1)",
+   "measured": 0.9883,
+   "verdict": "PASS"
+  },
+  {
+   "metric": "success",
+   "target": "~0.56 strike success [Documented Hodgens] (band 0.46-0.66 for a single day)",
+   "measured": 0.368,
+   "verdict": "MISS"
+  },
+  {
+   "metric": "strikes_per_hunt_hour",
+   "target": "~4/h of hunting [Documented] (design band 3-6)",
+   "measured": 3.17,
+   "verdict": "PASS"
+  },
+  {
+   "metric": "hunt_share_waking",
+   "target": "0.30-0.50 of waking hours [Documented Brandman]",
+   "measured": 0.486,
+   "verdict": "PASS"
+  },
+  {
+   "metric": "relocate_share",
+   "target": "relocation after ~every strike [Documented Warrick] (>= 0.80)",
+   "measured": 1.0,
+   "verdict": "PASS"
+  },
+  {
+   "metric": "maintenance_bouts",
+   "target": "2-5 bouts/day, order stretch->shake->preen",
+   "measured": 2,
+   "verdict": "PASS"
+  }
+ ],
+ "events": [
+  {
+   "behavior": "hunt",
+   "dur_min": 31.0,
+   "stand": "creek",
+   "kind": "bout_start",
+   "t": 23400.1
+  },
+  {
+   "hit": true,
+   "big": false,
+   "stand": "creek",
+   "kind": "strike",
+   "t": 25154.7
+  },
+  {
+   "mode": "walk",
+   "to": "east",
+   "kind": "relocate",
+   "t": 25159.7
+  },
+  {
+   "behavior": "hunt",
+   "kind": "bout_end",
+   "t": 25262.6
+  },
+  {
+   "behavior": "hunt",
+   "dur_min": 31.6,
+   "stand": "east",
+   "kind": "bout_start",
+   "t": 25488.0
+  },
+  {
+   "hit": false,
+   "big": false,
+   "stand": "east",
+   "kind": "strike",
+   "t": 26540.3
+  },
+  {
+   "label": "relocate_flight",
+   "kind": "flight",
+   "t": 26552.3
+  },
+  {
+   "kind": "shake_after_landing",
+   "t": 26558.7
+  },
+  {
+   "mode": "flight",
+   "to": "creek",
+   "kind": "relocate",
+   "t": 26558.7
+  },
+  {
+   "behavior": "hunt",
+   "kind": "bout_end",
+   "t": 26558.7
+  },
+  {
+   "step": "freeze_check",
+   "disturbance": "brief",
+   "stand": "creek",
+   "kind": "ladder",
+   "t": 26558.7
+  },
+  {
+   "behavior": "maintenance",
+   "stand": "creek",
+   "kind": "bout_start",
+   "t": 26560.8
+  },
+  {
+   "behavior": "maintenance",
+   "sequence": [
+    "stretch",
+    "body_shake",
+    "preen",
+    "scratch"
+   ],
+   "kind": "bout_end",
+   "t": 26610.1
+  },
+  {
+   "label": "reposition",
+   "kind": "flight",
+   "t": 27160.8
+  },
+  {
+   "behavior": "loaf",
+   "dur_min": 10.8,
+   "stand": "creek",
+   "kind": "bout_start",
+   "t": 27860.0
+  },
+  {
+   "behavior": "loaf",
+   "kind": "bout_end",
+   "t": 28508.7
+  },
+  {
+   "label": "reposition",
+   "kind": "flight",
+   "t": 29349.7
+  },
+  {
+   "behavior": "hunt",
+   "dur_min": 27.6,
+   "stand": "creek",
+   "kind": "bout_start",
+   "t": 29922.3
+  },
+  {
+   "hit": true,
+   "big": false,
+   "stand": "creek",
+   "kind": "strike",
+   "t": 31218.2
+  },
+  {
+   "mode": "walk",
+   "to": "east",
+   "kind": "relocate",
+   "t": 31223.2
+  },
+  {
+   "behavior": "hunt",
+   "kind": "bout_end",
+   "t": 31580.7
+  },
+  {
+   "behavior": "loaf",
+   "dur_min": 25.4,
+   "stand": "east",
+   "kind": "bout_start",
+   "t": 32219.2
+  },
+  {
+   "behavior": "loaf",
+   "kind": "bout_end",
+   "t": 33741.7
+  },
+  {
+   "behavior": "hunt",
+   "dur_min": 24.7,
+   "stand": "east",
+   "kind": "bout_start",
+   "t": 34531.5
+  },
+  {
+   "hit": false,
+   "big": false,
+   "stand": "east",
+   "kind": "strike",
+   "t": 35227.0
+  },
+  {
+   "label": "relocate_flight",
+   "kind": "flight",
+   "t": 35238.0
+  },
+  {
+   "mode": "flight",
+   "to": "creek",
+   "kind": "relocate",
+   "t": 35238.0
+  },
+  {
+   "hit": true,
+   "big": false,
+   "stand": "creek",
+   "kind": "strike",
+   "t": 35870.3
+  },
+  {
+   "mode": "walk",
+   "to": "east",
+   "kind": "relocate",
+   "t": 35875.3
+  },
+  {
+   "behavior": "hunt",
+   "kind": "bout_end",
+   "t": 36015.8
+  },
+  {
+   "behavior": "hunt",
+   "dur_min": 37.7,
+   "stand": "east",
+   "kind": "bout_start",
+   "t": 36855.1
+  },
+  {
+   "hit": false,
+   "big": false,
+   "stand": "east",
+   "kind": "strike",
+   "t": 37768.3
+  },
+  {
+   "label": "relocate_flight",
+   "kind": "flight",
+   "t": 37779.3
+  },
+  {
+   "kind": "shake_after_landing",
+   "t": 37785.7
+  },
+  {
+   "mode": "flight",
+   "to": "creek",
+   "kind": "relocate",
+   "t": 37785.7
+  },
+  {
+   "hit": false,
+   "big": false,
+   "stand": "creek",
+   "kind": "strike",
+   "t": 38263.7
+  },
+  {
+   "mode": "walk",
+   "to": "east",
+   "kind": "relocate",
+   "t": 38268.7
+  },
+  {
+   "behavior": "hunt",
+   "kind": "bout_end",
+   "t": 39118.7
+  },
+  {
+   "behavior": "loaf",
+   "dur_min": 5.0,
+   "stand": "east",
+   "kind": "bout_start",
+   "t": 39402.0
+  },
+  {
+   "behavior": "loaf",
+   "kind": "bout_end",
+   "t": 39702.0
+  },
+  {
+   "behavior": "loaf",
+   "dur_min": 16.6,
+   "stand": "east",
+   "kind": "bout_start",
+   "t": 42013.2
+  },
+  {
+   "behavior": "loaf",
+   "kind": "bout_end",
+   "t": 43010.6
+  },
+  {
+   "behavior": "hunt",
+   "dur_min": 50.3,
+   "stand": "east",
+   "kind": "bout_start",
+   "t": 44065.0
+  },
+  {
+   "hit": false,
+   "big": false,
+   "stand": "east",
+   "kind": "strike",
+   "t": 44301.8
+  },
+  {
+   "label": "relocate_flight",
+   "kind": "flight",
+   "t": 44313.8
+  },
+  {
+   "kind": "shake_after_landing",
+   "t": 44320.1
+  },
+  {
+   "mode": "flight",
+   "to": "creek",
+   "kind": "relocate",
+   "t": 44320.1
+  },
+  {
+   "hit": true,
+   "big": false,
+   "stand": "creek",
+   "kind": "strike",
+   "t": 45046.0
+  },
+  {
+   "mode": "walk",
+   "to": "east",
+   "kind": "relocate",
+   "t": 45051.0
+  },
+  {
+   "hit": false,
+   "big": false,
+   "stand": "east",
+   "kind": "strike",
+   "t": 46244.8
+  },
+  {
+   "label": "relocate_flight",
+   "kind": "flight",
+   "t": 46255.8
+  },
+  {
+   "kind": "shake_after_landing",
+   "t": 46262.1
+  },
+  {
+   "mode": "flight",
+   "to": "creek",
+   "kind": "relocate",
+   "t": 46262.1
+  },
+  {
+   "behavior": "hunt",
+   "kind": "bout_end",
+   "t": 46262.1
+  },
+  {
+   "step": "freeze_check",
+   "disturbance": "sustained",
+   "stand": "creek",
+   "kind": "ladder",
+   "t": 46262.1
+  },
+  {
+   "step": "alert",
+   "disturbance": "sustained",
+   "kind": "ladder",
+   "t": 46264.5
+  },
+  {
+   "behavior": "hunt",
+   "dur_min": 66.6,
+   "stand": "creek",
+   "kind": "bout_start",
+   "t": 46267.0
+  },
+  {
+   "hit": false,
+   "big": false,
+   "stand": "creek",
+   "kind": "strike",
+   "t": 46673.9
+  },
+  {
+   "mode": "walk",
+   "to": "east",
+   "kind": "relocate",
+   "t": 46678.9
+  },
+  {
+   "hit": false,
+   "big": false,
+   "stand": "east",
+   "kind": "strike",
+   "t": 47827.1
+  },
+  {
+   "label": "relocate_flight",
+   "kind": "flight",
+   "t": 47839.1
+  },
+  {
+   "kind": "shake_after_landing",
+   "t": 47845.4
+  },
+  {
+   "mode": "flight",
+   "to": "creek",
+   "kind": "relocate",
+   "t": 47845.4
+  },
+  {
+   "hit": true,
+   "big": false,
+   "stand": "creek",
+   "kind": "strike",
+   "t": 48704.0
+  },
+  {
+   "mode": "walk",
+   "to": "east",
+   "kind": "relocate",
+   "t": 48709.0
+  },
+  {
+   "hit": false,
+   "big": false,
+   "stand": "east",
+   "kind": "strike",
+   "t": 49873.5
+  },
+  {
+   "label": "relocate_flight",
+   "kind": "flight",
+   "t": 49885.0
+  },
+  {
+   "kind": "shake_after_landing",
+   "t": 49891.4
+  },
+  {
+   "mode": "flight",
+   "to": "creek",
+   "kind": "relocate",
+   "t": 49891.4
+  },
+  {
+   "behavior": "hunt",
+   "kind": "bout_end",
+   "t": 50265.2
+  },
+  {
+   "behavior": "loaf",
+   "dur_min": 17.3,
+   "stand": "creek",
+   "kind": "bout_start",
+   "t": 51477.9
+  },
+  {
+   "behavior": "loaf",
+   "kind": "bout_end",
+   "t": 52518.5
+  },
+  {
+   "behavior": "hunt",
+   "dur_min": 25.4,
+   "stand": "creek",
+   "kind": "bout_start",
+   "t": 55285.3
+  },
+  {
+   "hit": true,
+   "big": false,
+   "stand": "creek",
+   "kind": "strike",
+   "t": 56116.7
+  },
+  {
+   "mode": "walk",
+   "to": "east",
+   "kind": "relocate",
+   "t": 56121.7
+  },
+  {
+   "behavior": "hunt",
+   "kind": "bout_end",
+   "t": 56809.7
+  },
+  {
+   "behavior": "hunt",
+   "dur_min": 17.7,
+   "stand": "east",
+   "kind": "bout_start",
+   "t": 57168.0
+  },
+  {
+   "behavior": "hunt",
+   "kind": "bout_end",
+   "t": 58230.0
+  },
+  {
+   "behavior": "hunt",
+   "dur_min": 41.5,
+   "stand": "east",
+   "kind": "bout_start",
+   "t": 58677.0
+  },
+  {
+   "hit": false,
+   "big": false,
+   "stand": "east",
+   "kind": "strike",
+   "t": 59625.0
+  },
+  {
+   "label": "relocate_flight",
+   "kind": "flight",
+   "t": 59637.0
+  },
+  {
+   "kind": "shake_after_landing",
+   "t": 59643.3
+  },
+  {
+   "mode": "flight",
+   "to": "creek",
+   "kind": "relocate",
+   "t": 59643.3
+  },
+  {
+   "hit": false,
+   "big": false,
+   "stand": "creek",
+   "kind": "strike",
+   "t": 60392.2
+  },
+  {
+   "mode": "walk",
+   "to": "east",
+   "kind": "relocate",
+   "t": 60397.2
+  },
+  {
+   "behavior": "hunt",
+   "kind": "bout_end",
+   "t": 61165.0
+  },
+  {
+   "behavior": "loaf",
+   "dur_min": 10.7,
+   "stand": "east",
+   "kind": "bout_start",
+   "t": 63743.1
+  },
+  {
+   "behavior": "loaf",
+   "kind": "bout_end",
+   "t": 64383.9
+  },
+  {
+   "behavior": "loaf",
+   "dur_min": 19.4,
+   "stand": "east",
+   "kind": "bout_start",
+   "t": 64512.0
+  },
+  {
+   "behavior": "loaf",
+   "kind": "bout_end",
+   "t": 65675.0
+  },
+  {
+   "step": "freeze_check",
+   "disturbance": "escalating",
+   "stand": "east",
+   "kind": "ladder",
+   "t": 65675.0
+  },
+  {
+   "step": "flush",
+   "disturbance": "escalating",
+   "kind": "ladder",
+   "t": 65677.2
+  },
+  {
+   "label": "flush",
+   "kind": "flight",
+   "t": 65689.2
+  },
+  {
+   "kind": "shake_after_landing",
+   "t": 65695.5
+  },
+  {
+   "behavior": "maintenance",
+   "stand": "creek",
+   "kind": "bout_start",
+   "t": 65695.5
+  },
+  {
+   "behavior": "maintenance",
+   "sequence": [
+    "stretch",
+    "body_shake",
+    "preen",
+    "scratch"
+   ],
+   "kind": "bout_end",
+   "t": 65750.0
+  },
+  {
+   "behavior": "hunt",
+   "dur_min": 32.9,
+   "stand": "creek",
+   "kind": "bout_start",
+   "t": 65930.0
+  },
+  {
+   "hit": true,
+   "big": false,
+   "stand": "creek",
+   "kind": "strike",
+   "t": 66608.2
+  },
+  {
+   "mode": "walk",
+   "to": "east",
+   "kind": "relocate",
+   "t": 66613.2
+  },
+  {
+   "hit": false,
+   "big": false,
+   "stand": "east",
+   "kind": "strike",
+   "t": 67728.5
+  },
+  {
+   "label": "relocate_flight",
+   "kind": "flight",
+   "t": 67740.5
+  },
+  {
+   "kind": "shake_after_landing",
+   "t": 67746.8
+  },
+  {
+   "mode": "flight",
+   "to": "creek",
+   "kind": "relocate",
+   "t": 67746.8
+  },
+  {
+   "behavior": "hunt",
+   "kind": "bout_end",
+   "t": 67906.7
+  }
+ ]
+}

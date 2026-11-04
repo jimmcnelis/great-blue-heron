@@ -1,0 +1,179 @@
+{
+  "id": "great-blue-heron",
+  "definition": "rig-v25-mechanism",
+  "units": "all lengths normalized by torso length (hull diameter over tail/chest/backtop/belly landmarks, study definition)",
+  "neck_chain": {
+    "n_links": 20,
+    "arc_total": 0.72,
+    "segment_weight_formula": "w_i = 0.75 + 0.60*sin(pi*(i+0.5)/20), i=0..19; segment length = arc_total * w_i / sum(w). Mid-neck elongated per skeleton mounts (FARMS anatomy anchor).",
+    "joint_limits_deg": {
+      "throat_zone_joints_1_to_6": 26,
+      "mid_zone_joints_7_to_12": 20,
+      "hinge_zone_joints_13_to_17": 30,
+      "distal_joints_18_to_19": 22,
+      "note": "Two bend zones: forward bend low (throat, joints 1-6), backward bend high (kink behind head = strike hinge, joints 13-17). One documented revision during construction (before any gate measurement): deepest measured coils accumulate ~300-340 deg of turning; mid joints carry ~18-22 deg in the reversals' tails, so the first-draft mid cap of 16 made the canon coil unreachable by construction. Poses are authored to <=90% of cap."
+    },
+    "root_anchor": "Chain root = breast anchor ON the torso outline (the chest point of the approved strike still). First draft placed it 46 px inside the silhouette, which made the canon visible arc unreachable by construction; corrected before the gate. In folded poses the tube lies across the front of the breast, as the real neck does; the gate's neckbase = the tube/body junction as grounded on the mask."
+  },
+  "width_profile_rest": {
+    "note": "Full tube width x torso, u = arc fraction from chain root. Base value from the approved stills (measure_stills instrument): rest 0.117, strike 0.0695 at the base station.",
+    "u": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "width": [
+      0.117,
+      0.112,
+      0.102,
+      0.088,
+      0.068
+    ]
+  },
+  "slimming_field_at_full_extension": {
+    "note": "Multiplier on the rest width profile at the standing strike peak. Base 0.595 = approved stills' own strike/rest base ratio; mid 0.58 (drawings 0.59 / bird 0.57); tip 0.62.",
+    "u": [
+      0.0,
+      0.5,
+      1.0
+    ],
+    "mult": [
+      0.595,
+      0.58,
+      0.62
+    ]
+  },
+  "head_assembly": {
+    "bill_length": 0.23,
+    "skull_semi_major": 0.052,
+    "skull_semi_minor": 0.03,
+    "bill_base_offset_from_skull_centre": 0.04,
+    "bill_tip_reach_from_skull_centre": 0.27,
+    "eye_anchor_in_head_frame": {
+      "along_bill": 0.028,
+      "up": 0.014,
+      "note": "Derived from the approved strike still (eye vs skull/bill geometry, stills_results.json); validated to ~0.016 torso on that still. The eye anchor is part of the head assembly geometry on every pose (spike-3 finding: the drawn eye silently never drew in the fill spikes - the anchor must exist here)."
+    }
+  },
+  "poses": {
+    "note": "Each pose = heading profile knots (s = chain arc fraction, theta = heading degrees, screen coords: 0 = forward, +90 = down, -90 = up), PCHIP-interpolated; segment headings from the profile. Head pitch offset rotates the head assembly beyond the final segment heading.",
+    "alert": {
+      "knots": [
+        [
+          0,
+          62
+        ],
+        [
+          0.15,
+          32
+        ],
+        [
+          0.3,
+          -14
+        ],
+        [
+          0.43,
+          -58
+        ],
+        [
+          0.6,
+          -96
+        ],
+        [
+          0.72,
+          -108
+        ],
+        [
+          0.86,
+          -76
+        ],
+        [
+          1,
+          -52
+        ]
+      ],
+      "head_pitch_offset_deg": 55
+    },
+    "deep_coil": {
+      "knots": [
+        [
+          0,
+          86
+        ],
+        [
+          0.13,
+          80
+        ],
+        [
+          0.23,
+          42
+        ],
+        [
+          0.33,
+          6
+        ],
+        [
+          0.43,
+          -26
+        ],
+        [
+          0.53,
+          -58
+        ],
+        [
+          0.64,
+          -92
+        ],
+        [
+          0.72,
+          -124
+        ],
+        [
+          0.8,
+          -130
+        ],
+        [
+          0.86,
+          -96
+        ],
+        [
+          0.93,
+          -58
+        ],
+        [
+          1,
+          -38
+        ]
+      ],
+      "head_pitch_offset_deg": 80
+    },
+    "strike_peak": {
+      "knots": [
+        [
+          0,
+          85
+        ],
+        [
+          0.3,
+          66
+        ],
+        [
+          0.55,
+          50
+        ],
+        [
+          0.8,
+          36
+        ],
+        [
+          1,
+          27
+        ]
+      ],
+      "head_pitch_offset_deg": 26,
+      "slimming": true
+    }
+  }
+}

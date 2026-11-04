@@ -1,0 +1,6 @@
+clip,species,phase,window_s,signal_fft_hz,signal_peakcount_hz,eye_hz,adopted_hz,notes
+fb-astroland-winter-flight,GBH,cruise toward camera,15.5-18.5,2.65,2.71-2.98,~2.5-2.7,2.7 +/- 0.2,anchor-crop dark/area/bh signals; dense every-frame strips viewed
+fb-teague-moment,GBH,takeoff + climb away,30.3-33.0,2.69-3.13,2.73-3.0,~2.7-2.9,2.85 +/- 0.2,anchor-crop signals; strip rows 1-6 show full cycles at ~11-frame spacing
+yt-shorts-EgEaJ4VkduE,NOT GBH (white plumage black primaries extended neck - pelican-like),descent to water,3.4-4.9,,,~2.9 (bh peaks),EXCLUDED,excluded from GBH pooling on species grounds
+boga_render_reference,GBH (render),cruise,8.87-13.41 render,0.417-0.455,,,0.435 central,from ADDENDUM_REPORT 4.1: cycle 2.2-2.4 render-s
+calibration,,,,,,,"factor 6.2 measured; 6.0 adopted (range 5.5-7.0)",true cruise 2.7 Hz / render 0.435 Hz

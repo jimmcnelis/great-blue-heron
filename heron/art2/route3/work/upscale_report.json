@@ -1,0 +1,39 @@
+{
+ "rest": {
+  "leg_far": 1.64,
+  "tail": 0.54,
+  "torso": 0.55,
+  "wing": 0.53,
+  "neck": 0.87,
+  "head": 0.76,
+  "leg_near": 0.99
+ },
+ "front": {
+  "leg_far": 2.91,
+  "tail": 1.53,
+  "torso": 1.2,
+  "wing": 1.34,
+  "neck": 1.45,
+  "head": 1.01,
+  "leg_near": 3.22
+ },
+ "swallow": {
+  "leg_far": 1.2,
+  "tail": 0.53,
+  "torso": 0.55,
+  "wing": 0.54,
+  "neck": 0.58,
+  "head": 0.76,
+  "leg_near": 1.75
+ },
+ "flight": {
+  "leg_far": 1.13,
+  "tail": 0.5,
+  "torso": 0.52,
+  "wing_far": 0.63,
+  "wing": 0.68,
+  "neck": 0.81,
+  "head": 0.76,
+  "leg_near": 1.25
+ }
+}
