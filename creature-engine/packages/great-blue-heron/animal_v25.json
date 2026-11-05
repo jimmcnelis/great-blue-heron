@@ -176,5 +176,40 @@
       "slimming": true
     }
   },
+  "legs": {
+    "status": "CORRECTED 2026-11-04 (post-reset; Jimmy approved the design gate 2026-11-04). Source: art2/art-design/LEG_CANON.md, measured off real GBH frames (qpYk f0028 coil + f0037 peak, same bird; 6bc stand; vanord underwater structure). Traces live in rig_v25.py as LEGS_BY_POSE, computed from these bands — not traced from any image.",
+    "convention": "Fractions along the torso over the loop x-extent (125-605 px, span 480); segment lengths x torso at the gate constant T = 496.3 px. A leg is a 3-point articulated chain (emergence -> intertarsal joint -> foot), configured PER POSE. The waterline crosses each leg exactly AT the intertarsal joint; on the 1024x600 mechanism canvas both joints sit at y = 382 and both feet on the ground line y = 486.",
+    "segments_exposed": {
+      "upper_emergence_to_joint": "0.21-0.25 band; traces built at 0.210 (LEG_CANON sec.2.3)",
+      "lower_joint_to_foot": "0.17-0.22 band; traces built at 0.210 (LEG_CANON sec.2.3, the GBH same-bird split 0.214/0.215)",
+      "total": "0.42-0.44 (traces 0.420)",
+      "note": "GBH segment split rests on n=1 clean frame; the pooled band stands (LEG_CANON sec.3 GAP). The femur is inside the body plumage — never a visible segment; the thigh mass is rusty body plumage and the leg emerges from the thigh pockets at 0.53-0.61 along the torso. Lower leg stilt-thin (render widths hip->joint 16->11 px, joint->foot 7->5 px, kept)."
+    },
+    "poses": {
+      "alert": {
+        "feet_centre": 0.521,
+        "feet": [0.571, 0.471],
+        "stagger": 0.1,
+        "emergence": [0.59, 0.531],
+        "flag": "Standing band — no alert-specific leg frame has been measured (LEG_CANON sec.3 GAP). The first alert plate drawn under the design is checked against this band."
+      },
+      "deep_coil": {
+        "feet_centre": 0.55,
+        "feet": [0.621, 0.479],
+        "stagger": 0.142,
+        "emergence": [0.6, 0.5],
+        "source": "qpYk f0028"
+      },
+      "strike_peak": {
+        "feet_centre": 0.506,
+        "feet": [0.596, 0.417],
+        "stagger": 0.179,
+        "emergence": [0.61, 0.5],
+        "source": "qpYk f0037",
+        "note": "Feet stay planted (centre moves 0.55 -> 0.50 coil to peak, within read noise); the body pitches over them and the legs slant BACK from emergence to feet by ~0.11 of span; stagger widens 0.14 -> 0.19 class. Peak segment lengths use the standing band (f0037 joint read unstable — LEG_CANON sec.3 GAP); placement is measured and solid."
+      }
+    },
+    "what_was_wrong": "The retired traces (one pair, all poses, traced from a pre-reset still): feet-centre 0.285 vs the real bird's 0.50-0.55 (feet ~a quarter of the body too far toward the tail; mask-measured 0.284, identical on all three pose masks); emergence 0.22/0.35 vs 0.53-0.61 (the whole leg apparatus hung too far back); upper segment ~correct (0.20-0.21), lower segment 0.235-0.243 vs 0.215 (+0.02 to +0.07 too long); total 0.44-0.46 vs 0.42-0.44; and NO pose dependence — at peak the old feet kept the alert stance while the bird pitched, the error Jimmy spotted in the gate overlays and again in the warp-spike peak frame."
+  },
   "iteration2_note": "Iteration 2 (Jimmy approved 2026-11-04, after the v2.5 gate failed on reach factor only): (1) deep_coil knots re-authored - descent (s<=0.53) untouched; the deepening is in the bottom dwell and the fold-back completed later along the chain (s=0.64 -92->-90, 0.72 -124->-128, 0.80 -130->-138, 0.86 -96->-114, 0.93 -58->-78, 1.0 -38->-46). Joint caps FROZEN (throat 26 / mid 20 / hinge 30 / distal 22); the new coil's maxima: throat 22.1, mid 19.6, hinge 27.6, distal 20.8 - all legal. Alert and strike_peak poses untouched. (2) Torso outline re-traced denser in rig_v25.py (53 pts, structural body line, plume envelope excluded). Design values under the new torso: coil chord_base 0.269 (gate build 0.306), arc_vis 0.695."
 }

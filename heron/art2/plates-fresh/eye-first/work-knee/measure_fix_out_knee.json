@@ -1,0 +1,212 @@
+{
+ "plate_1": {
+  "src": "ranked/plate_1.png",
+  "out": "plate_1_knee.png",
+  "sha_before": "9da53949ddcbeafc07cce3b84f34124cee304f985acf3bd746cf73644e4c2f99",
+  "sha_after": "9da53949ddcbeafc07cce3b84f34124cee304f985acf3bd746cf73644e4c2f99",
+  "hash_unchanged": true,
+  "foot_ring_measured_wh": [
+   119,
+   32
+  ],
+  "donor_nonpaper_frac": 0.0017,
+  "diff_bbox": [
+   293,
+   409,
+   454,
+   563
+  ],
+  "diff_px": 5978,
+  "diff_outside_legzone": 0,
+  "rings": [
+   {
+    "joint": [
+     363,
+     411
+    ],
+    "ring_centre": [
+     363,
+     418
+    ],
+    "outer": [
+     78,
+     16
+    ],
+    "inner": [
+     46,
+     10
+    ]
+   },
+   {
+    "joint": [
+     404,
+     415
+    ],
+    "ring_centre": [
+     404,
+     422
+    ],
+    "outer": [
+     78,
+     16
+    ],
+    "inner": [
+     46,
+     10
+    ]
+   }
+  ],
+  "ring_centroid_measured": [
+   [
+    382.7,
+    417.9,
+    456
+   ],
+   [
+    387.3,
+    419.5,
+    384
+   ]
+  ]
+ },
+ "coil_2": {
+  "src": "coil/ranked/coil_2.png",
+  "out": "coil_2_knee.png",
+  "sha_before": "88b14dcec7c7c1e2cb26231cc07129994f60629587fc0c5cfbf2d268cfca8cc5",
+  "sha_after": "88b14dcec7c7c1e2cb26231cc07129994f60629587fc0c5cfbf2d268cfca8cc5",
+  "hash_unchanged": true,
+  "foot_ring_measured_wh": [
+   119,
+   35
+  ],
+  "donor_nonpaper_frac": 0.0017,
+  "diff_bbox": [
+   291,
+   410,
+   454,
+   562
+  ],
+  "diff_px": 6178,
+  "diff_outside_legzone": 0,
+  "rings": [
+   {
+    "joint": [
+     362,
+     412
+    ],
+    "ring_centre": [
+     362,
+     419
+    ],
+    "outer": [
+     78,
+     16
+    ],
+    "inner": [
+     46,
+     10
+    ]
+   },
+   {
+    "joint": [
+     401,
+     420
+    ],
+    "ring_centre": [
+     401,
+     427
+    ],
+    "outer": [
+     78,
+     16
+    ],
+    "inner": [
+     46,
+     10
+    ]
+   }
+  ],
+  "ring_centroid_measured": [
+   [
+    382.1,
+    419.3,
+    475
+   ],
+   [
+    386.7,
+    424.2,
+    344
+   ]
+  ]
+ },
+ "peak_3": {
+  "src": "peak/ranked/peak_3.png",
+  "out": "peak_3_knee.png",
+  "sha_before": "0944555e7850eafdd7a420819651ac208a9ff6c68a0085c8dbcd63ab77e12550",
+  "sha_after": "0944555e7850eafdd7a420819651ac208a9ff6c68a0085c8dbcd63ab77e12550",
+  "hash_unchanged": true,
+  "foot_ring_measured_wh": [
+   128,
+   35
+  ],
+  "donor_nonpaper_frac": 0.001,
+  "diff_bbox": [
+   289,
+   409,
+   451,
+   560
+  ],
+  "diff_px": 5966,
+  "diff_outside_legzone": 0,
+  "rings": [
+   {
+    "joint": [
+     334,
+     418
+    ],
+    "ring_centre": [
+     334,
+     419
+    ],
+    "outer": [
+     86,
+     17
+    ],
+    "inner": [
+     50,
+     10
+    ]
+   },
+   {
+    "joint": [
+     383,
+     423
+    ],
+    "ring_centre": [
+     383,
+     424
+    ],
+    "outer": [
+     86,
+     17
+    ],
+    "inner": [
+     50,
+     10
+    ]
+   }
+  ],
+  "ring_centroid_measured": [
+   [
+    350.3,
+    419.1,
+    437
+   ],
+   [
+    370.1,
+    422.1,
+    375
+   ]
+  ]
+ }
+}

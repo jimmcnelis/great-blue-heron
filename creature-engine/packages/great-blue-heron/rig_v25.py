@@ -5,21 +5,34 @@ arc budget, per-joint angle limits in two bend zones, a width profile from
 the approved stills, and a head assembly (skull + bill + eye anchor) riding
 the chain's distal end. Poses are heading-profile states of the chain.
 
-Renders BARE MASKS (black silhouette on white, 1024x600) for the gate:
-alert rest, deep coil, standing strike peak + peak overlay/side-by-side
-against the approved strike still. Also prints DESIGN values (integrated
+Renders BARE MASKS (black silhouette on white, 1024x600): alert rest,
+deep coil, standing strike peak. Also prints DESIGN values (integrated
 chain geometry, joint-limit usage, outline-crossing neckbase, visible
-chords) — the gate verdict itself comes from an independent measurement
-pass over the PNGs (see GATE_REPORT.md).
+chords) — gate verdicts come from independent measurement passes over
+the PNGs (see the gate records in art2/rig-v25-gate/).
+
+REVISION 2026-11-04 (post-reset, Jimmy-approved design gate): LEGS
+CORRECTED per art2/art-design/LEG_CANON.md. The old LEGS were a single
+pose-invariant pair traced from a pre-reset still — feet-centre 0.285 of
+the torso span (real bird 0.50-0.55), emergence 0.22/0.35 (real 0.53-0.61),
+lower segment +0.02-0.07 too long, and identical at alert, coil and peak
+(the invariance itself was the deepest error: at a standing spear the
+real feet stay planted while the body pitches). Replaced by per-pose
+LEGS_BY_POSE below, computed from the LEG_CANON bands (never traced from
+an image). This build is also self-contained: it loads its own package
+animal_v25.json and writes masks to HERON_V25_OUT (default: the package
+dir); the gate build's overlay against the pre-reset still is removed —
+the frozen gate record stays in art2/rig-v25-gate/iter2/.
 """
-import json, math
+import json, math, os
 import numpy as np
 if not hasattr(np, 'trapezoid'): np.trapezoid = np.trapz  # numpy<2 compat shim (pure rename, gate environment had numpy>=2)
 from PIL import Image, ImageDraw
 from scipy.interpolate import PchipInterpolator
 
-HERE = '/home/hatch/workspace/heron/art2/rig-v25-gate/iter2'
-ANIMAL = json.load(open(f'{HERE}/animal_v25.json'))
+PKG = os.path.dirname(os.path.abspath(__file__))
+OUT = os.environ.get('HERON_V25_OUT', PKG)
+ANIMAL = json.load(open(f'{PKG}/animal_v25.json'))
 W_PX, H_PX = 1024, 600
 
 # ------------------------------------------------------------ frame / torso
@@ -59,16 +72,33 @@ TORSO_LOOP = [(125, 299), (140, 258), (150, 222), (157, 200), (172, 180),
               (188, 319), (181, 319), (175, 306), (168, 288),
               (160, 297), (150, 305), (138, 308)]
 
-# Legs: (hip, knee, foot) px, traced on the strike still.
-LEGS = [((232, 322), (224, 428), (236, 548)),
-        ((296, 252), (300, 432), (288, 548))]
-# Iter2 leg note: leg 2's traced top (292,326) was the point where the
-# black leg emerges from the PLUME envelope; under the structural belly
-# (y~260 there) it would float detached, so its top anchor moves up to
-# the body core (296,252). Knee (300,432) and foot (288,548) unchanged -
-# the stick still passes within ~5 px of the traced emergence point.
-# Leg 1 is untouched: the front thigh dip (bottom 328) keeps its traced
-# hip (232,322) buried.
+# Legs: PER-POSE (hip, joint, foot) px — LEG CANON correction
+# (art2/art-design/LEG_CANON.md, applied 2026-11-04 after Jimmy's design
+# gate). Computed from the measured bands, NOT traced from any image:
+#   fractions over the torso loop x-extent (125-605, span 480 px);
+#   segments upper = lower = 0.21 torso = 104.2 px at T = 496.3;
+#   both intertarsal joints on one waterline y = 382 (the waterline
+#   crosses each leg AT the joint — canon); both feet on one ground
+#   line y = 486 (feet stay planted through a standing strike).
+# Each leg: the visible exit sits at the torso belly edge plus a small
+# feather skirt (0-16 px; far legs read lower, as in the real frames);
+# the hip point extends 42 px above the exit, buried in the body core.
+#   alert       standing band (GAP: no alert-specific leg frame exists;
+#               feet-centre 0.521, emergence 0.590/0.531, stagger 0.100)
+#   deep_coil   qpYk f0028 config (feet-centre 0.550, emergence
+#               0.600/0.500, stagger 0.142)
+#   strike_peak qpYk f0037 config (feet planted at centre 0.506,
+#               emergence 0.610/0.500, stagger widened to 0.179, legs
+#               slanting back from emergence to feet)
+LEGS_BY_POSE = {
+    'alert':       [((409, 236), (406, 382), (399, 486)),
+                    ((389, 239), (358, 382), (351, 486))],
+    'deep_coil':   [((412, 236), (416, 382), (423, 486)),
+                    ((366, 236), (362, 382), (355, 486))],
+    'strike_peak': [((418, 236), (418, 382), (411, 486)),
+                    ((378, 243), (332, 382), (325, 486))],
+}
+LEGS = LEGS_BY_POSE['deep_coil']  # legacy alias (the old single pair is retired)
 
 # ------------------------------------------------------------ chain build
 N = ANIMAL['neck_chain']['n_links']
@@ -221,8 +251,8 @@ def render(pose_name):
     # torso
     loop = catmull_rom(TORSO_LOOP, n_per=3, closed=True)  # iter2: minimal smoothing
     dr.polygon([tuple(p) for p in loop], fill=0)
-    # legs
-    for hip, knee, foot in LEGS:
+    # legs (per-pose, LEG_CANON)
+    for hip, knee, foot in LEGS_BY_POSE[pose_name]:
         for a, b, w0, w1 in ((hip, knee, 16, 11), (knee, foot, 7, 5)):
             a, b = np.array(a, float), np.array(b, float)
             d = b - a; d = d / max(np.hypot(*d), 1e-9)
@@ -275,7 +305,7 @@ def main():
     recs = {}
     for pose in ('alert', 'deep_coil', 'strike_peak'):
         img, dv, eye = render(pose)
-        out = f'{HERE}/mask_{pose}.png'
+        out = f'{OUT}/mask_{pose}.png'
         img.save(out)
         recs[pose] = (dv, eye)
         print(f"== {pose}: neckbase={np.round(dv['neckbase'], 1)} "
@@ -283,26 +313,11 @@ def main():
         print(f"   design: chord_base={dv['chord_base']:.3f} chord76={dv['chord76']:.3f} "
               f"arc_vis={dv['arc_vis']:.3f} arc:chord={dv['arc_vis'] / dv['chord_base']:.2f} "
               f"max_joint={dv['max_joint']:.1f}deg over_limit={dv['over_limit']}")
-    # ---- peak overlay + side by side vs the approved strike still
-    still = Image.open('/home/hatch/workspace/heron/art2/finished-art-stills/'
-                       'audubon_strike.png').convert('RGB')
-    mask = Image.open(f'{HERE}/mask_strike_peak.png')
-    marr = np.array(mask)
-    over = np.array(still).astype(float)
-    bird = marr < 128
-    over[bird] = over[bird] * 0.35 + np.array([255, 40, 40]) * 0.65
-    over_img = Image.fromarray(over.astype(np.uint8))
-    dv, eye = recs['strike_peak']
-    dr = ImageDraw.Draw(over_img)
-    r = 7
-    dr.ellipse([eye[0] - r, eye[1] - r, eye[0] + r, eye[1] + r],
-               outline=(255, 220, 0), width=3)
-    over_img.save(f'{HERE}/overlay_strike_peak.png')
-    sbs = Image.new('RGB', (W_PX * 2 + 8, H_PX), (200, 200, 200))
-    sbs.paste(still, (0, 0))
-    sbs.paste(mask.convert('RGB'), (W_PX + 8, 0))
-    sbs.save(f'{HERE}/sidebyside_strike_peak.png')
-    print('overlay + side-by-side written; torso_px =', round(T, 2))
+    # (The gate build's peak overlay against the pre-reset still was
+    # removed in the 2026-11-04 leg-canon revision: post-reset, no
+    # pre-reset image is an input to this build. The frozen overlay
+    # remains part of the gate record in art2/rig-v25-gate/iter2/.)
+    print('masks written to', OUT, '; torso_px =', round(T, 2))
 
 
 if __name__ == '__main__':

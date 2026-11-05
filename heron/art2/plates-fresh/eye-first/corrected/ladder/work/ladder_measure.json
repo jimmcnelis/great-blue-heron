@@ -1,0 +1,246 @@
+{
+ "D1": {
+  "offset_spec": -8,
+  "source": "built from original master",
+  "centres": [
+   [
+    364,
+    403
+   ],
+   [
+    404,
+    407
+   ]
+  ],
+  "cuts": [
+   407,
+   411
+  ],
+  "diff_px": 6615,
+  "diff_bbox": [
+   18,
+   394,
+   454,
+   584
+  ],
+  "diff_outside_legband_and_label": 0,
+  "diff_in_labelbox": 199,
+  "seat_measure": [
+   {
+    "drawn_centre": [
+     364,
+     403
+    ],
+    "bottom_arc_y": 410.0,
+    "implied_centre_y": 402.0,
+    "implied_offset_vs_transition": -9.0
+   },
+   {
+    "drawn_centre": [
+     404,
+     407
+    ],
+    "bottom_arc_y": 412.0,
+    "implied_centre_y": 404.0,
+    "implied_offset_vs_transition": -11.0
+   }
+  ]
+ },
+ "D2": {
+  "offset_spec": 0,
+  "source": "built from original master",
+  "centres": [
+   [
+    363,
+    411
+   ],
+   [
+    404,
+    415
+   ]
+  ],
+  "cuts": [
+   415,
+   419
+  ],
+  "diff_px": 6352,
+  "diff_bbox": [
+   18,
+   402,
+   454,
+   584
+  ],
+  "diff_outside_legband_and_label": 0,
+  "diff_in_labelbox": 210,
+  "seat_measure": [
+   {
+    "drawn_centre": [
+     363,
+     411
+    ],
+    "bottom_arc_y": 418.0,
+    "implied_centre_y": 410.0,
+    "implied_offset_vs_transition": -1.0
+   },
+   {
+    "drawn_centre": [
+     404,
+     415
+    ],
+    "bottom_arc_y": 420.0,
+    "implied_centre_y": 412.0,
+    "implied_offset_vs_transition": -3.0
+   }
+  ]
+ },
+ "D3": {
+  "offset_spec": 7,
+  "source": "plate_1_knee.png as shipped",
+  "centres": [
+   [
+    363,
+    418
+   ],
+   [
+    404,
+    422
+   ]
+  ],
+  "cuts": [
+   422,
+   426
+  ],
+  "diff_px": 6201,
+  "diff_bbox": [
+   18,
+   409,
+   454,
+   584
+  ],
+  "diff_outside_legband_and_label": 0,
+  "diff_in_labelbox": 223,
+  "seat_measure": [
+   {
+    "drawn_centre": [
+     363,
+     418
+    ],
+    "bottom_arc_y": 425.0,
+    "implied_centre_y": 417.0,
+    "implied_offset_vs_transition": 6.0
+   },
+   {
+    "drawn_centre": [
+     404,
+     422
+    ],
+    "bottom_arc_y": 427.0,
+    "implied_centre_y": 419.0,
+    "implied_offset_vs_transition": 4.0
+   }
+  ],
+  "diff_vs_shipped_source_px": 223,
+  "diff_vs_source_outside_label": 0
+ },
+ "D4": {
+  "offset_spec": 19,
+  "source": "plate_1_knee2.png as shipped",
+  "centres": [
+   [
+    359,
+    430
+   ],
+   [
+    404,
+    434
+   ]
+  ],
+  "cuts": [
+   434,
+   438
+  ],
+  "diff_px": 6212,
+  "diff_bbox": [
+   18,
+   409,
+   454,
+   584
+  ],
+  "diff_outside_legband_and_label": 0,
+  "diff_in_labelbox": 216,
+  "seat_measure": [
+   {
+    "drawn_centre": [
+     359,
+     430
+    ],
+    "bottom_arc_y": 436.0,
+    "implied_centre_y": 428.0,
+    "implied_offset_vs_transition": 17.0
+   },
+   {
+    "drawn_centre": [
+     404,
+     434
+    ],
+    "bottom_arc_y": 439.0,
+    "implied_centre_y": 431.0,
+    "implied_offset_vs_transition": 16.0
+   }
+  ],
+  "diff_vs_shipped_source_px": 216,
+  "diff_vs_source_outside_label": 0
+ },
+ "D5": {
+  "offset_spec": 32,
+  "source": "built from original master",
+  "centres": [
+   [
+    358,
+    443
+   ],
+   [
+    404,
+    447
+   ]
+  ],
+  "cuts": [
+   447,
+   451
+  ],
+  "diff_px": 5522,
+  "diff_bbox": [
+   18,
+   434,
+   456,
+   584
+  ],
+  "diff_outside_legband_and_label": 0,
+  "diff_in_labelbox": 220,
+  "seat_measure": [
+   {
+    "drawn_centre": [
+     358,
+     443
+    ],
+    "bottom_arc_y": 449.0,
+    "implied_centre_y": 441.0,
+    "implied_offset_vs_transition": 30.0
+   },
+   {
+    "drawn_centre": [
+     404,
+     447
+    ],
+    "bottom_arc_y": 452.0,
+    "implied_centre_y": 444.0,
+    "implied_offset_vs_transition": 29.0
+   }
+  ]
+ },
+ "_hashes": {
+  "/home/hatch/workspace/heron/art2/plates-fresh/eye-first/ranked/plate_1.png": "9da53949ddcbeafc07cce3b84f34124cee304f985acf3bd746cf73644e4c2f99",
+  "/home/hatch/workspace/heron/art2/plates-fresh/eye-first/corrected/plate_1_knee.png": "54d6bb201619080e3534df58dde1cb31de253ae71b4f8f55173042732c3d65dd",
+  "/home/hatch/workspace/heron/art2/plates-fresh/eye-first/corrected/plate_1_knee2.png": "a3c02028514e16cb052120ba55de9b5c0d4bc299f137a06abf446933368c338b"
+ }
+}

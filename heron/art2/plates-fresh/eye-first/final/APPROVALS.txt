@@ -1,0 +1,14 @@
+alert legfix2 candidate_1: Jimmy 👍 2026-11-04 17:05 — filed as final/alert_legfix_approved.png
+coil legfix c1: Jimmy 👍 2026-11-04 17:06 — filed as final/coil_legfix_approved.png
+peak legfix c1: Jimmy 👍 2026-11-04 17:06 — filed as final/peak_legfix_approved.png
+alert idle anim attempt1 (video gen): ACCEPTED by Jimmy 2026-11-04 17:13
+alert idle anim attempt2 (procedural warp): ACCEPTED by Jimmy 2026-11-04 17:13
+strike attempt A (video gen): PREFERRED by Jimmy over B, 2026-11-04 17:22 ("a better than b")
+strike attempt B (plate morph): not preferred — strike smears to a fade
+stride attempt 2: PREFERRED by Jimmy, "looks great", 2026-11-04 17:26 (stride attempt 1 not preferred)
+flight attempt1: ACCEPTED by Jimmy 2026-11-04 17:30 ("yes to all")
+stretch attempt1: ACCEPTED by Jimmy 2026-11-04 17:30
+preen attempt1: ACCEPTED by Jimmy 2026-11-04 17:30
+catch built1: REJECTED by Jimmy 2026-11-04 18:07 ("nope thats bad") — the constructed splice failed his eye too. Catch status: NOT achieved in 5 attempts (gen 1 no swallow, gen 2 melt per Jimmy, gen 3 circle/tuck, gen 4 drops fish, built1 splice bad). Parked pending Jimmy's direction; do not keep iterating unasked.
+CATCH: CLOSED by Jimmy 2026-11-04 18:10 ("lets skip the catch and move forward without it"). Repair crew stopped mid-work at his word. The portrait ships without a catch cycle unless Jimmy reopens it.
+courtship attempt1 + miss attempt1 + nightstalk attempt1: ADDED to the living loop at Jimmy's direction 2026-11-04 18:21 — scheduler bag: miss x2, courtship x1, nightstalk x1 (night-gated on device). Previously delivered unruled; now in rotation.

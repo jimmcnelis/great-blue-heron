@@ -1,5 +1,15 @@
 # Heron 7″ creature frame — case + low dock
 
+> **2026-11-04 — BOARD IN HAND, PROTOTYPE REVISION APPLIED.** The
+> physical 7B Rev1.1 differs from several assumptions below (all USB
+> is on one short edge; mics are back-facing at the corners; the kit
+> speaker is an enclosed box). Verdicts + evidence:
+> `RECONCILIATION-2026-11-04.md`. What changed + new print files:
+> `REVISION-2026-11-04.md` and **`stl-proto2/`** (print those, not
+> `stl/`, for the prototype frame; the dock is unchanged). The
+> UNVERIFIED table below is kept for the record — hole pattern, USB
+> position and mic positions are now VERIFIED (see the reports).
+
 A picture-frame desk case for the **Waveshare ESP32-P4-WIFI6-Touch-LCD-7B**
 (SKU 32510, BASIC — no camera), per Jimmy's form call: *stands like the
 ESP32-S3-BOX-3 in its dock — upright, slight recline — but LOW.* The frame's

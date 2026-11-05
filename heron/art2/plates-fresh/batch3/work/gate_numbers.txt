@@ -1,0 +1,6 @@
+c1: T=585.4 chord=0.439 eye_miss=5.9px along=0.072 bill=0.177 seatN=3.6px(0.006) seatF=3.6px(0.006) emerg_x=0.504/0.459 emerg_p=0.509/0.464 upper=0.248/0.252 jointc_x=0.460 frame: crown=49 right=138 left=103 ink f=0.0601 c=0.313
+c2: T=644.3 chord=0.348 eye_miss=19.8px along=0.108 bill=0.255 seatN=4.2px(0.007) seatF=4.2px(0.007) emerg_x=0.503/0.436 emerg_p=0.503/0.436 upper=0.319/0.321 jointc_x=0.459 frame: crown=59 right=94 left=74 ink f=0.0522 c=0.216
+c3: T=623.2 chord=0.442 eye_miss=5.0px along=0.084 bill=0.257 seatN=5.4px(0.009) seatF=5.4px(0.009) emerg_x=0.477/0.550 emerg_p=0.480/0.551 upper=0.297/0.298 jointc_x=0.497 frame: crown=50 right=84 left=53 ink f=0.0708 c=0.292
+c4: T=655.9 chord=0.391 eye_miss=11.5px along=0.075 bill=0.225 seatN=3.0px(0.005) seatF=4.2px(0.006) emerg_x=0.504/0.447 emerg_p=0.508/0.452 upper=0.250/0.258 jointc_x=0.478 frame: crown=65 right=90 left=54 ink f=0.0597 c=0.242
+c5: T=707.3 chord=0.364 eye_miss=23.0px along=0.052 bill=0.225 seatN=9.0px(0.013) seatF=7.8px(0.011) emerg_x=0.485/0.431 emerg_p=0.489/0.436 upper=0.301/0.302 jointc_x=0.439 frame: crown=52 right=61 left=47 ink f=0.0933 c=0.350
+c6: T=735.5 chord=0.377 eye_miss=24.7px along=0.051 bill=0.167 seatN=3.6px(0.005) seatF=3.6px(0.005) emerg_x=0.473/0.412 emerg_p=0.475/0.415 upper=0.214/0.218 jointc_x=0.431 frame: crown=40 right=62 left=48 ink f=0.0782 c=0.287

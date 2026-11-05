@@ -1,0 +1,26 @@
+# idle1 x 10s
+file 'attempt1.mp4'
+# idle2 x 42s
+file 'attempt2.mp4'
+# stride x 10s
+file 'stride_attempt2.mp4'
+# idle2 x 82s
+file 'attempt2.mp4'
+# stretch x 10s
+file 'stretch_attempt1.mp4'
+# idle1 x 10s
+file 'attempt1.mp4'
+# idle2 x 52s
+file 'attempt2.mp4'
+# preen x 10s
+file 'preen_attempt1.mp4'
+# idle2 x 50s
+file 'attempt2.mp4'
+# stretch x 10s
+file 'stretch_attempt1.mp4'
+# idle2 x 88s
+file 'attempt2.mp4'
+# stride x 10s
+file 'stride_attempt2.mp4'
+# idle2 x 52s
+file 'attempt2.mp4'

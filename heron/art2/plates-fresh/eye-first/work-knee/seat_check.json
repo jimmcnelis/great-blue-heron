@@ -1,0 +1,117 @@
+{
+ "plate_1": {
+  "seats": [
+   {
+    "joint": [
+     363,
+     411
+    ],
+    "ring_centre": [
+     363,
+     418
+    ],
+    "centre_minus_joint": [
+     0,
+     7
+    ],
+    "outerside_arc_row_centroid": 417.6,
+    "arc_tip_x": 323,
+    "tip_offset_from_drawn": -1
+   },
+   {
+    "joint": [
+     404,
+     415
+    ],
+    "ring_centre": [
+     404,
+     422
+    ],
+    "centre_minus_joint": [
+     0,
+     7
+    ],
+    "outerside_arc_row_centroid": 421.7,
+    "arc_tip_x": 442,
+    "tip_offset_from_drawn": -1
+   }
+  ]
+ },
+ "coil_2": {
+  "seats": [
+   {
+    "joint": [
+     362,
+     412
+    ],
+    "ring_centre": [
+     362,
+     419
+    ],
+    "centre_minus_joint": [
+     0,
+     7
+    ],
+    "outerside_arc_row_centroid": 418.5,
+    "arc_tip_x": 322,
+    "tip_offset_from_drawn": -1
+   },
+   {
+    "joint": [
+     401,
+     420
+    ],
+    "ring_centre": [
+     401,
+     427
+    ],
+    "centre_minus_joint": [
+     0,
+     7
+    ],
+    "outerside_arc_row_centroid": 426.4,
+    "arc_tip_x": 440,
+    "tip_offset_from_drawn": 0
+   }
+  ]
+ },
+ "peak_3": {
+  "seats": [
+   {
+    "joint": [
+     334,
+     418
+    ],
+    "ring_centre": [
+     334,
+     419
+    ],
+    "centre_minus_joint": [
+     0,
+     1
+    ],
+    "outerside_arc_row_centroid": 418.3,
+    "arc_tip_x": 290,
+    "tip_offset_from_drawn": -1
+   },
+   {
+    "joint": [
+     383,
+     423
+    ],
+    "ring_centre": [
+     383,
+     424
+    ],
+    "centre_minus_joint": [
+     0,
+     1
+    ],
+    "outerside_arc_row_centroid": 423.4,
+    "arc_tip_x": 425,
+    "tip_offset_from_drawn": -1
+   }
+  ],
+  "changed_px_right_of_x600": 0
+ }
+}

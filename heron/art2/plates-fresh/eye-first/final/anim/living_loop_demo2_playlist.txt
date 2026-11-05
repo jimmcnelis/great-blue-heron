@@ -1,0 +1,48 @@
+# idle2 x 32s
+file 'attempt2.mp4'
+# idle1 x 10s
+file 'attempt1.mp4'
+# idle1 x 10s
+file 'attempt1.mp4'
+# idle1 x 10s
+file 'attempt1.mp4'
+# stride x 10s
+file 'stride_attempt2.mp4'
+# idle2 x 32s
+file 'attempt2.mp4'
+# miss x 10s
+file 'miss_attempt1.mp4'
+# idle2 x 58s
+file 'attempt2.mp4'
+# preen x 10s
+file 'preen_attempt1.mp4'
+# idle1 x 10s
+file 'attempt1.mp4'
+# idle2 x 65s
+file 'attempt2.mp4'
+# stride x 10s
+file 'stride_attempt2.mp4'
+# idle2 x 22s
+file 'attempt2.mp4'
+# idle1 x 10s
+file 'attempt1.mp4'
+# idle1 x 10s
+file 'attempt1.mp4'
+# idle1 x 10s
+file 'attempt1.mp4'
+# courtship x 10s
+file 'courtship_attempt1.mp4'
+# idle1 x 10s
+file 'attempt1.mp4'
+# idle2 x 64s
+file 'attempt2.mp4'
+# idle1 x 10s
+file 'attempt1.mp4'
+# stretch x 10s
+file 'stretch_attempt1.mp4'
+# idle2 x 65s
+file 'attempt2.mp4'
+# preen x 10s
+file 'preen_attempt1.mp4'
+# idle2 x 62s
+file 'attempt2.mp4'
