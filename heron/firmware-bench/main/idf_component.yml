@@ -1,0 +1,22 @@
+## Heron living loop (Stage A) — main component dependencies.
+## Forked unchanged from firmware-first-light (same proven stack).
+##
+## Toolchain (FINAL, first light 2026-11-04): ESP-IDF v5.5.5 (~/esp-idf55
+## on the Studio). The board's ESP32-P4 is silicon rev v3.2; IDF v5.3.1
+## predates v3 silicon (max rev v0.99) and its builds cannot flash this
+## unit. v5.5's default rev profile (REV_MIN_300) is correct — set NO
+## revision symbols in sdkconfig.defaults.
+##
+## BSP choice: waveshare/esp32_p4_wifi6_touch_lcd_7b 1.0.4, declared here
+## directly so its headers (bsp/...) are visible to main; it re-exports
+## espressif/esp_lvgl_port ^2 (resolved: 2.9.0) as a public dep.
+## NOTE: BSP 1.0.4's .c file uses memcpy without <string.h> — the copy in
+## managed_components/ on the Studio is patched with that one include;
+## re-apply it if the component is ever re-fetched.
+##
+## LVGL pinned to 9.3.0: esp_lvgl_port 2.9.0 references
+## LV_COLOR_FORMAT_RGB565_SWAPPED, which only exists in LVGL >= 9.3.
+dependencies:
+  waveshare/esp32_p4_wifi6_touch_lcd_7b: "1.0.4"
+  lvgl/lvgl: "9.3.0"
+  idf: ">=5.3"

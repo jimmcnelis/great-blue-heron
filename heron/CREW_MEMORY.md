@@ -13,6 +13,19 @@ A generative great blue heron that lives in a small framed screen — standing k
 - What carries forward: **learnings and methods only**. The Audubon manner survives as the written style rules below — never as pictures.
 - Order: **design → Jimmy gates → draw → Jimmy gates → animate**. Never invert it.
 
+## FORGOTTEN REFERENCE (Jimmy, 2026-11-05 — read before any drawing work)
+
+The rig's torso loop (TORSO_LOOP in the species package's rig_v25.py) and EVERY silhouette/canvas derived from it are FORGOTTEN as a drawing/art reference — "the root of multiple issues" (the v1.2 blue oval, the finish-model mismatch, the 2026-11-05 picks). Never draw from it, condition on it, or judge likeness against it. Body shape comes from the reference library's real birds only. Full record: ~/workspace/heron/FORGOTTEN-REFERENCE-2026-11-05.md. The motion canon and neck mechanism below remain valid — they are measurements, not the drawing.
+
+## FAILURE CORRECTIONS — RATIFIED LAW (Jimmy, 2026-11-05; full text ~/workspace/heron/FAILURE-ANALYSIS-2026-11-05.md)
+
+1. Draw ONLY from the reference library's real birds. Never from rig traces, canvases, or prior art.
+2. Metrics are diagnostics. The art gate is a photo side-by-side + Mordecai's eye (stop authority) + Jimmy's eye.
+3. One canonical bird definition for rig, charts, and art — reconciled before building.
+4. Style proof is ONE finished drawing, gated before any pipeline.
+5. A failed eye-gate ends the method. No internal fix-rounds presented as progress.
+6. Artist-level drawing is never procedural. Best drawing tool, reference-conditioned; chip engineering comes after art passes.
+
 ## The canon (measured from real birds; source: art2/real-bird-measure/)
 
 All lengths × torso length unless noted.

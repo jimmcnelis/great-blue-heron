@@ -1,0 +1,30 @@
+# Heron living loop (Stage A) — sdkconfig defaults (ESP-IDF v5.5, target esp32p4)
+# (Forked from firmware-first-light; identical essentials — see README.)
+#
+# --- Chip revision -------------------------------------------------------
+# This unit's ESP32-P4 is silicon rev v3.2 (read by esptool at flash time).
+# Pre-v3 and v3.x firmware are binary-incompatible; ESP-IDF v5.5's default
+# profile (REV_MIN_300) targets v3.x, so NO revision symbols are set here.
+# (IDF v5.3.1 predates v3 silicon entirely — max rev v0.99 — do not use it.)
+
+# --- Flash ---------------------------------------------------------------
+# The ESP32-P4-Core module on this board has 32 MB NOR flash.
+CONFIG_ESPTOOLPY_FLASHSIZE_32MB=y
+
+# --- PSRAM ---------------------------------------------------------------
+# 32 MB PSRAM stacked in the ESP32-P4 package; run it at 200 MHz
+# (the speed used by known-good configs for this board).
+CONFIG_SPIRAM=y
+CONFIG_SPIRAM_SPEED_200M=y
+
+# --- Partitions ----------------------------------------------------------
+# Custom table (partitions.csv): one 12 MB factory app. The app carries
+# the ~1.2 MB plate plus ~4.3 MB of embedded idle MJPEG (Stage A); the
+# stock single-app partition sizes are far too small.
+CONFIG_PARTITION_TABLE_CUSTOM=y
+CONFIG_PARTITION_TABLE_FILENAME="partitions.csv"
+
+# --- Display -------------------------------------------------------------
+# Panel colour format: RGB565 is the BSP default; state it explicitly so
+# the LVGL image format (RGB565) and the panel can never drift apart.
+CONFIG_BSP_LCD_COLOR_FORMAT_RGB565=y
