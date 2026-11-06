@@ -36,3 +36,10 @@ All copied into this folder and probe-verified unless noted. This run closed eve
 **Missed strike (was the last gap — now n = 2):** _ywT7_fNFlM.webm (Barrentine, "Missing a Fish," 20 s, 480p), fb-jia-unsuccessful-fishing.mp4 (group post, "Unsuccessful fishing attempt," 19 s, 1080p).
 
 **Other:** fb-samrino-waterfall-tightrope.mp4 (waterfall-edge balance walk + takeoff, 118 s render, rate-flagged), ig-marksmith-glide-landing.mp4 (48 s), ig-naturaloop-dropped-fish-grey.mp4 (GREY heron — dropped fish + split-second recatch; cousin reference only, 15 s).
+
+
+## ADDITIONS — 2026-11-06 night (Harry, live capture at Jimmy's call)
+
+Jimmy spotted Harry fishing on the Osprey Box camera at 00:54 and called it in; captured live from the camera's RTSPS stream via the MacBook Pro.
+
+**Harry night fishing (IR, our own bird, his known jet-ski-lift perch):** harry-night-fishing-clip1-20261106.mp4 (30.0 s, 4K HEVC — the take died at 30 s on a TLS error, clean footage survives), harry-night-fishing-seg1-20261106.mp4 (~25 s, reconnect-loop segment; Harry on the lift frame at the left edge throughout, hunting S-neck, posture shifts mid-clip), stills harry-night-fishing-still-08s/14s/20s-20261106.jpg (900x900 crops of the perch; the 14 s still is the clean portrait: full side profile, coiled neck, bill down at the water). Reconnect segments 2-8 failed (Pro detached-process LAN block, "No route to host") — the two clips + stills are the whole catch. First reference-library footage of Harry himself fishing at night.

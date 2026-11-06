@@ -1,0 +1,10 @@
+eye: 0.4
+bill_tip: 1.3
+neckbase: 12.3
+skull: 12.0
+ankle_1: 2.2
+foot_1: 0.0
+ankle_2: 2.2
+foot_2: 0.0
+max: 12.3
+mean: 3.8
