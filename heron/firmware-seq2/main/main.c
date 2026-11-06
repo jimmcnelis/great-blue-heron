@@ -778,25 +778,30 @@ static void play_flight(void)
 /* planted feet slid through the water). The redo follows the          */
 /* measured step cycle in sequences/choreography/stride.md: per step,  */
 /* the root stays still through fold / advance / toe-first plant, and  */
-/* travel happens only in the body pass, with the planted foot         */
-/* WORLD-PINNED (poses are foot-anchored at registration; dx changes   */
-/* only at pass boundaries, by reach*k, k=0.960 — per-pass pin error   */
-/* ~3 device px) and the head held world-locked (pass poses drawn      */
-/* with the head in place, K6). 9 full steps + a short closing step    */
-/* land the feet on the mirrored home stance (~1 canvas px), then     */
-/* the drawn turn + sink, as before.                                   */
+/* travel happens in the body pass, with the head held world-locked    */
+/* (pass poses drawn with the head in place, K6). 9 full steps + a     */
+/* short closing step land the feet on the mirrored home stance        */
+/* (~1 canvas px), then the drawn turn + sink, as before.              */
+/*                                                                     */
+/* V3 (2026-11-06, Jimmy on v2: "still not there. jerky and not        */
+/* fluid" — v2 stepped dx at pass boundaries, up to +85 device px in   */
+/* one tick): dx now RAMPS linearly across each pass + the next        */
+/* step's fold (the chart's distributed body_pass) — no dx steps       */
+/* anywhere; the planted foot creeps ~8-11 device px/tick during       */
+/* passes only. Poses are foot-anchored at registration (reach*k,      */
+/* k=0.960 plateaus). Jimmy approved the v3 preview before flashing.   */
 /*                                                                     */
 /* Poses: 0=HOME(rest) 1=D1 half-rise 2=D2 carriage 3=WA fold (near)  */
 /* 4=ADV_N 5=PLANT_N 6=PASS1_N 7=PASS2_N (= far fold, body passed)     */
 /* 8=ADV_F 9=PLANT_F 10=PASS1_F 11=PASS2_F (= near fold, body passed)  */
 /* 12=PLANT_F_SHORT (closing step) 13=T1 14=T2 15=T3 16=T4 17=T5.      */
 /*                                                                     */
-/* The schedule is a baked run-length table (stride_sched.inc,        */
-/* generated from sequences/stride/stride2_preview.py — the preview   */
-/* Jimmy approved). The composite's flip flag is the side the bird     */
-/* starts on, so the SAME table walks it back the other way next       */
-/* time. At the settle, s_mirrored toggles and show_rest draws the     */
-/* new side's home.                                                    */
+/* The schedule is a baked per-tick table (stride_sched.inc,          */
+/* generated from sequences/stride/stride3_preview.py — the v3        */
+/* preview Jimmy approved 2026-11-06). The composite's flip flag is    */
+/* the side the bird starts on, so the SAME table walks it back the    */
+/* other way next time. At the settle, s_mirrored toggles and          */
+/* show_rest draws the new side's home.                                */
 /* ------------------------------------------------------------------ */
 extern const uint8_t z_d1_halfrise_jpg_start[] asm("_binary_z_d1_halfrise_jpg_start");
 extern const uint8_t z_d1_halfrise_jpg_end[]   asm("_binary_z_d1_halfrise_jpg_end");
@@ -850,7 +855,6 @@ static const uint8_t *const stride_pose_end[18] = {
     z_t3_turn_jpg_end, z_t4_left_jpg_end, z_t5_sink_jpg_end,
 };
 
-typedef struct { uint8_t pose; uint8_t ticks; int16_t dx; } stride_run_t;
 #include "stride_sched.inc"
 
 #define STRIDE_MAX_TICKS 176
@@ -859,15 +863,11 @@ static int16_t s_stride_dx[STRIDE_MAX_TICKS];
 
 static int stride_build_schedule(void)
 {
-    int n = 0;
-    for (int r = 0; r < STRIDE_NUM_RUNS; r++) {
-        for (int k = 0; k < STRIDE_RUNS[r].ticks; k++) {
-            s_stride_pose[n] = STRIDE_RUNS[r].pose;
-            s_stride_dx[n] = STRIDE_RUNS[r].dx;
-            n++;
-        }
+    for (int t = 0; t < STRIDE_TICKS; t++) {
+        s_stride_pose[t] = STRIDE_POSE_TBL[t];
+        s_stride_dx[t] = STRIDE_DX_TBL[t];
     }
-    return n;
+    return STRIDE_TICKS;
 }
 
 static void play_stride(void)
